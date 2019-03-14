@@ -1,0 +1,44 @@
+%
+% the first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigplan,screen]{acmart}
+
+%
+% defining the \BibTeX command - from Oren Patashnik's original BibTeX documentation.
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08emT\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+%
+% end of the preamble, start of the body of the document source.
+
+\begin{document}
+
+\settopmatter{printacmref=false} % removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+\setcopyright{none} % removes copyright information
+%
+% The "title" command has an optional parameter, allowing the author to define a "short title" to be used in page headers.
+\title{LinuxKit Paper}
+
+\author{Yiwen Li}
+\affiliation{\institution{New York University}}
+\email{liyiwen@nyu.edu}
+
+\author{Brendan Dolan-Gavitt}
+\affiliation{\institution{New York University}}
+\email{brendandg@nyu.edu}
+
+\author{Justin Cappos}
+\affiliation{\institution{New York University}}
+\email{jcappos@nyu.edu}
+
+\maketitle
+
+\input{abstract}
+\input{introduction}
+\input{evaluation}
+
+%
+% The next two lines define the bibliography style to be used, and the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{paper}
+\end{document}

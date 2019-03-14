@@ -1,0 +1,25 @@
+\section*{Abstract}
+Containers, such as Docker and LinuxKit, are widely used because of the perceived isolation and security they provide 
+against the potentially malicious or buggy user programs running inside of them. However, this perception may be false. 
+It is possible to trigger zero-day kernel bugs from inside of a container, which could lead to such security problems as privilege escalation. 
+The core of this problem lies in that these containers are allowed access to rarely executed paths in the host operating system kernel, 
+which often contain bugs. A previous study \cite{Lock-in-Pop} has proven the value of limiting kernel access to 
+only the frequently used ``popular paths,'' as they contain fewer security bugs. 
+Therefore, if an application could run using only these paths, the security of the container would be greatly enhanced. 
+
+In this paper, we show that if the popular paths metric is applied to existing containers, such as LinuxKit, 
+it can create the true isolation its users desire with no loss in performance. 
+We start by presenting a method to systematically identify the popular paths for a LinuxKit virtual machine 
+by collecting kernel trace data from 200 popular Docker container images from Docker Hub. 
+We found that more than 95\% of the kernel trace overlapped, making it possible to identify the popular paths by running 
+only the first 10 containers, rather than sampling hundreds of application containers. 
+We also verified that, of 50 Linux kernel CVE security vulnerabilities only about 5\% of were present in the popular paths. 
+With this extracted road map, we were able to implement a system to automatically instrument the kernel in order to 
+prevent container applications from accessing risky unpopular paths. 
+We call our modified kernel the ``security logging mode'' kernel. 
+This ``security logging mode'' kernel stops execution of risky code, and thus prevents dangerous application behaviors. 
+It will also warn users about which container application are trying to access which unpopular paths, 
+which can be used to identify suspicious and malicious applications. 
+Lastly, we demonstrated that the 200 popular Docker containers were still able to run their normal workload 
+using the ``security logging mode'' kernel, and security was not improved at the cost of efficiency, 
+as space overhead and runtime performance overhead incurred only xx\%, and xx\%, respectively.  
