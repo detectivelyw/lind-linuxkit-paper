@@ -1,3 +1,47 @@
 \section{Evaluation}
 \label{sec.evaluation}
-This is the evaluation section.
+The key idea of this paper is that by applying the popular paths metric onto an existing container design, LinuxKit, 
+we can achieve stronger security and isolation for containers, while still maintaining functionality and performance. 
+In other words, we want to demonstrate that using only the popular paths to run containers is feasible in real-world practice. 
+
+To test this feasibility, we set out to answer the following questions: 
+
+\begin{itemize}
+\item Can real-world containers run only on the popular paths? (Section~{\ref{sec.evaluation.usability}})
+\item Does restricting access only to the popular paths improve the security of  running containers? (Section~{\ref{sec.evaluation.security}})
+\item What is the performance overhead of only using the popular paths? (Section~{\ref{sec.evaluation.performance}})
+\end{itemize}
+
+\subsection{Usability Evaluation}
+\label{sec.evaluation.usability} 
+We conducted experiments to test the feasibility of running real-world containers only using the popular paths. 
+The goal here is to verify if users can still run their containers with their existing configuration and commands, 
+using our secure logging kernel instead of the original Linux kernel. The secure logging kernel was created by our Secure Logging System.
+
+\textbf{Experimental Setup.}
+First, we collected the kernel trace data by running the 100 most popular (ranked by the number of user downloads) Docker containers from Docker Hub. 
+We use this dataset as our popular paths training set. Next, our Secure Logging System used our training set data to instrument the Linux kernel, 
+and generated our secure logging kernel. Finally, we ran another 100 popular Docker containers,  our testing set, on our security logging kernel. 
+
+In our experiment, we ran the popular Docker containers inside of a LinuxKit version 0.2+ machine, which was built using Docker version 18.03.0-ce. 
+Our host operating system was Ubuntu 16.04 LTS, with Linux kernel 4.13.0-36-generic. A QEMU emulator version 2.5.0 served as the local hypervisor. 
+
+\textbf{Results.}
+This is our results.
+
+\subsection{Security Evaluation}
+\label{sec.evaluation.security} 
+We examined a list of 50 CVE kernel vulnerabilities, and verified that only three of them were triggerable in our LinuxKit popular paths kernel trace. 
+This demonstrates that running containers using our secure logging kernel can help prevent kernel bugs from being triggered effectively. 
+
+\textbf{Experimental Setup.}
+
+\textbf{Results.}
+
+\subsection{Performance Evaluation}
+\label{sec.evaluation.performance} 
+We evaluated both the run-time performance overhead and the memory space overhead of using our secure logging kernel. 
+
+\textbf{Experimental Setup.}
+
+\textbf{Results.}

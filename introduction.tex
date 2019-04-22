@@ -1,3 +1,37 @@
 \section{Introduction}
 \label{sec.introduction}
-This is our introduction.
+Containers continue to grow in popularity, with one industry survey suggesting the technology could become a \$2.7 billion market by 2020 \cite{451-Research}.  
+This wide-spread adoption of containers, such as Docker \cite{Docker} and LinuxKit \cite{LinuxKit} can be attributed to the perceived isolation and security they provide 
+to the user programs running inside of them. 
+However, this perception may be false, as it is possible to trigger zero-day kernel bugs from inside of a container [cite]. 
+And since the kernel is shared by containers and the host system, exploitation of such bugs could lead to severe security problems, 
+such as privilege escalation [cite a few examples of exploitation].  
+
+The problem lies in allowing containers access to the underlying host operating system kernel where zero-day bugs could be encountered [cite]. 
+To this point, there has been little or no efforts to limit such contact, in part because there was no efficient way to identify where the bugs might be. 
+If one knew that part of the kernel did not contain zero-day bugs— or at the very least was less likely to host this threat— then 
+restricting a container to touch only this part of the kernel would greatly improve security. 
+
+A previous study \cite{Lock-in-Pop}, has shown that there is a powerful correlation between the popularity of a kernel code path and its likelihood to contain a security flaw. 
+Furthermore, the study \cite{Lock-in-Pop} demonstrated that these frequently used kernel paths can be leveraged to design and build secure virtualization systems. 
+Building on these results, we ask  the question, can we apply the popular paths metric to  securing existing containers? 
+And, if such an application is possible, could it provide stronger security and truer isolation than the existing design of container systems permits?
+
+In this paper, we document our efforts to answer those questions by studying the feasibility of using the popular paths metric to secure 
+the LinuxKit container toolkit. This entailed finding a way to identify the parts of the underlying kernel that are less likely to contain security bugs, 
+demonstrating that existing containers could operate exclusively on these paths, 
+and developing a method to warn users away from code found in the less-used paths. 
+
+We were able to demonstrate  a systematic way to gather data on popular paths, 
+and affirmed this data is representative of hundreds of popular Docker containers from Docker Hub \cite{DockerHub}. 
+Next, we implemented a secure logging kernel designed to generate warning messages whenever a line of code from the unpopular paths is to be executed. 
+By doing so, users can detect potentially dangerous program behaviors and make decisions about whether any attempt to execute unpopular paths should be blocked. 
+
+An evaluation of our findings affirmed that popular Docker containers can run normally using our secure logging kernel. 
+For the official Docker containers' default workload, the popular paths were used 99\% of the time. 
+And whenever unpopular paths were reached, our secure logging kernel was able to log these paths and warn users about the potentially dangerous program behaviors. 
+Our security evaluation was able to confirm that the using the popular paths to run Docker containers can effectively 
+prevent most kernel vulnerabilities from being triggered, as only three of the 50 CVE kernel security vulnerabilities we checked for were found in the popular paths of LinuxKit. 
+And, in our performance evaluation, we found that running our secure logging kernel only incurred about 2\% of runtime overhead. 
+The memory space overhead of our secure logging kernel was about 0.5\% (193.5MB-192.4MB/192.4MB = 0.57\%). 
+Thus, greater security could be achieved with very little perceived difference in operation efficiency or cost.
