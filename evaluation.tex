@@ -8,7 +8,7 @@ To test this feasibility, we set out to answer the following questions:
 
 \begin{itemize}
 \item Can real-world containers run only on the popular paths? (Section~{\ref{sec.evaluation.usability}})
-\item Does restricting access only to the popular paths improve the security of  running containers? (Section~{\ref{sec.evaluation.security}})
+\item Does restricting access only to the popular paths improve the security of running containers? (Section~{\ref{sec.evaluation.security}})
 \item What is the performance overhead of only using the popular paths? (Section~{\ref{sec.evaluation.performance}})
 \end{itemize}
 
@@ -31,12 +31,84 @@ This is our results.
 
 \subsection{Security Evaluation}
 \label{sec.evaluation.security} 
-We examined a list of 50 CVE kernel vulnerabilities, and verified that only three of them were triggerable in our LinuxKit popular paths kernel trace. 
-This demonstrates that running containers using our secure logging kernel can help prevent kernel bugs from being triggered effectively. 
+The goal of our security evaluation is to answer the question: does restricting access only to the popular paths improve the security of running containers? 
+We already es
+We try to answer this question by studying how many CVE kernel vulnerabilities were present in the popular paths of the LinuxKit VM. 
 
 \textbf{Experimental Setup.}
+In this paper, we used the Linux kernel version 4.14.24 when running the LinuxKit VM. 
+We examined a list of 50 CVE kernel vulnerabilities (Table \ref{tab:evaluation_cve}). 
+Our methodology for getting this list is to obtain the CVE vulnerabilities for Linux kernel version 4.14.24 and version 4.14.x from the National Vulnerability Database \cite{NVD}. 
+These 50 CVE vulnerabilities were all the available ones for our targeted kernel versions at the time of our study (April 2019). 
+For each of these CVE vulnerabilities, we looked at the patch that fixed the bug to identify the lines of kernel source code that could trigger this vulnerability. 
+Next, we compared these lines against the popular paths kernel trace of LinuxKit, and identified which vulnerabilities were present in the popular paths. 
 
 \textbf{Results.}
+In our study, we found out that only three out of all the fifty CVE vulnerabilities were detected in the popular paths of LinuxKit (Table \ref{tab:evaluation_cve}). 
+And these three vulnerabilities detected were among commonly used kernel code that were hard to avoid by any program, and more likely to be patched since they were essential code that was used a lot. 
+We describe these three kernel bugs found in the LinuxKit's popular paths in more details below.  
+
+\begin{table*}[h!]
+  \begin{center}
+    \caption{Evaluation of the CVE vulnerabilities for the Linux kernel}
+    \label{tab:evaluation_cve}
+    \begin{tabular}{c|l|c|c|c} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      \textbf{\#} & \textbf{CVE ID} & \textbf{CVSS Score} & \textbf{Description} & \textbf{Detected in the}\\
+       & & & & \textbf{LinuxKit Popular Paths}\\
+      \hline
+      1 & CVE-2019-10124 & 7.8 & denial of service, in mm/memory-failure.c & \ding{55}\\
+      2 & CVE-2019-9213 & 4.9 & kernel NULL pointer dereferences, in mm/mmap.c & \ding{55}\\
+      3 & CVE-2019-9003 & 7.8 & use-after-free & \ding{55}\\
+      4 & CVE-2019-8956 & 7.2 & use-after-free & \ding{55}\\
+      5 & CVE-2019-8912 & 7.2 & use-after-free & \ding{55}\\
+      6 & CVE-2019-7308 & 7.5 & out-of-bounds speculation on pointer arithmetic & \ding{55}\\
+      7 & CVE-2019-3701 & 7.1& privilege escalation & \ding{55}\\
+      8 & CVE-2018-1000204 & 6.3 & copy kernel heap pages to the userspace & \ding{55}\\
+      9 & CVE-2018-1000200 & 4.9 & NULL pointer dereference & \ding{55}\\
+      10 & CVE-2018-1000026 & 6.8 & denial of service & \ding{55}\\
+      11 & CVE-2018-20511 & 2.1 & privilege escalation & \ding{55}\\
+      12 & CVE-2018-20169 & 7.2 & mishandle size checks & \ding{55}\\
+      13 & CVE-2018-18690 & 4.9 & unchecked error condition & \ding{55}\\
+      14 & CVE-2018-18445 & 7.2 & out-of-bounds memory access & \ding{55}\\
+      15 & CVE-2018-18281 & 4.6 & improperly flush TLB before releasing pages & \ding{55}\\
+      16 & CVE-2018-18021 & 3.6 & denial of service & \ding{55}\\
+      17 & CVE-2018-16862 & 2.1 & the cleancache subsystem incorrectly clears an inode & \ding{55}\\
+      18 & CVE-2018-16658 & 3.6 & local attackers could read kernel memory & \ding{55}\\
+      19 & CVE-2018-16276 & 7.2 & privilege escalation & \ding{55}\\
+      \color{red}{20} & \color{red}{CVE-2018-15594} & \color{red}{2.1} & \color{red}{spectre-v2 attacks against paravirtual guests} & \color{red}{\ding{51}}\\
+      \color{red}{21} & \color{red}{CVE-2018-15572} & \color{red}{2.1} & \color{red}{userspace-userspace spectreRSB attacks} & \color{red}{\ding{51}}\\
+      22 & CVE-2018-14646 & 4.9 & NULL pointer dereference & \ding{55}\\
+      23 & CVE-2018-14634 & 7.2 & integer overflow, privilege escalation & \ding{55}\\
+      24 & CVE-2018-14633 & 8.3 & stack buffer overflow & \ding{55}\\
+      25 & CVE-2018-14619 & 7.2 & privilege escalation & \ding{55}\\
+      26 & CVE-2018-13406 & 7.2 & integer overflow & \ding{55}\\
+      27 & CVE-2018-12904 & 4.4 & privilege escalation & \ding{55}\\
+      28 & CVE-2018-11508 & 2.1 & local user could access kernel memory & \ding{55}\\
+      29 & CVE-2018-11412 & 4.3 & ext4 incorrectly allows external inodes for inline data & \ding{55}\\
+      30 & CVE-2018-10940 & 4.9 & incorrect bounds check allows kernel memory access & \ding{55}\\
+      31 & CVE-2018-10881 & 4.9 & denial of service & \ding{55}\\
+      32 & CVE-2018-10880 & 7.1 & denial of service & \ding{55}\\
+      33 & CVE-2018-10879 & 6.1 & use-after-free & \ding{55}\\
+      34 & CVE-2018-10878 & 6.1 & denial of service & \ding{55}\\
+      35 & CVE-2018-10074 & 4.9 & denial of service & \ding{55}\\
+      36 & CVE-2018-10021 & 4.9 & denial of service & \ding{55}\\
+      37 & CVE-2018-8781 & 7.2 & code execution in kernel space & \ding{55}\\
+      38 & CVE-2018-6555 & 7.2 & denial of service & \ding{55}\\
+      39 & CVE-2018-6554 & 4.9 & denial of service & \ding{55}\\
+      40 & CVE-2018-5390 & 7.8 & denial of service & \ding{55}\\
+      41 & CVE-2018-1130 & 4.9 & NULL pointer dereference & \ding{55}\\
+      \color{red}{42} & \color{red}{CVE-2018-1120} & \color{red}{3.5} & \color{red}{denial of service} & \color{red}{\ding{51}}\\
+      43 & CVE-2018-1118 & 2.1 & kernel memory leakage & \ding{55}\\
+      44 & CVE-2018-1068 & 7.2 & write to kernel memory & \ding{55}\\
+      45 & CVE-2017-1000410 & 5.0 & leaking data in kernel address space & \ding{55}\\
+      46 & CVE-2017-1000407 & 6.1 & denial of service & \ding{55}\\
+      47 & CVE-2017-1000405 & 6.9 & overwrite read-only huge pages & \ding{55}\\
+      48 & CVE-2017-18224 & 1.9 & race condition, denial of service & \ding{55}\\
+      49 & CVE-2017-18216 & 2.1 & NULL pointer dereference, denial of service & \ding{55}\\
+      50 & CVE-2015-5327 & 4.0 & out-of-bounds memory read & \ding{55}\\
+    \end{tabular}
+  \end{center}
+\end{table*}
 
 \subsection{Performance Evaluation}
 \label{sec.evaluation.performance} 
