@@ -1,0 +1,181 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{11}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{451 Research}{451 Research}{2017}]%
+        {451-Research}
+451 Research \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Cloud-Enabling Technologies Market Monitor Report.}
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://451research.com/images/Marketing/press_releases/Application-container-market-will-reach-2-7bn-in-2020_final_graphic.pdf}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Docker}{Docker}{2019}]%
+        {Docker}
+Docker \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{Enterprise Container Platform for High Velocity
+  Innovation}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.docker.com}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Docker Hub}{Docker Hub}{2019}]%
+        {DockerHub}
+Docker Hub \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{A Library and Community for Container Images}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://hub.docker.com}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kubernetes}{Kubernetes}{2019}]%
+        {Kubernetes}
+Kubernetes \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{An open-source system for automating deployment,
+  scaling, and management of containerized applications.}
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://kubernetes.io}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Li, Dolan-Gavitt, Weber, and Cappos}{Li
+  et~al\mbox{.}}{2017}]%
+        {Lock-in-Pop}
+\bibfield{author}{\bibinfo{person}{Yiwen Li}, \bibinfo{person}{Brendan
+  Dolan-Gavitt}, \bibinfo{person}{Sam Weber}, {and} \bibinfo{person}{Justin
+  Cappos}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Lock-in-Pop: Securing Privileged Operating System
+  Kernels by Keeping on the Beaten Path}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2017 USENIX Annual Technical
+  Conference (USENIX ATC ’17)}}. \bibinfo{publisher}{USENIX Association},
+  \bibinfo{address}{Santa Clara, CA, USA}, \bibinfo{pages}{1--13}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{LinuxKit}{LinuxKit}{2019}]%
+        {LinuxKit}
+LinuxKit \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{A toolkit for building secure, portable and lean
+  operating systems for containers}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/linuxkit/linuxkit}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{NVD}{NVD}{2019}]%
+        {NVD}
+NVD \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{National Vulnerability Database}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://nvd.nist.gov}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{OS Level Virtualization}{OS Level
+  Virtualization}{2019}]%
+        {OS-Level-Virtualization}
+OS Level Virtualization \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{Wikipedia}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://en.wikipedia.org/wiki/OS-level_virtualisation}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{VirtualBox}{VirtualBox}{2019}]%
+        {VirtualBox}
+VirtualBox \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{An x86 and AMD64/Intel64 virtualization.}
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.virtualbox.org}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{VMWare Workstation}{VMWare
+  Workstation}{2019}]%
+        {VMWare-Workstation}
+VMWare Workstation \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{Running multiple operating systems as virtual
+  machines (VMs) on a single Linux or Windows PC.}
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.vmware.com/products/workstation-pro.html}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{W.G. Wong}{W.G. Wong}{2016}]%
+        {Containers_and_VirtualMachines}
+W.G. Wong \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{What’s the Difference Between Containers and
+  Virtual Machines? Electronic Design}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://en.wikipedia.org/wiki/OS-level_virtualisation}
+\showURL{%
+Retrieved April, 2019 from \tempurl}
+
+
+\end{thebibliography}
