@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 JUN 2019 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 OCT 2019 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,7 +1106,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
-(Font)              scaled to size 10.0pt on input line 12.
+(Font)              scaled to size 10.0pt on input line 5.
 ) (./introduction.tex) (./motivation.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1288,7 +1288,7 @@ bertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 /LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newt
 x/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on paper.pdf (8 pages, 637706 bytes).
+Output written on paper.pdf (8 pages, 638621 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream

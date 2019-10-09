@@ -1,23 +1,18 @@
 \section*{Abstract}
 Containers, such as Docker and LinuxKit, are widely used because of the perceived isolation and security 
 they provide against the potentially malicious or buggy user programs running inside of them. 
-However, this perception may be false. It is possible to trigger zero-day kernel bugs from inside of a container, 
-which could lead to such security problems  as privilege escalation.  
-The reason for this vulnerability is that these containers are allowed access to rarely executed paths in the host operating system kernel, 
-which often contain bugs. A previous study \cite{Lock-in-Pop} has proven the value of limiting kernel access to 
-only the frequently used ``popular paths,'' as they contain fewer security bugs. 
-Therefore, if an application could run using only these paths, the security of the container would be greatly enhanced. 
+However, it is possible to trigger zero-day kernel bugs from inside of a container, which could lead to such security problems as privilege escalation. 
+Containers remain vulnerable because they are allowed access to rarely executed \textbf{\textit{unpopular paths}} in the host operating system kernel that often contain bugs. 
+Limiting kernel access to only frequently used \textbf{\textit{popular paths}}, which have previously been proven to contain fewer security bugs, would greatly reduce this risk. 
+Therefore, if a container could run using only these paths, its security would be greatly enhanced. 
 
-In this paper, we show that the popular paths metric can be used to improve the security of existing containers, such as LinuxKit. 
-We designed and implemented a \textbf{\textit{Secure Logging System}}, which first finds the popular paths for the LinuxKit kernel 
-by profiling popular Docker containers from Docker Hub \cite{DockerHub}, 
-and then creating a \textbf{\textit{secure logging kernel}} designed to run 
-only on those secure paths. Whenever a line of code from an unpopular path is to be executed, this kernel generates warning messages 
-to alert users about potential security breaches. 
-Our evaluation verified that the containers tested were able to run their default workload normally using our secure logging kernel, 
-touching the popular paths 99\% of the time. 
-As an examination of 50 Linux kernel CVE security vulnerabilities confirmed only 6\% of them were present in the popular paths, 
-this means our design is a more inherently secure alternative to conventional containers. 
-Furthermore, as our performance evaluation shows, running Docker containers using our secure logging kernel 
-only incurs about 2\% runtime overhead, and around 0.5\% extra cost of memory space. 
-Therefore, the new design can provide better security without any significant loss of efficiency.
+In this paper, we enhance the security of existing container designs by leveraging the popular paths metric and its security benefits. 
+We designed and implemented the \textbf{\textit{Secure Logging System}}, which first systematically collects popular paths data by profiling popular containers, 
+then use this data to create a \textbf{\textit{Secure Logging Kernel}} designed to test the feasibility of running containers only on those secure paths. 
+If the application attempts to execute a line of code from an unpopular path, this kernel generates security logs and warning messages that alert users 
+and help them decide whether the potentially dangerous code execution should be stopped. 
+Our evaluation verified that more than 99.9\% of the time containers were able to run their default workload normally just using the popular paths. 
+Furthermore, only 6\% of 50 Linux kernel CVE security vulnerabilities we examined were present in the popular paths on which these containers ran, 
+which greatly reduced any potential risk of triggering kernel bugs. Our performance evaluation shows that 
+containers running our Secure Logging Kernel only incur about 0.1\% runtime overhead on average, and around 0.5\% extra cost of memory space. 
+This means the Secure Logging Kernel can improve security with little or no loss of efficiency. 
