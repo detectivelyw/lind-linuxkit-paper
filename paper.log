@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 OCT 2019 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 OCT 2019 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,7 +1106,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
-(Font)              scaled to size 10.0pt on input line 5.
+(Font)              scaled to size 10.0pt on input line 6.
 ) (./introduction.tex) (./motivation.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1191,30 +1191,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [4.4 <./diagram/linuxkit-kernel-profiler.png>]
 Underfull \vbox (badness 1527) has occurred while \output is active []
 
- [5.5 <./diagram/linuxkit-kernel-modifier.png>]
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 50.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 50.
+surrounding objects on input line 31.
 
 
-Overfull \hbox (5.79922pt too wide) in paragraph at lines 54--109
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 31.
+
+
+Overfull \hbox (48.98456pt too wide) in paragraph at lines 35--45
+ [] 
+ []
+
+[5.5 <./diagram/linuxkit-kernel-modifier.png>]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 67.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 67.
+
+
+Overfull \hbox (5.79922pt too wide) in paragraph at lines 71--126
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 7.59998pt on input line 110.
+LaTeX Warning: Float too large for page by 7.59998pt on input line 127.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./limitation.tex) (./related_work.tex) (./conclusion.tex) (./paper.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6.6]
+) (./limitation.tex) (./related_work.tex) (./conclusion.tex [6.6]) (./paper.bbl
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 49.
 
@@ -1256,11 +1267,7 @@ LaTeX Info: Redefining \tempurl on input line 176.
 
 Class acmart Warning: Some images may lack descriptions.
 
-
-Overfull \vbox (1.204pt too high) has occurred while \output is active []
-
- [7.7]
-[8.8]
+[7.7] [8.8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./paper.aux)
@@ -1268,10 +1275,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 17981 strings out of 492649
- 271246 string characters out of 6129622
- 410030 words of memory out of 5000000
- 21146 multiletter control sequences out of 15000+600000
+ 17982 strings out of 492649
+ 271274 string characters out of 6129622
+ 412069 words of memory out of 5000000
+ 21147 multiletter control sequences out of 15000+600000
  114110 words of font info for 220 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,11n,94p,796b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1288,7 +1295,7 @@ bertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 /LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newt
 x/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on paper.pdf (8 pages, 638621 bytes).
+Output written on paper.pdf (8 pages, 640957 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream

@@ -28,6 +28,23 @@ Our host operating system was Ubuntu 16.04 LTS, with Linux kernel 4.13.0-36-gene
 \textbf{Results.}
 This is our results.
 
+\begin{table}[h!]
+\begin{center}
+\caption{LTP tests}
+\label{tab:evaluation_ltp_results}
+\begin{tabular}{c|c|c}
+ & Original Linux kernel & Secure Logging Kernel \\
+ \hline
+ Total Tests & 798 & 798 \\
+ \hline
+ Total Skipped Tests & 20 & 20 \\
+ \hline
+ Total Failures & 105 & 105 \\
+ 
+\end{tabular}
+\end{center}
+\end{table}
+
 \subsection{Security Evaluation}
 \label{sec.evaluation.security} 
 The goal of our security evaluation is to answer the question: does restricting access only to the popular paths improve the security of running containers? 

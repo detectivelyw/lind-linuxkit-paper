@@ -1,18 +1,17 @@
 \section*{Abstract}
-Containers, such as Docker and LinuxKit, are widely used because of the perceived isolation and security 
-they provide against the potentially malicious or buggy user programs running inside of them. 
-However, it is possible to trigger zero-day kernel bugs from inside of a container, which could lead to such security problems as privilege escalation. 
-Containers remain vulnerable because they are allowed access to rarely executed \textbf{\textit{unpopular paths}} in the host operating system kernel that often contain bugs. 
+One of several reasons why containers, such as Docker and LinuxKit, are so widely used is because of the perceived isolation and security they provide against 
+the potentially malicious or buggy user programs running inside of them. However, containers provide no protection from the zero-day kernel bugs inside the kernel itself, 
+which, if triggered, could lead to such security problems as privilege escalation. 
+Containers remain vulnerable because they allow access to rarely executed paths where such bugs can be found. 
 Limiting kernel access to only frequently used \textbf{\textit{popular paths}}, which have previously been proven to contain fewer security bugs, would greatly reduce this risk. 
 Therefore, if a container could run using only these paths, its security would be greatly enhanced. 
 
-In this paper, we enhance the security of existing container designs by leveraging the popular paths metric and its security benefits. 
-We designed and implemented the \textbf{\textit{Secure Logging System}}, which first systematically collects popular paths data by profiling popular containers, 
-then use this data to create a \textbf{\textit{Secure Logging Kernel}} designed to test the feasibility of running containers only on those secure paths. 
-If the application attempts to execute a line of code from an unpopular path, this kernel generates security logs and warning messages that alert users 
-and help them decide whether the potentially dangerous code execution should be stopped. 
-Our evaluation verified that more than 99.9\% of the time containers were able to run their default workload normally just using the popular paths. 
+In this paper, we propose a method to enhance the security of existing container designs by leveraging the popular paths metric. 
+We designed and implemented a \textbf{\textit{Secure Logging System}}, which first systematically identifies popular paths data in widely-used containers, 
+and uses this data to create a kernel that generates security logs and warning messages when a potentially risky path is reached. 
+Users can then decide whether the potentially dangerous code execution should be stopped. We tested this modified kernel, which we named the \textbf{\textit{Secure Logging Kernel}}, 
+to determine its  ability to run containers. Our evaluation verified that, more than 99.9\% of the time, containers were able to run their default workload using just the popular paths. 
 Furthermore, only 6\% of 50 Linux kernel CVE security vulnerabilities we examined were present in the popular paths on which these containers ran, 
-which greatly reduced any potential risk of triggering kernel bugs. Our performance evaluation shows that 
-containers running our Secure Logging Kernel only incur about 0.1\% runtime overhead on average, and around 0.5\% extra cost of memory space. 
-This means the Secure Logging Kernel can improve security with little or no loss of efficiency. 
+greatly reducing any potential risk of triggering kernel bugs. 
+Lastly, our performance evaluation shows that containers running our Secure Logging Kernel only incur about 0.1\% runtime overhead on average, 
+and around 0.37\% extra cost of memory space. This means the Secure Logging Kernel can improve security with little or no loss of efficiency. 
