@@ -12,14 +12,95 @@ Warning--to sort, need author or key in dirty-cow
 Warning--no key, author in dirty-cow-impact
 Warning--no author, editor, organization, or key in dirty-cow-impact
 Warning--to sort, need author or key in dirty-cow-impact
+Warning--no key, author in namespaces
+Warning--no author, editor, organization, or key in namespaces
+Warning--to sort, need author or key in namespaces
+Warning--no key, author in LXC
+Warning--no author, editor, organization, or key in LXC
+Warning--to sort, need author or key in LXC
+Warning--no key, author in cgroups
+Warning--no author, editor, organization, or key in cgroups
+Warning--to sort, need author or key in cgroups
+Warning--no key, author in linux-kernel-capabilities
+Warning--no author, editor, organization, or key in linux-kernel-capabilities
+Warning--to sort, need author or key in linux-kernel-capabilities
+Warning--no key, author in AppArmor
+Warning--no author, editor, organization, or key in AppArmor
+Warning--to sort, need author or key in AppArmor
+Warning--no key, author in SELinux
+Warning--no author, editor, organization, or key in SELinux
+Warning--to sort, need author or key in SELinux
+Warning--no key, author in GRSEC
+Warning--no author, editor, organization, or key in GRSEC
+Warning--to sort, need author or key in GRSEC
+Warning--no key, author in PAX
+Warning--no author, editor, organization, or key in PAX
+Warning--to sort, need author or key in PAX
+Warning--no key, author in red-hat
+Warning--no author, editor, organization, or key in red-hat
+Warning--to sort, need author or key in red-hat
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--no key, author in AppArmor
+Warning--no key, author in AppArmor
+Warning--no key, author in cgroups
+Warning--no key, author in cgroups
 Warning--no key, author in dirty-cow
 Warning--no key, author in dirty-cow
 Warning--no key, author in dirty-cow-impact
 Warning--no key, author in dirty-cow-impact
+Warning--no key, author in GRSEC
+Warning--no key, author in GRSEC
+Warning--no key, author in linux-kernel-capabilities
+Warning--no key, author in linux-kernel-capabilities
+Warning--no key, author in LXC
+Warning--no key, author in LXC
+Warning--no key, author in namespaces
+Warning--no key, author in namespaces
+Warning--no key, author in PAX
+Warning--no key, author in PAX
+Warning--no key, author in red-hat
+Warning--no key, author in red-hat
+Warning--no key, author in SELinux
+Warning--no key, author in SELinux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in AppArmor
+Warning--no author, editor, organization, or key in AppArmor
+Warning--empty author in AppArmor
+Warning--empty year in AppArmor
+Warning--no key, author in GRSEC
+Warning--no author, editor, organization, or key in GRSEC
+Warning--empty author in GRSEC
+Warning--empty year in GRSEC
+Warning--no key, author in cgroups
+Warning--no author, editor, organization, or key in cgroups
+Warning--empty author in cgroups
+Warning--empty year in cgroups
+Warning--no key, author in linux-kernel-capabilities
+Warning--no author, editor, organization, or key in linux-kernel-capabilities
+Warning--empty author in linux-kernel-capabilities
+Warning--empty year in linux-kernel-capabilities
+Warning--no key, author in namespaces
+Warning--no author, editor, organization, or key in namespaces
+Warning--empty author in namespaces
+Warning--empty year in namespaces
+Warning--no key, author in LXC
+Warning--no author, editor, organization, or key in LXC
+Warning--empty author in LXC
+Warning--empty year in LXC
+Warning--no key, author in PAX
+Warning--no author, editor, organization, or key in PAX
+Warning--empty author in PAX
+Warning--empty year in PAX
+Warning--no key, author in red-hat
+Warning--no author, editor, organization, or key in red-hat
+Warning--empty author in red-hat
+Warning--empty year in red-hat
+Warning--no key, author in SELinux
+Warning--no author, editor, organization, or key in SELinux
+Warning--empty author in SELinux
+Warning--empty year in SELinux
 Warning--no key, author in dirty-cow
 Warning--no author, editor, organization, or key in dirty-cow
 Warning--empty author in dirty-cow
@@ -40,45 +121,45 @@ Warning--articleno or eid, but no pages or numpages field in Ozment
 Warning--empty author in VirtualBox
 Warning--empty author in VMWare-Workstation
 Warning--empty author in Containers_and_VirtualMachines
-You've used 18 entries,
+You've used 27 entries,
             5732 wiz_defined-function locations,
-            1545 strings with 19700 characters,
-and the built_in function-call counts, 14485 in all, are:
-= -- 1569
+            1572 strings with 20267 characters,
+and the built_in function-call counts, 20182 in all, are:
+= -- 2019
 > -- 213
 < -- 0
-+ -- 88
++ -- 97
 - -- 76
-* -- 910
-:= -- 1161
-add.period$ -- 78
-call.type$ -- 18
-change.case$ -- 96
-chr.to.int$ -- 18
-cite$ -- 56
-duplicate$ -- 1574
-empty$ -- 1156
+* -- 1306
+:= -- 1521
+add.period$ -- 114
+call.type$ -- 27
+change.case$ -- 132
+chr.to.int$ -- 27
+cite$ -- 182
+duplicate$ -- 2222
+empty$ -- 1669
 format.name$ -- 88
-if$ -- 3424
+if$ -- 4855
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 14
-newline$ -- 249
+newline$ -- 357
 num.names$ -- 48
-pop$ -- 626
+pop$ -- 1166
 preamble$ -- 1
-purify$ -- 258
+purify$ -- 321
 quote$ -- 0
-skip$ -- 557
+skip$ -- 719
 stack$ -- 0
-substring$ -- 1078
-swap$ -- 109
+substring$ -- 1312
+swap$ -- 154
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 540
-warning$ -- 30
+type$ -- 810
+warning$ -- 111
 while$ -- 46
 width$ -- 0
-write$ -- 401
-(There were 30 warnings)
+write$ -- 572
+(There were 111 warnings)

@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{18}
+\begin{thebibliography}{27}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -36,6 +36,114 @@
 \providecommand\bibinfo[2]{#2}
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{??}{App}{[n. d.]}]%
+        {AppArmor}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{AppArmor}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://wiki.ubuntu.com/AppArmor}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{GRS}{[n. d.]}]%
+        {GRSEC}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{GRSEC}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://wiki.debian.org/grsecurity}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{cgr}{[n. d.]}]%
+        {cgroups}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Linux control groups}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{http://man7.org/linux/man-pages/man7/cgroups.7.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{lin}{[n. d.]}]%
+        {linux-kernel-capabilities}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Linux kernel capabilities}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{http://man7.org/linux/man-pages/man7/capabilities.7.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{nam}{[n. d.]}]%
+        {namespaces}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Linux Namespaces}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{http://man7.org/linux/man-pages/man7/namespaces.7.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{LXC}{[n. d.]}]%
+        {LXC}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{LXC}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://linuxcontainers.org}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{PAX}{[n. d.]}]%
+        {PAX}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{PAX}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://pax.grsecurity.net}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{red}{[n. d.]}]%
+        {red-hat}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Red Hat Linux}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{SEL}{[n. d.]}]%
+        {SELinux}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{SELinux}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://selinuxproject.org/page/Main_Page}
+\showURL{%
+\tempurl}
+
 
 \bibitem[\protect\citeauthoryear{??}{dir}{2016}]%
         {dirty-cow}

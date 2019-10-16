@@ -1,31 +1,29 @@
 \section{Background and Motivation}
 \label{sec.motivation}
-The concept of OS virtualization, where an operating system runs programs in an isolated space over a kernel, has been around for several decades \cite{OS-Level-Virtualization}. 
-Yet,  the emergence of container programs \cite{Containers_and_VirtualMachines}, which run off the kernel's OS and therefore have a lower overhead, 
-has spurred  growth in the popularity of these machines, as  Docker \cite{Docker}, LinuxKit \cite{LinuxKit}, and Kubernetes \cite{Kubernetes}, have seen wider adoption over the past few years. 
-For example, Docker Hub \cite{DockerHub} holds more than two million container images , and the most popular ones have been downloaded by more than ten million users. 
-Many users prefer using containers over traditional full-scale virtual machines such as VMware workstation \cite{VMWare-Workstation} and VirtualBox \cite{VirtualBox}, 
+The concept of full virtualization, where a guest operating system runs programs in isolation, has been around for several decades \cite{OS-Level-Virtualization}. 
+Yet, the emergence of container programs \cite{Containers_and_VirtualMachines}, which directly utilize the host kernel code to perform OS functionality, and therefore have a lower overhead than full virtual machines, 
+has spurred  growth in  container popularity.  Docker \cite{Docker}, LinuxKit \cite{LinuxKit}, and Kubernetes \cite{Kubernetes} have all seen wide adoption over the past few years. 
+For example, Docker Hub \cite{DockerHub} now holds more than two million container images, and the most popular ones have been downloaded by more than ten million users. 
+Many users prefer using containers over traditional full-scale virtual machines, such as VMware workstation \cite{VMWare-Workstation} and VirtualBox \cite{VirtualBox}, 
 because containers allow them to test and develop their software programs with relatively low overhead. 
-In addition, the idea of running their programs in a ``contained'' environment tends to make developers feel they have secured them against all threats. 
+In addition, the idea of running their programs in a “contained” environment tends to make developers feel they have sufficiently secured them against potential threats. 
 
-Existing container systems use several mechanisms to provide isolation and security to the programs running inside of them. 
-Namespaces [8] were a modern Linux kernel feature, introduced between Linux kernel version 2.6.15 and 2.6.26, to provide a global system resource abstraction 
-that helps achieve isolation between different containers. Docker and LXC [9] containers also used namespaces to provide isolation. 
-Control groups [10] are another key Linux feature that enables accounting and limiting important system resources, such as memory, CPU, and disk I/O, to each container.  
-In addition, this feature helps prevent denial-of-service attacks. Linux kernel capabilities [11] are used by a number of container systems, including Docker. 
-Capabilities allow containers restrict permissions on specific resources, such as network and file system. 
-Modern Linux kernels also have other kernel hardening systems, such as AppArmor [12], SELinux [13], GRSEC [14], PAX [15], etc., 
-that may be leveraged by containers to provide some extra safety. GRSEC and PAX add safety checks at compile-time and run-time of the kernel. 
-Docker ships a template that works with AppArmor, and also has SELinux policies working with Red Hat [16]. 
-These kernel hardening systems are mostly access control mechanism that provides safety in the similar way that capabilities do.
+This perception has been bolstered over the years by the deployment of a number of security and isolation mechanisms designed to protect the programs running inside of them. 
+Linux introduced Namespaces \cite{namespaces} to the kernel between versions 2.6.15 and 2.6.26, to provide a global system resource abstraction that helps achieve isolation between different containers. 
+Docker and LXC \cite{LXC} containers also use this technique. 
+Another key Linux feature called control groups \cite{cgroups} can be used to limit, account for, and isolate important system resources, such as memory, CPU, and disk I/O, to each container.  
+This feature not only controls resources, but also helps prevent denial-of-service attacks. 
 
-While containers leverage existing mechanisms to try to improve security, there is yet one fundamental issue that is really challenging to address. 
-The problem is, as acknowledged above,  that unlike ia full-scale virtual machine, the operating system kernel is shared among all containers and the host. 
-This magnifies the damage a kernel vulnerability could cause. If a bug in the kernel was triggered from one guest container, it could result in a security problem for other containers, 
-and even the host, breaking all the isolation that users expect to get from a container.
+When Linux kernel capabilities \cite{linux-kernel-capabilities} were introduced, container systems, such as Docker were also able to restrict permissions on specific resources, such as network and file system. 
+Another option for enhancing kernel security has emerged, with the development of kernel hardening systems, such as AppArmor \cite{AppArmor}, SELinux \cite{SELinux}, GRSEC \cite{GRSEC}, and PAX \cite{PAX}. 
+Acknowledging that buggy code is likely unavoidable,  these systems look to make the kernel code resilient enough to attacks that any resident bugs cannot be exploited. 
+GRSEC and PAX add safety checks at compile-time and run-time of the kernel. Docker ships a template that works with AppArmor, and also has SELinux policies working with Red Hat \cite{red-hat}. 
+These kernel hardening systems are mostly access control mechanisms that provide safety in a way similar to that of capabilities. 
 
-The threat of zero-day kernel vulnerabilities is the main motivation behind this work. 
-This research initiative was launched to prevent zero-day kernel bugs from being triggered in containers, while still allowing containers to perform their desired workload. 
-Having already established in a previous paper that   implementing the popular paths metric i could identify and neutralize the threat of these bugs [3] 
-we theorized that container security can be enhanced in the same manner. 
-To prove this hypothesis, we created a new design implementation for container security that is described in detail in the following section.
+These existing mechanisms do improve security to a certain degree, but do not address the aforementioned access problem. 
+Unlike in a full-scale virtual machine, the host kernel is shared among all the containers and the host operating system. 
+This magnifies the damage a kernel vulnerability could cause, in addition to, breaking the isolation that users expect from using a container. 
+
+The design initiative  described in the next section was launched specifically to enhance container security by preventing zero-day kernel bugs from being triggered inside containers, 
+while still allowing containers to perform their assigned  workload. Having already established in a previous paper that leveraging the popular paths metric could identify and neutralize the threat of these bugs \cite{Lock-in-Pop}, 
+we proposed that container security can be enhanced in the same manner. To prove this point, we designed and implemented the Secure Logging System. 
