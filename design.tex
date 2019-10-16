@@ -1,53 +1,49 @@
 \section{Design and Implementation}
 \label{sec.design}
 
+Designing an implementation of the popular paths metric for use with containers required completion of two separate tasks. 
+First, we had to find the popular paths for the underlying host operating system. 
+And, second, once we knew where these paths were, we needed a way to log / block the unpopular paths to warn and keep containers away from these less-used and potentially buggy code paths. 
+Our solution was a dual module approach we call the Secure Logging System (Shown in Figure \ref{fig:design}). 
+
 \subsection{Design of Our ``Secure Logging System''}
 \label{sec.design.secure_logging_system}
-Designing an implementation of the popular paths metric for use with containers required two separate tasks. 
-First, we had to identify the popular paths for the underlying host operating system. 
-And, second, once we knew where they were, second, we needed a way to log / block the non-popular paths to keep containers aways from these less-used 
-and potentially buggy code paths. To address these issues, we came up with a dual module approach we call the Secure Logging System (Shown in Diagram \ref{fig:design}). 
+Identifying the popular paths for the given container system is handled by the system module we refer to as the Kernel Profiler. 
+This module identifies the lines of code in the host kernel that are executed when running its default / regular workload. 
+Such a workload is often defined in the configuration files (Dockerfiles) that come with the container images. 
+We collected  ``popular paths kernel traces,'' as we named them, from a set of the containers, as  ranked ``most popular'' by the number of user downloads. 
 
 \begin{figure*}
 \centering
 \includegraphics[width=1.5\columnwidth]{diagram/design.png}
-\caption{\small Design Overview of Our Secure Logging System}
+\caption{\small Design overview of our Secure Logging System}
 \label{fig:design}
 \end{figure*}
 
-Our system has two main modules, one is the ``Kernel Profiler'', the other one is the ``Kernel Modifier''. 
-Our system operates in the following way: first, the Kernel Profiler will obtain the popular paths kernel trace for the given container system. 
-Here, we define the ``popular paths kernel trace'' as the lines of code in the host kernel that are executed when running the default / regular workload 
-(such workload is often defined in the configuration files that come with the container images) of a set of the most popular containers 
-(ranked by the number of user downloads.) The key insight of our design is that this popular paths kernel trace we got should contain fewer kernel vulnerabilities, 
-based on the findings in the Lock-in-Pop paper [3]. Second, our Kernel modifier leverages this popular paths data to enhance security of the kernel, 
-by instrumenting the rarely used non-popular paths to either generate security warning messages, or block code execution on these potentially dangerous code paths. 
-Finally, our Secure Logging System produces a Secure Logging Kernel, which is an instrumented Linux kernel with security checks inserted at the non-popular paths. 
-This Secure Logging Kernel can then be used to run containers without any changes to the containers themselves, and help prevent kernel vulnerabilities from being triggered. 
+In effect, the Profiler sets out a map highlighting places in the kernel that are safe for an application to access. 
+The second module, the Kernel Modifier,  uses this map to instrument the rarely used unpopular paths to either generate security warning messages / logs, or to block code execution on these paths. 
+When both modules are implemented, the result is an instrumented Linux kernel with security monitors and checks inserted at the non-popular paths. 
+This Secure Logging Kernel can then be used to run containers without any required changes to the containers themselves.
 
 \subsection{Implementation}
 \label{sec.design.implementation}
-Our Secure Logging System has two main modules, the Kernel Profiler and the Kernel modifier. We now describe how each of them was implemented. 
+To adapt our design for real-world containers  and applications, it was necessary to build our own infrastructure. This section describes in detail how the modules in our system were implemented.
 
-\subsubsection{Implementation of the Kernel Profiler}
+\subsubsection{Implementing the Kernel Profiler}
 \label{sec.design.implementation.kernel_profiler}
 The Kernel Profiler is designed to collect the kernel trace of running user containers. 
-Especially, we are interested in obtaining the popular paths kernel trace. 
-In this work, the popular paths kernel trace refers to the lines of code in the underlying host operating system kernel that were executed when running the regular workload 
-(defined in the configuration files of the corresponding container images) of popular (determined by the number of user downloads) containers. 
-In our implementation, we chose to run our Kernel Profiler on popular Docker containers from Docker Hub [4]. 
-Docker Hub provides millions of Docker container images, and the popular ones are downloaded more than ten millions times. 
+The popular paths kernel trace we are looking to identify refers to the lines of code in the underlying host operating system kernel that were executed when running the regular container workload. 
+This workload is defined in the configuration files of the corresponding images from containers we labeled popular based on the number of user downloads. 
 Our Kernel Profiler works in the following way: 
 \begin{enumerate}
-	\item The Linux kernel used to run the Docker containers will first be recompiled with the Gcov [17] kernel profiling feature enabled. 
-	\item Our Kernel Profiler used the LinuxKit toolkit to run the Docker containers on the Gcov-enabled Linux kernel. 
-	To run the Docker containers, the Kernel Profiler first generate the configuration file for LinuxKit, in which the task container will be defined, 
-	along with a data container responsible for collecting, storing, and transferring the kernel trace data. 
-	\item When booting the LinuxKit virtual machine, the Kernel Profiler has a script to start running the workload of the task container. 
-	And then, the Kernel Profiler will collect the kernel trace data (gcda files generated by Gcov), stored at ``/sys/kernel/debug/gcov'', 
-	and transfer the data to the host system for further use. 
-	\item From the host system, our Kernel Profiler used the lcov [18] tool to process the kernel trace data we collected, 
-	and will generate the formatted data about which lines of code were executed in the kernel source files, to be used by our Kernel Modifier. 
+	\item The Linux kernel used to run the Docker containers is recompiled with the Gcov \cite{gcov} kernel profiling feature enabled. 
+	\item To run the Docker containers, the Kernel Profiler first automatically generates the configuration file for the Gcov-enabled LinuxKit. 
+	This file will define the task container, along with a data container responsible for collecting, storing, and transferring the kernel trace data. 
+	\item When booting the LinuxKit virtual machine, a script in the profiler automatically starts running the workload of the task container. 
+	The profiler will collect the kernel trace data, in the form of gcda files generated by Gcov, store them at ``/sys/kernel/debug/gcov/,'' 
+	and by the end of the run transfer the data to the host system for further use. 
+	\item Using the lcov \cite{lcov} tool to process the kernel trace data collected from the host system, the profiler generates formatted data about which lines of code were executed in the kernel source files. 
+	These files will be used by the  Kernel Modifier to identify the unpopular paths that must trigger an alert if used. 
 \end{enumerate}
 
 \begin{figure*}
@@ -57,27 +53,29 @@ Our Kernel Profiler works in the following way:
 \label{fig:linuxkit-kernel-profiler}
 \end{figure*}
 
-\subsubsection{Implementation of the Kernel Modifier}
+\subsubsection{Implementing the Kernel Modifier}
 \label{sec.design.implementation.kernel_modifier}
-The Kernel Modifier is responsible for modifying the Linux kernel to insert security logging code at the non-popular paths. 
-It needs to first identify the correct places in the Linux kernel source tree to be instrumented, and then perform the code modification. 
-The Kernel Modifier has three main parts, the Clang compiler, the Clang analyzer, and the kernel instrumenting tool (shown in Diagram 3). 
+For the Kernel Modifier to insert security logging code at the unpopular paths in the Linux kernel, It needs to first identify the correct places in the kernel source files to be instrumented. 
+It can then modify the code as needed. The Kernel Modifier has three main parts: the Clang compiler, the Clang analyzer, and the kernel instrumenting tool (Shown in Figure \ref{fig:linuxkit-kernel-modifier}).
 It operates in the following way: 
 \begin{enumerate}
-	\item First, we used the Clang C compiler from the Clang / LLVM project [19] along with BEAR [20] tool to compile the Linux kernel source. 
-	BEAR can help us generate a compilation database, which contains all the compile flags and options used during the kernel compilation process. 
-	And this compilation database will be used by our Clang analyzer to perform source code parsing in our next step. 
-	\item Once we got the compilation database for the Linux kernel, next, we used our Clang analyzer to perform static analysis on the kernel source code to obtain 
-	the control flow graph for each function in the source code files. Our Clang analyzer leveraged Clang’s LibTooling [21] to construct the AST tree from the kernel source code, 
-	and then obtain the control flow graph. From the control flow graph, we can identify the corresponding source line number for each basic block. 
-	And the beginning lines of all the basic blocks in the source files are our candidates for adding security logging code at this point. 
-	\item Next, our kernel instrumenting tool will perform the actual kernel modification based on the basic blocks we obtained, and the popular paths data we collected. 
-	The algorithm for our kernel modification is that we go through the basic blocks in the kernel source files. If none of the lines in a basic block was in the popular paths data, 
-	we consider this basic block as a non-popular basic block, and our kernel instrumenting tool will add the security logging code at the beginning of this non-popular basic block. 
-	One optimization strategy we conducted here is that if we discover that an entire function has none of its lines in the popular paths data, 
-	we consider this function as a non-popular function, and then we just add our security logging code once at the beginning of this function, 
-	avoiding adding redundant and unnecessary code inside this function. 
-	\item Finally, our Kernel Modifier will produce the Secure Logging Kernel. And It can be directly used to run Docker containers in the LinuxKit VM. 
+	\item The Clang C compiler from the Clang / LLVM project \cite{llvm}, along with a BEAR \cite{bear} tool compiled the Linux kernel source. Using BEAR, 
+	we can generate a compilation database containing all the compile flags and options needed for the process. 
+	In turn, this database will be used by our Clang analyzer to perform source code parsing in the next step.
+	\item Once we have the compilation database for the Linux kernel,  we use the Clang analyzer to perform static analysis on the kernel source code to obtain the control flow graph for each function in the files. 
+	The analyzer leveraged Clang’s LibTooling \cite{clang-libtooling} to construct the AST tree from the kernel source code, and then obtain the control flow graph. 
+	With this graph, we can identify the corresponding source line number for each basic block. Furthermore, the beginning lines of all the blocks in the source files are candidates for places to add security logging code. 
+	Here, a basic block refers to a straight-line code sequence with no branches in except to the entry and no branches out except at the exit. 
+	Thus, if a basic block is unpopular, it is sufficient to insert only one piece of secure logging code at the beginning of it to monitor and warn the attempt to reach that code. 
+	This approach can optimize our instrumentation by  avoiding redundancy in our code injection.  
+	\item The next steps has the kernel instrumenting tool executing modifications based on both the basic blocks, and the collected popular paths data . 
+	The algorithm for our kernel modification directs us through the basic blocks in the kernel source files. If none of the lines in a block are in the popular paths data, we consider this an unpopular basic block, 
+	and our instrumenting tool will add the security logging code at the beginning of this block. If we discover that an entire function has no  lines in the popular paths data, we consider this an unpopular function, 
+	and just add our security logging code once where it starts . This allows us to avoid adding redundant and unnecessary code. 
+	The secure logging code we inserted in front of the unpopular paths was a kvm hypercall from the LinuxKit kernel into the host Linux kernel. 
+	In this way, we can guarantee minimal affect on the LinuxKit kernel functionality, while still being able to generate security logging whenever unpopular paths were reached.
+	\item Our Kernel Modifier automatically inserts our secure logging code at beginning of the unpopular paths in the Linux kernel source files, 
+	and then recompiles the kernel to produce the Secure Logging Kernel, which can be directly used to run Docker containers in the LinuxKit VM. 
 \end{enumerate}
 
 \begin{figure*}

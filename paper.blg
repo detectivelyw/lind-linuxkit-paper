@@ -39,21 +39,46 @@ Warning--to sort, need author or key in PAX
 Warning--no key, author in red-hat
 Warning--no author, editor, organization, or key in red-hat
 Warning--to sort, need author or key in red-hat
+Warning--no key, author in gcov
+Warning--no author, editor, organization, or key in gcov
+Warning--to sort, need author or key in gcov
+Warning--no key, author in lcov
+Warning--no author, editor, organization, or key in lcov
+Warning--to sort, need author or key in lcov
+Warning--no key, author in llvm
+Warning--no author, editor, organization, or key in llvm
+Warning--to sort, need author or key in llvm
+Warning--no key, author in bear
+Warning--no author, editor, organization, or key in bear
+Warning--to sort, need author or key in bear
+Warning--no key, author in clang-libtooling
+Warning--no author, editor, organization, or key in clang-libtooling
+Warning--to sort, need author or key in clang-libtooling
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Warning--no key, author in AppArmor
 Warning--no key, author in AppArmor
+Warning--no key, author in bear
+Warning--no key, author in bear
 Warning--no key, author in cgroups
 Warning--no key, author in cgroups
+Warning--no key, author in clang-libtooling
+Warning--no key, author in clang-libtooling
 Warning--no key, author in dirty-cow
 Warning--no key, author in dirty-cow
 Warning--no key, author in dirty-cow-impact
 Warning--no key, author in dirty-cow-impact
+Warning--no key, author in gcov
+Warning--no key, author in gcov
 Warning--no key, author in GRSEC
 Warning--no key, author in GRSEC
+Warning--no key, author in lcov
+Warning--no key, author in lcov
 Warning--no key, author in linux-kernel-capabilities
 Warning--no key, author in linux-kernel-capabilities
+Warning--no key, author in llvm
+Warning--no key, author in llvm
 Warning--no key, author in LXC
 Warning--no key, author in LXC
 Warning--no key, author in namespaces
@@ -69,10 +94,26 @@ Warning--no key, author in AppArmor
 Warning--no author, editor, organization, or key in AppArmor
 Warning--empty author in AppArmor
 Warning--empty year in AppArmor
+Warning--no key, author in bear
+Warning--no author, editor, organization, or key in bear
+Warning--empty author in bear
+Warning--empty year in bear
+Warning--no key, author in clang-libtooling
+Warning--no author, editor, organization, or key in clang-libtooling
+Warning--empty author in clang-libtooling
+Warning--empty year in clang-libtooling
+Warning--no key, author in gcov
+Warning--no author, editor, organization, or key in gcov
+Warning--empty author in gcov
+Warning--empty year in gcov
 Warning--no key, author in GRSEC
 Warning--no author, editor, organization, or key in GRSEC
 Warning--empty author in GRSEC
 Warning--empty year in GRSEC
+Warning--no key, author in lcov
+Warning--no author, editor, organization, or key in lcov
+Warning--empty author in lcov
+Warning--empty year in lcov
 Warning--no key, author in cgroups
 Warning--no author, editor, organization, or key in cgroups
 Warning--empty author in cgroups
@@ -85,6 +126,10 @@ Warning--no key, author in namespaces
 Warning--no author, editor, organization, or key in namespaces
 Warning--empty author in namespaces
 Warning--empty year in namespaces
+Warning--no key, author in llvm
+Warning--no author, editor, organization, or key in llvm
+Warning--empty author in llvm
+Warning--empty year in llvm
 Warning--no key, author in LXC
 Warning--no author, editor, organization, or key in LXC
 Warning--empty author in LXC
@@ -121,45 +166,45 @@ Warning--articleno or eid, but no pages or numpages field in Ozment
 Warning--empty author in VirtualBox
 Warning--empty author in VMWare-Workstation
 Warning--empty author in Containers_and_VirtualMachines
-You've used 27 entries,
+You've used 32 entries,
             5732 wiz_defined-function locations,
-            1572 strings with 20267 characters,
-and the built_in function-call counts, 20182 in all, are:
-= -- 2019
+            1587 strings with 20551 characters,
+and the built_in function-call counts, 23351 in all, are:
+= -- 2269
 > -- 213
 < -- 0
-+ -- 97
++ -- 104
 - -- 76
-* -- 1306
-:= -- 1521
-add.period$ -- 114
-call.type$ -- 27
-change.case$ -- 132
-chr.to.int$ -- 27
-cite$ -- 182
-duplicate$ -- 2222
-empty$ -- 1669
+* -- 1526
+:= -- 1721
+add.period$ -- 134
+call.type$ -- 32
+change.case$ -- 152
+chr.to.int$ -- 32
+cite$ -- 252
+duplicate$ -- 2582
+empty$ -- 1954
 format.name$ -- 88
-if$ -- 4855
+if$ -- 5650
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 14
-newline$ -- 357
+newline$ -- 417
 num.names$ -- 48
-pop$ -- 1166
+pop$ -- 1466
 preamble$ -- 1
-purify$ -- 321
+purify$ -- 356
 quote$ -- 0
-skip$ -- 719
+skip$ -- 809
 stack$ -- 0
-substring$ -- 1312
-swap$ -- 154
+substring$ -- 1444
+swap$ -- 179
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 810
-warning$ -- 111
+type$ -- 960
+warning$ -- 156
 while$ -- 46
 width$ -- 0
-write$ -- 572
-(There were 111 warnings)
+write$ -- 667
+(There were 156 warnings)

@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{27}
+\begin{thebibliography}{32}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -49,6 +49,42 @@
 \tempurl}
 
 
+\bibitem[\protect\citeauthoryear{??}{bea}{[n. d.]}]%
+        {bear}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Build EAR}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/rizsotto/Bear}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{cla}{[n. d.]}]%
+        {clang-libtooling}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Clang LibTooling}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://clang.llvm.org/docs/LibTooling.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{gco}{[n. d.]}]%
+        {gcov}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Gcov}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://gcc.gnu.org/onlinedocs/gcc/Gcov.html}
+\showURL{%
+\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{??}{GRS}{[n. d.]}]%
         {GRSEC}
  \bibinfo{year}{[n. d.]}\natexlab{}.
@@ -57,6 +93,18 @@
 \newblock
 \urldef\tempurl%
 \url{https://wiki.debian.org/grsecurity}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{lco}{[n. d.]}]%
+        {lcov}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Lcov}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{http://ltp.sourceforge.net/coverage/lcov.php}
 \showURL{%
 \tempurl}
 
@@ -93,6 +141,18 @@
 \newblock
 \urldef\tempurl%
 \url{http://man7.org/linux/man-pages/man7/namespaces.7.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{llv}{[n. d.]}]%
+        {llvm}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{The LLVM Compiler Infrastructure Project}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://llvm.org}
 \showURL{%
 \tempurl}
 
