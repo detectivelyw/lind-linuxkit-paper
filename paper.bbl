@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{11}
+\begin{thebibliography}{18}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,6 +37,32 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[\protect\citeauthoryear{??}{dir}{2016}]%
+        {dirty-cow}
+ \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{Dirty COW - (CVE-2016-5195) - Docker Container
+  Escape}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://blog.paranoidsoftware.com/dirty-cow-cve-2016-5195-docker-container-escape/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{dir}{2017}]%
+        {dirty-cow-impact}
+ \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Dirty Cow vulnerability discovered in Android malware
+  campaign for the first time}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.zdnet.com/article/dirty-cow-vulnerability-discovered-in-android-malware-campaign-for-the-first-time/}
+\showURL{%
+\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{451 Research}{451 Research}{2017}]%
         {451-Research}
 451 Research \bibinfo{year}{2017}\natexlab{}.
@@ -47,6 +73,24 @@
 \url{https://451research.com/images/Marketing/press_releases/Application-container-market-will-reach-2-7bn-in-2020_final_graphic.pdf}
 \showURL{%
 Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chou, Yang, Chelf, Hallem, and Engler}{Chou
+  et~al\mbox{.}}{2001}]%
+        {Chou}
+\bibfield{author}{\bibinfo{person}{Andy Chou}, \bibinfo{person}{Junfeng Yang},
+  \bibinfo{person}{Benjamin Chelf}, \bibinfo{person}{Seth Hallem}, {and}
+  \bibinfo{person}{Dawson Engler}.} \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{An Empirical Study of Operating Systems Errors}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Eighteenth ACM Symposium on
+  Operating Systems Principles}} \emph{(\bibinfo{series}{SOSP '01})}.
+  \bibinfo{publisher}{ACM}, \bibinfo{address}{New York, NY, USA},
+  \bibinfo{pages}{73--88}.
+\newblock
+\showISBNx{1-58113-389-8}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/502034.502042}
+\showDOI{\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Docker}{Docker}{2019}]%
@@ -72,6 +116,20 @@ Docker Hub \bibinfo{year}{2019}\natexlab{}.
 \url{https://hub.docker.com}
 \showURL{%
 Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Gatlan}{Gatlan}{2019}]%
+        {containers-runc-vulnerability}
+\bibfield{author}{\bibinfo{person}{Sergiu Gatlan}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{RunC Vulnerability Gives Attackers Root Access on
+  Docker, Kubernetes Hosts}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.bleepingcomputer.com/news/security/runc-vulnerability-gives-attackers-root-access-on-docker-kubernetes-hosts/}
+\showURL{%
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Kubernetes}{Kubernetes}{2019}]%
@@ -137,6 +195,51 @@ OS Level Virtualization \bibinfo{year}{2019}\natexlab{}.
 \url{https://en.wikipedia.org/wiki/OS-level_virtualisation}
 \showURL{%
 Retrieved April, 2019 from \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Ozment and Schechter}{Ozment and
+  Schechter}{2006}]%
+        {Ozment}
+\bibfield{author}{\bibinfo{person}{Andy Ozment} {and}
+  \bibinfo{person}{Stuart~E. Schechter}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Milk or Wine: Does Software Security Improve with
+  Age?}. In \bibinfo{booktitle}{\emph{Proceedings of the 15th Conference on
+  USENIX Security Symposium - Volume 15}}
+  \emph{(\bibinfo{series}{USENIX-SS'06})}. \bibinfo{publisher}{USENIX
+  Association}, \bibinfo{address}{Berkeley, CA, USA}, Article
+  \bibinfo{articleno}{7}.
+\newblock
+\urldef\tempurl%
+\url{http://dl.acm.org/citation.cfm?id=1267336.1267343}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Pandurangan}{Pandurangan}{2016}]%
+        {containers-kernel-bug-tcp}
+\bibfield{author}{\bibinfo{person}{Vijay Pandurangan}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{Linux kernel bug delivers corrupt TCP/IP data to
+  Mesos, Kubernetes, Docker containers}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://tech.vijayp.ca/linux-kernel-bug-delivers-corrupt-tcp-ip-data-to-mesos-kubernetes-docker-containers-4986f88f7a19}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Rubens.}{Rubens.}{2017}]%
+        {what-containers-do}
+\bibfield{author}{\bibinfo{person}{P. Rubens.}}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{What are containers and why do you need them?}
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.cio.com/article/2924995/what-are-containers-and-why-do-you-need-them.htm}
+\showURL{%
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{VirtualBox}{VirtualBox}{2019}]%

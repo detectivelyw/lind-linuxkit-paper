@@ -6,59 +6,79 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: paper.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in dirty-cow
+Warning--no author, editor, organization, or key in dirty-cow
+Warning--to sort, need author or key in dirty-cow
+Warning--no key, author in dirty-cow-impact
+Warning--no author, editor, organization, or key in dirty-cow-impact
+Warning--to sort, need author or key in dirty-cow-impact
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--no key, author in dirty-cow
+Warning--no key, author in dirty-cow
+Warning--no key, author in dirty-cow-impact
+Warning--no key, author in dirty-cow-impact
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in dirty-cow
+Warning--no author, editor, organization, or key in dirty-cow
+Warning--empty author in dirty-cow
+Warning--no key, author in dirty-cow-impact
+Warning--no author, editor, organization, or key in dirty-cow-impact
+Warning--empty author in dirty-cow-impact
 Warning--empty author in 451-Research
+Warning--numpages field, but no articleno or eid field, in Chou
 Warning--empty author in Docker
 Warning--empty author in DockerHub
 Warning--empty author in Kubernetes
 Warning--empty author in LinuxKit
 Warning--empty author in NVD
 Warning--empty author in OS-Level-Virtualization
+Warning--articleno or eid field, but no numpages field, in Ozment
+Warning--page numbers missing in both pages and numpages fields in Ozment
+Warning--articleno or eid, but no pages or numpages field in Ozment
 Warning--empty author in VirtualBox
 Warning--empty author in VMWare-Workstation
 Warning--empty author in Containers_and_VirtualMachines
-You've used 11 entries,
+You've used 18 entries,
             5732 wiz_defined-function locations,
-            1502 strings with 18108 characters,
-and the built_in function-call counts, 8334 in all, are:
-= -- 927
-> -- 52
+            1545 strings with 19700 characters,
+and the built_in function-call counts, 14485 in all, are:
+= -- 1569
+> -- 213
 < -- 0
-+ -- 35
-- -- 16
-* -- 500
-:= -- 564
-add.period$ -- 45
-call.type$ -- 11
-change.case$ -- 58
-chr.to.int$ -- 11
-cite$ -- 21
-duplicate$ -- 960
-empty$ -- 714
-format.name$ -- 20
-if$ -- 2034
++ -- 88
+- -- 76
+* -- 910
+:= -- 1161
+add.period$ -- 78
+call.type$ -- 18
+change.case$ -- 96
+chr.to.int$ -- 18
+cite$ -- 56
+duplicate$ -- 1574
+empty$ -- 1156
+format.name$ -- 88
+if$ -- 3424
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 167
-num.names$ -- 8
-pop$ -- 382
+missing$ -- 14
+newline$ -- 249
+num.names$ -- 48
+pop$ -- 626
 preamble$ -- 1
-purify$ -- 157
+purify$ -- 258
 quote$ -- 0
-skip$ -- 332
+skip$ -- 557
 stack$ -- 0
-substring$ -- 645
-swap$ -- 62
+substring$ -- 1078
+swap$ -- 109
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 330
-warning$ -- 10
-while$ -- 7
+type$ -- 540
+warning$ -- 30
+while$ -- 46
 width$ -- 0
-write$ -- 257
-(There were 10 warnings)
+write$ -- 401
+(There were 30 warnings)
