@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 OCT 2019 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 OCT 2019 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1213,16 +1213,15 @@ LaTeX Warning: Float too large for page by 7.59998pt on input line 127.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./limitation.tex) (./related_work.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+) (./limitation.tex
+Underfull \vbox (badness 1694) has occurred while \output is active []
 
-
+)
+(./related_work.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6.6 <./diagram/linuxkit-kernel-modifier.png>]) (./conclusion.tex) (./paper.bb
 l
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 49.
 LaTeX Info: Redefining \tempurl on input line 59.
@@ -1314,14 +1313,11 @@ root-[]access-[]on-[]docker-[]kubernetes-[]hosts/$
  []
 
 LaTeX Info: Redefining \tempurl on input line 311.
+[7.7]
 LaTeX Info: Redefining \tempurl on input line 338.
 LaTeX Info: Redefining \tempurl on input line 350.
 LaTeX Info: Redefining \tempurl on input line 363.
 LaTeX Info: Redefining \tempurl on input line 381.
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [7.7]
 LaTeX Info: Redefining \tempurl on input line 395.
 
 Overfull \hbox (103.06596pt too wide) in paragraph at lines 388--398
@@ -1350,11 +1346,7 @@ LaTeX Info: Redefining \tempurl on input line 447.
 
 Class acmart Warning: Some images may lack descriptions.
 
-
-Overfull \vbox (1.896pt too high) has occurred while \output is active []
-
- [8.8]
-[9.9]
+[8.8] [9.9]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./paper.aux)
@@ -1364,11 +1356,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
 Here is how much of TeX's memory you used:
  18069 strings out of 492649
  272990 string characters out of 6129622
- 413742 words of memory out of 5000000
+ 412727 words of memory out of 5000000
  21212 multiletter control sequences out of 15000+600000
  116241 words of font info for 235 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,602s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,796b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{
@@ -1382,7 +1374,7 @@ bertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 /LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newt
 x/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on paper.pdf (9 pages, 650732 bytes).
+Output written on paper.pdf (9 pages, 651406 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream

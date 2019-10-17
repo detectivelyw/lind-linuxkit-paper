@@ -1,9 +1,12 @@
-\section{Limitation and Future Work}
+\section{Limitations}
 \label{sec.limitation}
-This is our limitation and future work. 
+While our results and analysis indicate that our dataset was representative of the common workload users performed when using container applications, 
+we believe that a larger sample base with more runs could potentially capture the race-condition related kernel footprint more comprehensively, thus rendering more accurate popular paths data. 
 
-What we should talk about here: 
+Another factor that could have affected our work was the type of images we used. 
+We limited our selection to official container images from Docker Hub, while there are a number of popular Docker images from open source projects on Github that we did not access. 
+With our methodology used in this work, running these additional containers to obtain and analyze their popular paths might have given us a broader spectrum of results.
 
-\begin{itemize}
-\item the popular paths data collection: more containers and more tasks (especially)
-\end{itemize}
+Lastly, in this work, we ran our system and produced results with Linux kernel version 4.14.24. 
+For future work, we plan to extend our system so that it can automatically work with different kernel versions. 
+This will generalize the use of our work, and potentially help a lot more users to secure their containers. 
