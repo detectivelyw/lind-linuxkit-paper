@@ -1,38 +1,40 @@
 \section{Related Work}
 \label{sec.related_work}
-In this paper, we design and implement a Secure Logging System to reduce exposure of the rarely-used risky code in the kernel in order to 
-enhance the security of containers running on top of the host kernel. In developing our secure logging strategy, we consulted previous studies in three areas: 
+In this paper, we seek to enhance the security of containers running on top of the host kernel by reducing exposure to the rarely-used risky code in the kernel. 
+When developing our strategy, we consulted previous studies in three areas: 
 1) metrics for vulnerability prediction, 2) techniques for enhancing kernel security, and 3) approaches for enhancing container security. 
 
 \textbf{Estimating and predicting vulnerabilities.} 
 
-Metrics that can identify the code that is most likely to contain vulnerabilities, 
-help developers and researchers prioritize their efforts to fix bugs and improve security. 
-Chou et al. [22] looked at error rates in different parts of the operating system kernel, and found that device drivers had error rates up to seven times higher than 
-the rest of the kernel. Ozment and Schechter [23] examined the age of code as a predictor of vulnerability in the OpenBSD [29] operating system, 
-and generally confirmed the finding that the rate at which bugs are found goes down over time. In a recent prior work [3], Li et al. directly compared both of these metrics to 
-our popular paths metric, and found that neither was as predictive of vulnerabilities in the Linux kernel as our popular paths metric. 
+Metrics that can identify code most likely to contain vulnerabilities help developers and researchers prioritize their efforts to fix bugs and improve security. 
+Chou et al. \cite{Chou} looked at error rates in different parts of the operating system kernel, and found that device drivers had error rates up to seven times higher than the rest of the kernel. 
+Ozment and Schechter \cite{Ozment} examined the age of code as a predictor of vulnerability in the OpenBSD \cite{OpenBSD} operating system, 
+and generally confirmed the finding that the rate at which bugs are found goes down over time. 
+In a recent prior work \cite{Lock-in-Pop}, Li et al. directly compared both of these metrics to the  popular paths metric, and found that neither was as predictive of vulnerabilities in the Linux kernel.
 
-Shin et al. [24] examined code churn, complexity, and developer activity metrics, finding that these metrics together could identify around 70\% of known vulnerabilities 
-in two large open source projects codebase they studied. However, file granularity is too coarse to be useful when deciding which parts of the kernel need protection. 
+Shin et al. \cite{Shin:2011:ECC} examined code churn, complexity, and developer activity metrics, 
+finding that these metrics together could identify around 70\% of known vulnerabilities in the two large open source projects codebase they studied. 
+However, file granularity is too coarse to be useful when deciding which parts of the kernel need protection. 
 Customizing the operating system kernel to work at the lines-of-code level, as the popular paths metric does, can be more effective. 
 
 \textbf{Operating System kernel security enhancement.} 
 
 Prior research in enhancing kernel security requires refactoring or modifying the kernel. 
-Engler et al. [25] introduced the Exokernel architecture, which allowed applications to directly manage hardware resources, in the hope of gaining efficiency in accessing the hardware; 
-this style of operating system design came to be known as a library OS. More recently, but in a similar spirit, unikernels, such as Mirage [26] run each application as its own operating system 
-inside of a virtual machine, customizing the “kernel” for each application. Each of these systems, however, requires significant changes to existing applications 
-(e.g., in the case of Mirage, applications must be rewritten in the OCaml programming language [30].) Other library OSes are written to run existing applications. Drawbridge [27] and Graphene [28] 
-support unmodified Windows and Linux applications, respectively, by implementing an OS “personality” as a support library in each address space to improve security. 
-However, user-space reimplementation of OS functionality incurs a performance overhead. Containers can mostly avoid this overhead, 
-since they allow contained applications to make system calls directly. Thus, our work focused on the container-based approach. 
+Engler et al. \cite{Engler:1995:EOS:224056.224076} introduced the Exokernel architecture, which allowed applications to directly manage hardware resources in the hope of gaining efficiency in accessing the hardware. 
+This style of operating system design came to be known as a library OS. More recently, but in a similar spirit, unikernels, 
+such as Mirage \cite{Madhavapeddy:2013:ULO:2451116.2451167} run each application as its own operating system inside of a virtual machine, customizing the ``kernel'' for each application. 
+Each of these systems, however, requires significant changes to existing applications (e.g., in the case of Mirage, applications must be rewritten in the OCaml programming language \cite{OCaml}.) 
+Other library OSes are written to run existing applications. Drawbridge \cite{Porter:2011:RLO:1950365.1950399} and Graphene \cite{Tsai:2014:CSI:2592798.2592812} support unmodified Windows and Linux applications, 
+respectively, by implementing an OS ``personality'' as a support library in each address space to improve security. 
+However, user-space reimplementation of OS functionality incurs a performance overhead. Containers can mostly avoid this overhead, since they allow contained applications to make system calls directly. 
+Thus, our work focused on the container-based approach. 
 
 \textbf{Container security enhancement.} 
 
-Existing security mechanisms available for containers usually leverage host kernel features. Namespaces is one mechanism that can provide isolation 
-between processes, and has been adopted by Docker. Linux capabilities allow users to define and choose smaller groups of root privileges, and thus can help prevent containers from having risky 
-privileges. Docker containers use Linux capabilities, and LinuxKit allows users to define and control the capabilities (such as file permissions) they want to use. While these existing approaches do 
-help improve security for containers, they also have limitations. First, it can be really hard to understand how to correctly configure the security settings for containers. 
-In fact, many users just use the default configuration, which may not be the best choice if strong security is needed. Second, in order to run applications the user wanted, 
-containers still have to allow access to risky code in the host kernel. Our work improves the container security by imposing a fine-grained control over access to the risky kernel code.  
+Existing security mechanisms available for containers usually leverage host kernel features. Namespaces \cite{namespaces} is one mechanism that can provide isolation between processes, and has been adopted by Docker. 
+Linux capabilities \cite{linux-kernel-capabilities} allow users to define and choose smaller groups of root privileges, and thus can reduce the number of entities that can exploit  containers. 
+Docker containers use Linux capabilities, and LinuxKit allows users to define and control the capabilities (such as file permissions) they want to use. 
+While these existing approaches do help improve security for containers, they also have limitations. First, it can be really hard to understand how to correctly configure the security settings for containers. 
+In fact, many users just use the default configuration, which may not be the best choice if strong security is needed. 
+Second, in order to run the applications a user wants, containers still need  to allow access to risky code in the host kernel. 
+Our work improves the container security by imposing a fine-grained security monitor and control over access to the potentially risky kernel code.

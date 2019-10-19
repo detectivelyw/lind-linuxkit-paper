@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 OCT 2019 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 OCT 2019 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1220,135 +1220,148 @@ Underfull \vbox (badness 1694) has occurred while \output is active []
 (./related_work.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6.6 <./diagram/linuxkit-kernel-modifier.png>]) (./conclusion.tex) (./paper.bb
-l
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 49.
-LaTeX Info: Redefining \tempurl on input line 59.
-LaTeX Info: Redefining \tempurl on input line 71.
-LaTeX Info: Redefining \tempurl on input line 83.
-LaTeX Info: Redefining \tempurl on input line 95.
-LaTeX Info: Redefining \tempurl on input line 107.
-LaTeX Info: Redefining \tempurl on input line 119.
-LaTeX Info: Redefining \tempurl on input line 131.
-LaTeX Info: Redefining \tempurl on input line 143.
-LaTeX Info: Redefining \tempurl on input line 155.
-LaTeX Info: Redefining \tempurl on input line 167.
-LaTeX Info: Redefining \tempurl on input line 179.
-LaTeX Info: Redefining \tempurl on input line 191.
-LaTeX Info: Redefining \tempurl on input line 203.
- [7.7]
-LaTeX Info: Redefining \tempurl on input line 216.
+ [6.6 <./diagram/linuxkit-kernel-modifier.png>]) (./conclusion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--219
+)
+(./paper.bbl
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 50.
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--51
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) 2016.  Dirty COW - (CVE-2016-5195) - Dock
 er Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--219
+Underfull \hbox (badness 10000) in paragraph at lines 42--51
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) tainer Es-cape.    $\T1/LinuxBiolinumT-TLF/
 m/n/8 (+20) h^^]ps : / / blog . paranoidso^^\ware . com /
  []
 
-LaTeX Info: Redefining \tempurl on input line 229.
+LaTeX Info: Redefining \tempurl on input line 61.
 
-Overfull \hbox (53.66722pt too wide) in paragraph at lines 223--232
+Overfull \hbox (53.66722pt too wide) in paragraph at lines 55--64
 \T1/LinuxBiolinumT-TLF/m/n/8 (-20) dirty-[]cow-[]vulnerability-[]discovered-[]i
 n-[]android-[]malware-[]campaign-[]for-[]the-[]first-[]time/$ 
  []
 
+LaTeX Info: Redefining \tempurl on input line 73.
+LaTeX Info: Redefining \tempurl on input line 85.
+LaTeX Info: Redefining \tempurl on input line 97.
+LaTeX Info: Redefining \tempurl on input line 109.
+LaTeX Info: Redefining \tempurl on input line 121.
+LaTeX Info: Redefining \tempurl on input line 133.
+LaTeX Info: Redefining \tempurl on input line 145.
+LaTeX Info: Redefining \tempurl on input line 157.
+LaTeX Info: Redefining \tempurl on input line 169.
+LaTeX Info: Redefining \tempurl on input line 181.
+[7.7]
+LaTeX Info: Redefining \tempurl on input line 193.
+LaTeX Info: Redefining \tempurl on input line 205.
+LaTeX Info: Redefining \tempurl on input line 217.
+LaTeX Info: Redefining \tempurl on input line 229.
 LaTeX Info: Redefining \tempurl on input line 241.
+LaTeX Info: Redefining \tempurl on input line 253.
+LaTeX Info: Redefining \tempurl on input line 265.
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--244
+Underfull \hbox (badness 10000) in paragraph at lines 260--268
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) 451 Re-search 2017.  Cloud-Enabling Tech-
 nolo-gies Mar-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--244
+Underfull \hbox (badness 10000) in paragraph at lines 260--268
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) ket Mon-i-tor Re-port.    Re-trieved April,
  2019 from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--244
+Underfull \hbox (badness 10000) in paragraph at lines 260--268
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) h^^]ps : / / 451research . com / images / Ma
 rketing / press _ releases /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--244
+Underfull \hbox (badness 10000) in paragraph at lines 260--268
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) Application-[]container-[]market-[]will-[]re
 ach-[]2-[]7bn-[]in-[]2020 _ final _
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 254.
-LaTeX Info: Redefining \tempurl on input line 260.
-LaTeX Info: Redefining \tempurl on input line 272.
+(Font)              scaled to size 8.0pt on input line 278.
 LaTeX Info: Redefining \tempurl on input line 284.
-LaTeX Info: Redefining \tempurl on input line 298.
+LaTeX Info: Redefining \tempurl on input line 296.
+LaTeX Info: Redefining \tempurl on input line 308.
+LaTeX Info: Redefining \tempurl on input line 328.
+LaTeX Info: Redefining \tempurl on input line 341.
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--301
+Underfull \hbox (badness 10000) in paragraph at lines 334--344
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) Sergiu Gat-lan. 2019.  RunC Vul-ner-a-bil
 -ity Gives At-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--301
+Underfull \hbox (badness 10000) in paragraph at lines 334--344
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) tack-ers Root Ac-cess on Docker, Ku-ber-net
 es Hosts.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--301
+Underfull \hbox (badness 10000) in paragraph at lines 334--344
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) h^^]ps : / / www . bleepingcomputer . com / 
 news / security /
  []
 
 
-Overfull \hbox (22.90636pt too wide) in paragraph at lines 291--301
+Overfull \hbox (22.90636pt too wide) in paragraph at lines 334--344
 \T1/LinuxBiolinumT-TLF/m/n/8 (-20) runc-[]vulnerability-[]gives-[]a^^]ackers-[]
 root-[]access-[]on-[]docker-[]kubernetes-[]hosts/$ 
  []
 
-LaTeX Info: Redefining \tempurl on input line 311.
-LaTeX Info: Redefining \tempurl on input line 338.
-LaTeX Info: Redefining \tempurl on input line 350.
-LaTeX Info: Redefining \tempurl on input line 363.
+LaTeX Info: Redefining \tempurl on input line 354.
 LaTeX Info: Redefining \tempurl on input line 381.
-LaTeX Info: Redefining \tempurl on input line 395.
+LaTeX Info: Redefining \tempurl on input line 403.
+LaTeX Info: Redefining \tempurl on input line 414.
+LaTeX Info: Redefining \tempurl on input line 427.
+LaTeX Info: Redefining \tempurl on input line 445.
+LaTeX Info: Redefining \tempurl on input line 459.
 
-Overfull \hbox (103.06596pt too wide) in paragraph at lines 388--398
+Overfull \hbox (103.06596pt too wide) in paragraph at lines 452--462
 \T1/LinuxBiolinumT-TLF/m/n/8 (-20) linux-[]kernel-[]bug-[]delivers-[]corrupt-[]
 tcp-[]ip-[]data-[]to-[]mesos-[]kubernetes-[]docker-[]containers-[]4986f88f7a19$
  
  []
 
-LaTeX Info: Redefining \tempurl on input line 408.
+LaTeX Info: Redefining \tempurl on input line 479.
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--411
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \tempurl on input line 491.
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--494
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) P. Rubens. 2017.  What are con-tain-ers a
 nd why do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--411
+Underfull \hbox (badness 10000) in paragraph at lines 485--494
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) you need them?    $\T1/LinuxBiolinumT-TLF/m
 /n/8 (+20) h^^]ps : / / www . cio . com / article / 2924995 /
  []
 
-LaTeX Info: Redefining \tempurl on input line 420.
-LaTeX Info: Redefining \tempurl on input line 434.
-LaTeX Info: Redefining \tempurl on input line 447.
+LaTeX Info: Redefining \tempurl on input line 510.
+LaTeX Info: Redefining \tempurl on input line 532.
+LaTeX Info: Redefining \tempurl on input line 543.
+LaTeX Info: Redefining \tempurl on input line 557.
+LaTeX Info: Redefining \tempurl on input line 570.
 )
 
 Class acmart Warning: Some images may lack descriptions.
 
 
-Overfull \vbox (1.90399pt too high) has occurred while \output is active []
-
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
 
 [8.8] [9.9]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
@@ -1358,13 +1371,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 18069 strings out of 492649
- 272990 string characters out of 6129622
- 422727 words of memory out of 5000000
- 21212 multiletter control sequences out of 15000+600000
- 116241 words of font info for 235 fonts, out of 8000000 for 9000
+ 18110 strings out of 492649
+ 274086 string characters out of 6129622
+ 416203 words of memory out of 5000000
+ 21237 multiletter control sequences out of 15000+600000
+ 117965 words of font info for 246 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,566s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,796b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{
@@ -1378,7 +1391,7 @@ bertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 /LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newt
 x/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on paper.pdf (9 pages, 652343 bytes).
+Output written on paper.pdf (9 pages, 655335 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
