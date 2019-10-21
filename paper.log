@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 OCT 2019 15:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 OCT 2019 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1220,11 +1220,8 @@ Underfull \vbox (badness 1694) has occurred while \output is active []
 (./related_work.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6.6 <./diagram/linuxkit-kernel-modifier.png>]) (./conclusion.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-(./paper.bbl
+ [6.6 <./diagram/linuxkit-kernel-modifier.png>]) (./conclusion.tex) (./paper.bb
+l
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 50.
 
@@ -1247,6 +1244,7 @@ n-[]android-[]malware-[]campaign-[]for-[]the-[]first-[]time/$
  []
 
 LaTeX Info: Redefining \tempurl on input line 73.
+[7.7]
 LaTeX Info: Redefining \tempurl on input line 85.
 LaTeX Info: Redefining \tempurl on input line 97.
 LaTeX Info: Redefining \tempurl on input line 109.
@@ -1256,7 +1254,6 @@ LaTeX Info: Redefining \tempurl on input line 145.
 LaTeX Info: Redefining \tempurl on input line 157.
 LaTeX Info: Redefining \tempurl on input line 169.
 LaTeX Info: Redefining \tempurl on input line 181.
-[7.7]
 LaTeX Info: Redefining \tempurl on input line 193.
 LaTeX Info: Redefining \tempurl on input line 205.
 LaTeX Info: Redefining \tempurl on input line 217.
@@ -1324,6 +1321,9 @@ LaTeX Info: Redefining \tempurl on input line 381.
 LaTeX Info: Redefining \tempurl on input line 403.
 LaTeX Info: Redefining \tempurl on input line 414.
 LaTeX Info: Redefining \tempurl on input line 427.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Info: Redefining \tempurl on input line 445.
 LaTeX Info: Redefining \tempurl on input line 459.
 
@@ -1334,9 +1334,6 @@ tcp-[]ip-[]data-[]to-[]mesos-[]kubernetes-[]docker-[]containers-[]4986f88f7a19$
  []
 
 LaTeX Info: Redefining \tempurl on input line 479.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Info: Redefining \tempurl on input line 491.
 
 Underfull \hbox (badness 10000) in paragraph at lines 485--494
@@ -1373,11 +1370,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
 Here is how much of TeX's memory you used:
  18110 strings out of 492649
  274086 string characters out of 6129622
- 416203 words of memory out of 5000000
+ 417203 words of memory out of 5000000
  21237 multiletter control sequences out of 15000+600000
  117965 words of font info for 246 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,796b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{
@@ -1391,7 +1388,7 @@ bertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 /LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newt
 x/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on paper.pdf (9 pages, 655335 bytes).
+Output written on paper.pdf (9 pages, 655968 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
