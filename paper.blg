@@ -6,7 +6,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: paper.bib
 Warning--string name "j-ieee-trans-softw-eng" is undefined
---line 515 of file paper.bib
+--line 521 of file paper.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in dirty-cow
 Warning--no author, editor, organization, or key in dirty-cow
@@ -56,6 +56,9 @@ Warning--to sort, need author or key in bear
 Warning--no key, author in clang-libtooling
 Warning--no author, editor, organization, or key in clang-libtooling
 Warning--to sort, need author or key in clang-libtooling
+Warning--no key, author in LTP
+Warning--no author, editor, organization, or key in LTP
+Warning--to sort, need author or key in LTP
 Warning--no key, author in OpenBSD
 Warning--no author, editor, organization, or key in OpenBSD
 Warning--to sort, need author or key in OpenBSD
@@ -87,6 +90,8 @@ Warning--no key, author in linux-kernel-capabilities
 Warning--no key, author in linux-kernel-capabilities
 Warning--no key, author in llvm
 Warning--no key, author in llvm
+Warning--no key, author in LTP
+Warning--no key, author in LTP
 Warning--no key, author in LXC
 Warning--no key, author in LXC
 Warning--no key, author in namespaces
@@ -135,6 +140,9 @@ Warning--empty author in linux-kernel-capabilities
 Warning--no key, author in namespaces
 Warning--no author, editor, organization, or key in namespaces
 Warning--empty author in namespaces
+Warning--no key, author in LTP
+Warning--no author, editor, organization, or key in LTP
+Warning--empty author in LTP
 Warning--no key, author in llvm
 Warning--no author, editor, organization, or key in llvm
 Warning--empty author in llvm
@@ -174,45 +182,45 @@ Warning--no journal in Shin:2011:ECC
 Warning--empty author in VirtualBox
 Warning--empty author in VMWare-Workstation
 Warning--empty author in Containers_and_VirtualMachines
-You've used 39 entries,
+You've used 40 entries,
             5732 wiz_defined-function locations,
-            1652 strings with 22837 characters,
-and the built_in function-call counts, 32962 in all, are:
-= -- 3381
+            1656 strings with 22911 characters,
+and the built_in function-call counts, 33665 in all, are:
+= -- 3448
 > -- 594
 < -- 0
-+ -- 235
++ -- 236
 - -- 210
-* -- 2277
-:= -- 2608
-add.period$ -- 167
-call.type$ -- 39
-change.case$ -- 211
-chr.to.int$ -- 39
-cite$ -- 273
-duplicate$ -- 3511
-empty$ -- 2575
+* -- 2322
+:= -- 2648
+add.period$ -- 171
+call.type$ -- 40
+change.case$ -- 215
+chr.to.int$ -- 40
+cite$ -- 286
+duplicate$ -- 3595
+empty$ -- 2638
 format.name$ -- 232
-if$ -- 7754
+if$ -- 7925
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 37
-newline$ -- 498
+newline$ -- 510
 num.names$ -- 88
-pop$ -- 1554
+pop$ -- 1599
 preamble$ -- 1
-purify$ -- 562
+purify$ -- 575
 quote$ -- 0
-skip$ -- 1215
+skip$ -- 1243
 stack$ -- 0
-substring$ -- 2405
-swap$ -- 257
+substring$ -- 2454
+swap$ -- 262
 text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1156
-warning$ -- 162
+type$ -- 1186
+warning$ -- 170
 while$ -- 79
 width$ -- 0
-write$ -- 820
-(There were 163 warnings)
+write$ -- 839
+(There were 171 warnings)

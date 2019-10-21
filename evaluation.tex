@@ -1,32 +1,43 @@
 \section{Evaluation}
 \label{sec.evaluation}
-In this evaluation, our goal is to demonstrate that it is feasible to apply the popular paths metric onto existing container designs, such as Docker and LinuxKit. 
-Furthermore, by applying this metric, we show that containers will have stronger security and isolation, while still maintaining functionality and performance.  
+To demonstrate that our popular paths based approach is practical and effective in improving container security, 
+we first had to verify that real-world container applications could function correctly using the popular paths. 
+In addition, we needed to prove that the modified kernel was actually more secure than existing options. 
 
-To demonstrate this, we set out to answer the following questions: 
-
+To test these assumptions, our evaluation set out to answer the following questions:
 \begin{itemize}
-\item Can real-world containers run only on the popular paths? (Section~{\ref{sec.evaluation.usability}})
+\item Can real-world containers run on the popular paths with correct functionality? (Section~{\ref{sec.evaluation.functionality}})
 \item Does restricting access only to the popular paths improve the security of running containers? (Section~{\ref{sec.evaluation.security}})
-\item What is the performance overhead of only using the popular paths? (Section~{\ref{sec.evaluation.performance}})
+\item What is the performance overhead of adopting our popular paths based security strategy, the Secure Logging Kernel? (Section~{\ref{sec.evaluation.performance}})
 \end{itemize}
 
-\subsection{Usability Evaluation}
-\label{sec.evaluation.usability} 
-We conducted experiments to test the feasibility of running real-world containers only using the popular paths. 
-The goal here is to verify if users can still run their containers with their existing configuration and commands, 
-using our secure logging kernel instead of the original Linux kernel. The secure logging kernel was created by our Secure Logging System.
+\subsection{Functionality Evaluation}
+\label{sec.evaluation.functionality} 
+Answering our first question required a two-part functionality evaluation. 
+First, we used the Linux Testing Project (LTP) \cite{LTP} test suites—an open source test project designed to validate the reliability, robustness, and stability of Linux—
+on the Secure Logging Kernel to verify it functions as anticipated. 
+Second, we ran a collection of the most popular Docker containers from Docker Hub to verify if they could function correctly accessing only the popular paths.
 
+\subsubsection{Testing functionality with the LTP test suites}
+\label{sec.evaluation.functionality.ltp} 
 \textbf{Experimental Setup.}
-First, we collected the kernel trace data by running the 100 most popular (ranked by the number of user downloads) Docker containers from Docker Hub. 
-We use this dataset as our popular paths training set. Next, our Secure Logging System used our training set data to instrument the Linux kernel, 
-and generated our secure logging kernel. Finally, we ran another 100 popular Docker containers,  our testing set, on our security logging kernel. 
-
-In our experiment, we ran the popular Docker containers inside of a LinuxKit version 0.2+ machine, which was built using Docker version 18.03.0-ce. 
-Our host operating system was Ubuntu 16.04 LTS, with Linux kernel 4.13.0-36-generic. A QEMU emulator version 2.5.0 served as the local hypervisor. 
+We used the Dockerfile provided by LinuxKit \cite{LinuxKit} to create the container image that runs the LTP version 20170116. 
+This test project offers a set of regression and conformance tests designed to let members of the open source community confirm the behavior of the Linux kernel. 
+The test script we ran consisted of 798 test cases that verified the correctness of system functionalities, 
+such as memory allocation, network connection, file system access, locking, and more. 
+Using the test suites, we ran our experiments inside of a LinuxKit version 0.2+ virtual machine. 
+The machine was built using Docker version 18.03.0-ce running on a host operating system of Ubuntu 16.04 LTS, with Linux kernel 4.13.0-36-generic. 
+A QEMU emulator version 2.5.0 served as the local hypervisor. 
 
 \textbf{Results.}
-This is our results.
+The Secure Logging Kernel was able to complete all of the 798 test cases. 
+Furthermore, compared to results from identical tests on the original unmodified Linux kernel, the Secure Logging Kernel produced the same output. (Shown in Table \ref{tab:evaluation_ltp_results}).  
+Among all these 798 test cases, 673 of them passed with the expected return values. 20 tests were skipped due to certain required functions unavailable in the LinuxKit VM. 
+For example, the swap file was not accessible in LinuxKit, therefore the related ``swapoff'' test iterations were skipped. 
+105 test cases failed due to restrictions or functionality issues of LinuxKit. 
+For example, ``mem01'' test failed because the malloc function failed to allocate 3056 MB memory due to the default memory restriction. 
+``gf01'' test failed due to ``no space left on device'' in LinuxKit. ``swapon01'' test failed due to swapfile not available, and more. 
+These skipped and failed tests were due to the inherent issues of the LinuxKit VM. Our Secure Logging Kernel didn't incur any additional functionality issues.  
 
 \begin{table}[h!]
 \begin{center}
@@ -39,11 +50,107 @@ This is our results.
  \hline
  Total Skipped Tests & 20 & 20 \\
  \hline
- Total Failures & 105 & 105 \\
- 
+ Total Failures & 105 & 105 \\ 
 \end{tabular}
 \end{center}
 \end{table}
+
+\subsubsection{Testing functionality on real-world container applications}
+\label{sec.evaluation.functionality.containers} 
+\textbf{Experimental Setup.}
+To confirm that our Secure Logging Kernel works in real-world practices, we tested the 100 most downloaded containers from Docker Hub. 
+We ran the experiment in the same version of the LinuxKit virtual machine as in 4.1.1. 
+Each Docker container was run in the LinuxKit VM using the commands in its Dockerfile from its official Docker image. 
+To take into account any potential variances, each container was run in the exact same environment for 10 times. 
+
+\textbf{Results.}
+One of the more important results of this initial test was that it showed most containers shared the same kernel footprint. 
+This means that the kernel trace, or the record of all kernel code executed, of a sample of containers can represent the trace of many more. 
+We used the CDF (Cumulative Distribution Function) to analyze how soon the kernel trace of different containers would converge. 
+Results of the CDF, as visualized  in Figure \ref{fig:pp-cdf}, 
+points out that the trace of the top six popular containers covered about 98\% of the total kernel trace for 25 containers. 
+This offers additional corroboration that the popular paths data we collected is valid not only for the few containers we ran, but also for hundreds of containers on Docker Hub.  
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/pp-individuals.png}
+\caption{\small Popular paths for individual Docker containers}
+\label{fig:pp-individuals}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/pp-cdf.png}
+\caption{\small CDF of the popular paths of Docker containers showing most share the same kernel footprint}
+\label{fig:pp-cdf}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/cdf-marked.png}
+\caption{\small Common kernel code identified across different containers}
+\label{fig:cdf-marked}
+\end{figure*}
+
+In addition to the always used popular paths, which we identified as the common kernel lines that appeared each and every time, 
+we also discovered certain lines of kernel code that showed up sporadically. 
+For these lines, we looked at what activities they performed, and how common they were across different containers. 
+In our analysis of the kernel trace of 10 popular Docker containers, we identified eight pieces of infrequently executed kernel code common among them. 
+These traces are presented graphically in Figure \ref{fig:cdf-marked}. 
+\begin{enumerate}
+	\item kernel/cgroup/freezer.c: a cgroup is freezing if any FREEZING flags are set.
+	\item kernel/locking/rwsem-xadd.c: waiting for a write lock to be granted. 
+	\item kernel/locking/rwsem-xadd.c: waiting for the read lock to be granted.
+	\item mm/filemap.c: process waitqueue for pages and check for a page match to prevent potential waitqueue hash collision. 
+	\item fs/exec.c: all other threads have exited, wait for the thread group leader to become inactive and to assume its PID. 
+	\item kernel/workqueue: insert a barrier work in the queue. According to the comments from the kernel source code, 
+	the reason for inserting a barrier work seems to be to prevent a cancellation. 
+	This is because try\_to\_grab\_pending() can not determine whether the work to be grabbed is at the head of the queue and thus can not clear LINKED flag of the previous work. 
+	There must be a valid next work after a work with a LINKED flag set. 
+	\item arch/x86/kernel/tsc.c: try to calibrate the TSC against the Programmable Interrupt Timer and return the frequency of the TSC in kHz. 
+	\item kernel/locking/mutex.c: hand off a mutex. Give up ownership to a specific task, when @task = NULL, this is equivalent to a regular unlock.
+\end{enumerate}
+
+What this analysis tells us is that this infrequently used code performs essential kernel functions used by multiple containers, and therefore should still be considered popular paths, 
+despite the fact that they are infrequently execute. 
+On closer examination, we learn they are not always executed during each run because they are race-condition related code that depend on locks, and system conditions may vary during different runs. 
+As the Secure Logging System profiles and identifies these infrequently-executed popular paths, as well as the always-executed ones, 
+our tests can guarantee that the Secure Logging Kernel functions in a correct manner.
+
+Based on the comprehensive popular paths data obtained, the Secure Logging System was able to create a customized Secure Logging Kernel for the LinuxKit VM. 
+Table \ref{tab:kernel_instrumentation} presents an overview of the required modifications. 
+
+\begin{table*}[h!]
+\begin{center}
+\caption{Instrumentation code added in our Secure Logging Kernel}
+\label{tab:kernel_instrumentation}
+\begin{tabular}{c|c|c|c}
+ kernel dir & unpopular functions & popular functions & total lines inserted \\
+ \hline
+ arch & 1502 & 931 & 3325 \\
+ \hline
+ block & 774 & 245 & 1035 \\
+ \hline
+ crypto & 527 & 121 & 656 \\ 
+ \hline
+ drivers & 6290 & 2584 & 13305 \\
+ \hline
+ fs & 2108 & 1404 & 4883 \\
+ \hline
+ ipc & 198 & 42 & 249 \\
+ \hline
+ kernel & 3721 & 2120 & 6335 \\
+ \hline
+ mm & 1037 & 792 & 2954 \\
+ \hline
+ net & 4107 & 1746 & 7510 \\
+ \hline
+ security & 200 & 180 & 551 \\
+ \hline
+ \textbf{total} & \textbf{20464} & \textbf{10165} & \textbf{40803} \\
+\end{tabular}
+\end{center}
+\end{table*}
 
 \subsection{Security Evaluation}
 \label{sec.evaluation.security} 

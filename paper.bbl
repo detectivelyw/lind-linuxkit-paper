@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{39}
+\begin{thebibliography}{40}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -167,6 +167,18 @@
 \newblock
 \urldef\tempurl%
 \url{http://man7.org/linux/man-pages/man7/namespaces.7.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{LTP}{2019}]%
+        {LTP}
+ \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{Linux Testing Project (LTP)}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/linux-test-project/ltp}
 \showURL{%
 \tempurl}
 
