@@ -72,7 +72,7 @@ It operates in the following way:
 	The algorithm for our kernel modification directs us through the basic blocks in the kernel source files. If none of the lines in a block are in the popular paths data, we consider this an unpopular basic block, 
 	and our instrumenting tool will add the security logging code at the beginning of this block. If we discover that an entire function has no  lines in the popular paths data, we consider this an unpopular function, 
 	and just add our security logging code once where it starts . This allows us to avoid adding redundant and unnecessary code. 
-	The secure logging code we inserted in front of the unpopular paths was a kvm hypercall from the LinuxKit kernel into the host Linux kernel. 
+	The secure logging code we inserted in front of the unpopular paths was a kvm hypercall from the LinuxKit kernel into the host Linux kernel (Shown in Figure \ref{fig:kvm_hypercall}). 
 	In this way, we can guarantee minimal affect on the LinuxKit kernel functionality, while still being able to generate security logging whenever unpopular paths were reached.
 	\item Our Kernel Modifier automatically inserts our secure logging code at beginning of the unpopular paths in the Linux kernel source files, 
 	and then recompiles the kernel to produce the Secure Logging Kernel, which can be directly used to run Docker containers in the LinuxKit VM. 
@@ -83,4 +83,11 @@ It operates in the following way:
 \includegraphics[width=1.5\columnwidth]{diagram/linuxkit-kernel-modifier.png}
 \caption{\small Implementation of the Kernel Modifier}
 \label{fig:linuxkit-kernel-modifier}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/kvm_hypercall.png}
+\caption{\small Our KVM\_HYPERCALL kernel instrumentation}
+\label{fig:kvm_hypercall}
 \end{figure*}

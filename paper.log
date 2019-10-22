@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1176,10 +1176,23 @@ ne 83.
 
 Class acmart Warning: A possible image without description on input line 86.
 
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 89.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 89.
+
+<diagram/kvm_hypercall.png, id=26, 828.09375pt x 383.4325pt>
+File: diagram/kvm_hypercall.png Graphic file (type png)
+<use diagram/kvm_hypercall.png>
+Package pdftex.def Info: diagram/kvm_hypercall.png  used on input line 90.
+(pdftex.def)             Requested size: 361.41748pt x 167.34761pt.
+
+Class acmart Warning: A possible image without description on input line 93.
+
 ) (./evaluation.tex
-Underfull \vbox (badness 2359) has occurred while \output is active []
-
-
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 42.
@@ -1194,6 +1207,12 @@ Overfull \hbox (48.98456pt too wide) in paragraph at lines 46--55
  []
 
 [5.5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6.6 <./diagram/linuxkit-kernel-modifier.png> <./diagram/kvm_hypercall.png>]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 75.
@@ -1202,7 +1221,7 @@ surrounding objects on input line 75.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 75.
 
-<diagram/pp-individuals.png, id=29, 1238.6275pt x 759.83875pt>
+<diagram/pp-individuals.png, id=33, 1238.6275pt x 759.83875pt>
 File: diagram/pp-individuals.png Graphic file (type png)
 <use diagram/pp-individuals.png>
 Package pdftex.def Info: diagram/pp-individuals.png  used on input line 76.
@@ -1211,10 +1230,6 @@ Package pdftex.def Info: diagram/pp-individuals.png  used on input line 76.
 Class acmart Warning: A possible image without description on input line 79.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 82.
 
@@ -1222,7 +1237,7 @@ surrounding objects on input line 82.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 82.
 
-<diagram/pp-cdf.png, id=31, 1276.77pt x 740.7675pt>
+<diagram/pp-cdf.png, id=35, 1276.77pt x 740.7675pt>
 File: diagram/pp-cdf.png Graphic file (type png)
 <use diagram/pp-cdf.png>
 Package pdftex.def Info: diagram/pp-cdf.png  used on input line 83.
@@ -1238,7 +1253,7 @@ surrounding objects on input line 89.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 89.
 
-<diagram/cdf-marked.png, id=32, 1008.76875pt x 733.74126pt>
+<diagram/cdf-marked.png, id=36, 1008.76875pt x 733.74126pt>
 File: diagram/cdf-marked.png Graphic file (type png)
 <use diagram/cdf-marked.png>
 Package pdftex.def Info: diagram/cdf-marked.png  used on input line 90.
@@ -1253,16 +1268,6 @@ be-cause try_to_grab_pending()
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6.6 <./diagram/linuxkit-kernel-modifier.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 5726) has occurred while \output is active []
-
- [7.7 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
-
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 123.
 
@@ -1272,9 +1277,6 @@ surrounding objects on input line 123.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (7.70953pt too wide) in paragraph at lines 174--179
@@ -1307,7 +1309,7 @@ Overfull \hbox (42.7489pt too wide) in paragraph at lines 180--186
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8.8 <./diagram/cdf-marked.png>]
+ [7.7]
 Overfull \hbox (9.30254pt too wide) in paragraph at lines 187--193
 []\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15572] \T1/LinuxLibertineT-TLF/m/n/1
 0 (-20) The [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation
@@ -1324,6 +1326,9 @@ Overfull \hbox (128.53954pt too wide) in paragraph at lines 187--193
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) userspace spec-tr-eRSB at-tacks. This piec
 e of code in [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation(void)
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (9.90231pt too wide) in paragraph at lines 194--199
@@ -1349,9 +1354,17 @@ Overfull \hbox (5.79922pt too wide) in paragraph at lines 204--259
 LaTeX Warning: Float too large for page by 7.59998pt on input line 260.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8.8 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9.9 <./diagram/cdf-marked.png>]
+
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 285.
 
@@ -1359,7 +1372,7 @@ surrounding objects on input line 285.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 285.
 
-<diagram/performance.png, id=47, 980.66376pt x 667.49374pt>
+<diagram/performance.png, id=51, 980.66376pt x 667.49374pt>
 File: diagram/performance.png Graphic file (type png)
 <use diagram/performance.png>
 Package pdftex.def Info: diagram/performance.png  used on input line 286.
@@ -1367,17 +1380,7 @@ Package pdftex.def Info: diagram/performance.png  used on input line 286.
 
 Class acmart Warning: A possible image without description on input line 289.
 
-) (./limitation.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9.9])
-(./related_work.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10.10 <./diagram/performance.png>]) (./conclusion.tex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+) (./limitation.tex) (./related_work.tex [10.10]) (./conclusion.tex)
 (./paper.bbl
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 50.
@@ -1408,6 +1411,10 @@ LaTeX Info: Redefining \tempurl on input line 121.
 LaTeX Info: Redefining \tempurl on input line 133.
 LaTeX Info: Redefining \tempurl on input line 145.
 LaTeX Info: Redefining \tempurl on input line 157.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11.11 <./diagram/performance.png>]
 LaTeX Info: Redefining \tempurl on input line 169.
 LaTeX Info: Redefining \tempurl on input line 181.
 
@@ -1480,10 +1487,6 @@ root-[]access-[]on-[]docker-[]kubernetes-[]hosts/$
  []
 
 LaTeX Info: Redefining \tempurl on input line 366.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11.11]
 LaTeX Info: Redefining \tempurl on input line 393.
 LaTeX Info: Redefining \tempurl on input line 415.
 LaTeX Info: Redefining \tempurl on input line 427.
@@ -1495,6 +1498,9 @@ Overfull \hbox (103.06596pt too wide) in paragraph at lines 452--462
 tcp-[]ip-[]data-[]to-[]mesos-[]kubernetes-[]docker-[]containers-[]4986f88f7a19$
  
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \tempurl on input line 479.
 LaTeX Info: Redefining \tempurl on input line 491.
@@ -1520,10 +1526,10 @@ LaTeX Info: Redefining \tempurl on input line 570.
 Class acmart Warning: Some images may lack descriptions.
 
 
-Overfull \vbox (1.888pt too high) has occurred while \output is active []
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
 
- [12.12]
-[13.13]
+[12.12] [13.13]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./paper.aux)
@@ -1531,13 +1537,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 18159 strings out of 492649
- 275144 string characters out of 6129622
- 417863 words of memory out of 5000000
- 21276 multiletter control sequences out of 15000+600000
+ 18165 strings out of 492649
+ 275299 string characters out of 6129622
+ 416937 words of memory out of 5000000
+ 21281 multiletter control sequences out of 15000+600000
  118264 words of font info for 247 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,796b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/
 usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/u
@@ -1553,10 +1559,10 @@ ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on paper.pdf (13 pages, 1912547 bytes).
+Output written on paper.pdf (13 pages, 1933472 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 34352 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 34357 words of extra memory for PDF output out of 35830 (max. 10000000)
 
