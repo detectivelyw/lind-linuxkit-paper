@@ -88,15 +88,17 @@
 \newlabel{fig:pp-individuals}{{4}{7}{\small Popular paths for individual Docker containers\relax }{figure.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \small  CDF of the popular paths of Docker containers showing most share the same kernel footprint\relax }}{7}{figure.caption.7}}
 \newlabel{fig:pp-cdf}{{5}{7}{\small CDF of the popular paths of Docker containers showing most share the same kernel footprint\relax }{figure.caption.7}{}}
-\citation{NVD}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \small  Common kernel code identified across different containers\relax }}{8}{figure.caption.8}}
 \newlabel{fig:cdf-marked}{{6}{8}{\small Common kernel code identified across different containers\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Security Evaluation}{8}{subsection.4.2}}
 \newlabel{sec.evaluation.security}{{4.2}{8}{Security Evaluation}{subsection.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Performance Evaluation}{8}{subsection.4.3}}
-\newlabel{sec.evaluation.performance}{{4.3}{8}{Performance Evaluation}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Limitations}{8}{section.5}}
-\newlabel{sec.limitation}{{5}{8}{Limitations}{section.5}{}}
+\citation{Lock-in-Pop}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Instrumentation code added in our Secure Logging Kernel\relax }}{9}{table.caption.9}}
+\newlabel{tab:kernel_instrumentation}{{2}{9}{Instrumentation code added in our Secure Logging Kernel\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Performance Evaluation}{9}{subsection.4.3}}
+\newlabel{sec.evaluation.performance}{{4.3}{9}{Performance Evaluation}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Limitations}{9}{section.5}}
+\newlabel{sec.limitation}{{5}{9}{Limitations}{section.5}{}}
 \citation{Chou}
 \citation{Ozment}
 \citation{OpenBSD}
@@ -108,6 +110,10 @@
 \citation{OCaml}
 \citation{Porter:2011:RLO:1950365.1950399}
 \citation{Tsai:2014:CSI:2592798.2592812}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \small  Runtime performance comparison for the top popular 10 containers\relax }}{10}{figure.caption.11}}
+\newlabel{fig:performance}{{7}{10}{\small Runtime performance comparison for the top popular 10 containers\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{10}{section.6}}
+\newlabel{sec.related_work}{{6}{10}{Related Work}{section.6}{}}
 \citation{namespaces}
 \citation{linux-kernel-capabilities}
 \citation{cgroups}
@@ -116,10 +122,6 @@
 \citation{GRSEC}
 \citation{PAX}
 \citation{red-hat}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Instrumentation code added in our Secure Logging Kernel\relax }}{9}{table.caption.9}}
-\newlabel{tab:kernel_instrumentation}{{2}{9}{Instrumentation code added in our Secure Logging Kernel\relax }{table.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{9}{section.6}}
-\newlabel{sec.related_work}{{6}{9}{Related Work}{section.6}{}}
 \bibstyle{ACM-Reference-Format}
 \bibdata{paper}
 \bibcite{dirty-cow}{{1}{2016}{{dir}}{{??}}}
@@ -149,27 +151,26 @@
 \bibcite{containers-runc-vulnerability}{{25}{2019}{{Gatlan}}{{Gatlan}}}
 \bibcite{Kubernetes}{{26}{2019}{{Kubernetes}}{{Kubernetes}}}
 \bibcite{Lock-in-Pop}{{27}{2017}{{Li et~al\unhbox \voidb@x \hbox {.}}}{{Li, Dolan-Gavitt, Weber, and Cappos}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}}
+\newlabel{sec.conclusion}{{7}{11}{Conclusion}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{References}{11}{section*.13}}
 \bibcite{LinuxKit}{{28}{2019}{{LinuxKit}}{{LinuxKit}}}
 \bibcite{Madhavapeddy:2013:ULO:2451116.2451167}{{29}{2013}{{Madhavapeddy et~al\unhbox \voidb@x \hbox {.}}}{{Madhavapeddy, Mortier, Rotsos, Scott, Singh, Gazagnaire, Smith, Hand, and Crowcroft}}}
-\bibcite{NVD}{{30}{2019}{{NVD}}{{NVD}}}
-\bibcite{OS-Level-Virtualization}{{31}{2019}{{OS Level Virtualization}}{{OS Level Virtualization}}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{10}{section.7}}
-\newlabel{sec.conclusion}{{7}{10}{Conclusion}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{References}{10}{section*.12}}
-\bibcite{Ozment}{{32}{2006}{{Ozment and Schechter}}{{Ozment and Schechter}}}
-\bibcite{containers-kernel-bug-tcp}{{33}{2016}{{Pandurangan}}{{Pandurangan}}}
-\bibcite{Porter:2011:RLO:1950365.1950399}{{34}{2011}{{Porter et~al\unhbox \voidb@x \hbox {.}}}{{Porter, Boyd-Wickizer, Howell, Olinsky, and Hunt}}}
-\bibcite{what-containers-do}{{35}{2017}{{Rubens.}}{{Rubens.}}}
-\bibcite{Shin:2011:ECC}{{36}{2011}{{Shin et~al\unhbox \voidb@x \hbox {.}}}{{Shin, Meneely, Williams, and Osborne}}}
-\bibcite{Tsai:2014:CSI:2592798.2592812}{{37}{2014}{{Tsai et~al\unhbox \voidb@x \hbox {.}}}{{Tsai, Arora, Bandi, Jain, Jannen, John, Kalodner, Kulkarni, Oliveira, and Porter}}}
-\bibcite{VirtualBox}{{38}{2019}{{VirtualBox}}{{VirtualBox}}}
-\bibcite{VMWare-Workstation}{{39}{2019}{{VMWare Workstation}}{{VMWare Workstation}}}
-\bibcite{Containers_and_VirtualMachines}{{40}{2016}{{W.G. Wong}}{{W.G. Wong}}}
+\bibcite{OS-Level-Virtualization}{{30}{2019}{{OS Level Virtualization}}{{OS Level Virtualization}}}
+\bibcite{Ozment}{{31}{2006}{{Ozment and Schechter}}{{Ozment and Schechter}}}
+\bibcite{containers-kernel-bug-tcp}{{32}{2016}{{Pandurangan}}{{Pandurangan}}}
+\bibcite{Porter:2011:RLO:1950365.1950399}{{33}{2011}{{Porter et~al\unhbox \voidb@x \hbox {.}}}{{Porter, Boyd-Wickizer, Howell, Olinsky, and Hunt}}}
+\bibcite{what-containers-do}{{34}{2017}{{Rubens.}}{{Rubens.}}}
+\bibcite{Shin:2011:ECC}{{35}{2011}{{Shin et~al\unhbox \voidb@x \hbox {.}}}{{Shin, Meneely, Williams, and Osborne}}}
+\bibcite{Tsai:2014:CSI:2592798.2592812}{{36}{2014}{{Tsai et~al\unhbox \voidb@x \hbox {.}}}{{Tsai, Arora, Bandi, Jain, Jannen, John, Kalodner, Kulkarni, Oliveira, and Porter}}}
+\bibcite{VirtualBox}{{37}{2019}{{VirtualBox}}{{VirtualBox}}}
+\bibcite{VMWare-Workstation}{{38}{2019}{{VMWare Workstation}}{{VMWare Workstation}}}
+\bibcite{Containers_and_VirtualMachines}{{39}{2016}{{W.G. Wong}}{{W.G. Wong}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{4.65pt}
 \newlabel{tocindent2}{11.49998pt}
 \newlabel{tocindent3}{18.34998pt}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Evaluation of the CVE vulnerabilities for the Linux kernel\relax }}{12}{table.caption.10}}
-\newlabel{tab:evaluation_cve}{{3}{12}{Evaluation of the CVE vulnerabilities for the Linux kernel\relax }{table.caption.10}{}}
-\newlabel{TotPages}{{12}{12}{}{page.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Evaluation of the CVE vulnerabilities for the Linux kernel\relax }}{13}{table.caption.10}}
+\newlabel{tab:evaluation_cve}{{3}{13}{Evaluation of the CVE vulnerabilities for the Linux kernel\relax }{table.caption.10}{}}
+\newlabel{TotPages}{{13}{13}{}{page.13}{}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 OCT 2019 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1277,33 +1277,108 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Overfull \hbox (7.70953pt too wide) in paragraph at lines 174--179
+[]\T1/LinuxLibertineT-TLF/b/n/10 Results. \T1/LinuxLibertineT-TLF/m/n/10 (-20) 
+Out of the 50 CVE ker-nel se-cu-rity bugs we searched
+ []
+
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 181.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 10.0pt on input line 181.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `zi4' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `T1/zi4/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `T1/zi4/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (42.7489pt too wide) in paragraph at lines 180--186
+[]\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15594] \T1/LinuxLibertineT-TLF/m/n/1
+0 (-20) This bug lies in [][]\T1/zi4/m/n/10 arch/x86/kernel/paravirt.c
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8.8 <./diagram/cdf-marked.png>]
+Overfull \hbox (9.30254pt too wide) in paragraph at lines 187--193
+[]\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15572] \T1/LinuxLibertineT-TLF/m/n/1
+0 (-20) The [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation
+ []
+
+
+Overfull \hbox (3.14291pt too wide) in paragraph at lines 187--193
+\T1/LinuxLibertineT-TLF/m/n/10 (-20) switch. This makes it eas-ier for at-tack-
+ers to con-duct userspace-
+ []
+
+
+Overfull \hbox (128.53954pt too wide) in paragraph at lines 187--193
+\T1/LinuxLibertineT-TLF/m/n/10 (-20) userspace spec-tr-eRSB at-tacks. This piec
+e of code in [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation(void)
+ []
+
+
+Overfull \hbox (9.90231pt too wide) in paragraph at lines 194--199
+\T1/LinuxLibertineT-TLF/m/n/10 (-20) volves [][]\T1/zi4/m/n/10 proc_pid_cmdline
+_read() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) and [][]\T1/zi4/m/n/10 environ_r
+ead() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) func-
+ []
+
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 174.
+surrounding objects on input line 200.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 174.
+surrounding objects on input line 200.
 
 
-Overfull \hbox (5.79922pt too wide) in paragraph at lines 178--233
+Overfull \hbox (5.79922pt too wide) in paragraph at lines 204--259
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 7.59998pt on input line 234.
+LaTeX Warning: Float too large for page by 7.59998pt on input line 260.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./limitation.tex [8.8 <./diagram/cdf-marked.png>]) (./related_work.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 285.
 
 
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 285.
+
+<diagram/performance.png, id=47, 980.66376pt x 667.49374pt>
+File: diagram/performance.png Graphic file (type png)
+<use diagram/performance.png>
+Package pdftex.def Info: diagram/performance.png  used on input line 286.
+(pdftex.def)             Requested size: 361.41748pt x 246.00124pt.
+
+Class acmart Warning: A possible image without description on input line 289.
+
+) (./limitation.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9.9])
-(./conclusion.tex) (./paper.bbl
+(./related_work.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10.10 <./diagram/performance.png>]) (./conclusion.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(./paper.bbl
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 50.
 
@@ -1405,47 +1480,50 @@ root-[]access-[]on-[]docker-[]kubernetes-[]hosts/$
  []
 
 LaTeX Info: Redefining \tempurl on input line 366.
-LaTeX Info: Redefining \tempurl on input line 393.
-LaTeX Info: Redefining \tempurl on input line 415.
-LaTeX Info: Redefining \tempurl on input line 426.
-LaTeX Info: Redefining \tempurl on input line 439.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10.10]
-LaTeX Info: Redefining \tempurl on input line 457.
-LaTeX Info: Redefining \tempurl on input line 471.
+ [11.11]
+LaTeX Info: Redefining \tempurl on input line 393.
+LaTeX Info: Redefining \tempurl on input line 415.
+LaTeX Info: Redefining \tempurl on input line 427.
+LaTeX Info: Redefining \tempurl on input line 445.
+LaTeX Info: Redefining \tempurl on input line 459.
 
-Overfull \hbox (103.06596pt too wide) in paragraph at lines 464--474
+Overfull \hbox (103.06596pt too wide) in paragraph at lines 452--462
 \T1/LinuxBiolinumT-TLF/m/n/8 (-20) linux-[]kernel-[]bug-[]delivers-[]corrupt-[]
 tcp-[]ip-[]data-[]to-[]mesos-[]kubernetes-[]docker-[]containers-[]4986f88f7a19$
  
  []
 
+LaTeX Info: Redefining \tempurl on input line 479.
 LaTeX Info: Redefining \tempurl on input line 491.
-LaTeX Info: Redefining \tempurl on input line 503.
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--506
+Underfull \hbox (badness 10000) in paragraph at lines 485--494
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) P. Rubens. 2017.  What are con-tain-ers a
 nd why do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--506
+Underfull \hbox (badness 10000) in paragraph at lines 485--494
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) you need them?    $\T1/LinuxBiolinumT-TLF/m
 /n/8 (+20) h^^]ps : / / www . cio . com / article / 2924995 /
  []
 
-LaTeX Info: Redefining \tempurl on input line 522.
-LaTeX Info: Redefining \tempurl on input line 544.
-LaTeX Info: Redefining \tempurl on input line 555.
-LaTeX Info: Redefining \tempurl on input line 569.
-LaTeX Info: Redefining \tempurl on input line 582.
+LaTeX Info: Redefining \tempurl on input line 510.
+LaTeX Info: Redefining \tempurl on input line 532.
+LaTeX Info: Redefining \tempurl on input line 543.
+LaTeX Info: Redefining \tempurl on input line 557.
+LaTeX Info: Redefining \tempurl on input line 570.
 )
 
 Class acmart Warning: Some images may lack descriptions.
 
-[11.11] [12.12]
+
+Overfull \vbox (1.888pt too high) has occurred while \output is active []
+
+ [12.12]
+[13.13]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./paper.aux)
@@ -1453,30 +1531,32 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 18134 strings out of 492649
- 274637 string characters out of 6129622
- 415790 words of memory out of 5000000
- 21258 multiletter control sequences out of 15000+600000
- 117965 words of font info for 246 fonts, out of 8000000 for 9000
+ 18159 strings out of 492649
+ 275144 string characters out of 6129622
+ 417863 words of memory out of 5000000
+ 21276 multiletter control sequences out of 15000+600000
+ 118264 words of font info for 247 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,796b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
-}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{
-/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/
-usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}</u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinLibertineT.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinLiberti
-neTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinLi
-bertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
-/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newt
-x/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
-fb>
-Output written on paper.pdf (12 pages, 1567579 bytes).
+}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/
+usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/u
+sr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/us
+r/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr
+/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}</usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinBiolinum
+T.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinLiber
+tineT.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine/LinL
+ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
+/LinLibertineTBI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lib
+ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
+uzdr.pfb>
+Output written on paper.pdf (13 pages, 1912547 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33835 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 34352 words of extra memory for PDF output out of 35830 (max. 10000000)
 

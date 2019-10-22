@@ -172,7 +172,6 @@ Warning--numpages field, but no articleno or eid field, in Engler:1995:EOS:22405
 Warning--empty author in Kubernetes
 Warning--empty author in LinuxKit
 Warning--numpages field, but no articleno or eid field, in Madhavapeddy:2013:ULO:2451116.2451167
-Warning--empty author in NVD
 Warning--empty author in OS-Level-Virtualization
 Warning--articleno or eid field, but no numpages field, in Ozment
 Warning--page numbers missing in both pages and numpages fields in Ozment
@@ -182,45 +181,45 @@ Warning--no journal in Shin:2011:ECC
 Warning--empty author in VirtualBox
 Warning--empty author in VMWare-Workstation
 Warning--empty author in Containers_and_VirtualMachines
-You've used 40 entries,
+You've used 39 entries,
             5732 wiz_defined-function locations,
-            1656 strings with 22911 characters,
-and the built_in function-call counts, 33665 in all, are:
-= -- 3448
+            1652 strings with 22854 characters,
+and the built_in function-call counts, 32969 in all, are:
+= -- 3368
 > -- 594
 < -- 0
-+ -- 236
++ -- 235
 - -- 210
-* -- 2322
-:= -- 2648
-add.period$ -- 171
-call.type$ -- 40
-change.case$ -- 215
-chr.to.int$ -- 40
-cite$ -- 286
-duplicate$ -- 3595
-empty$ -- 2638
+* -- 2282
+:= -- 2606
+add.period$ -- 167
+call.type$ -- 39
+change.case$ -- 210
+chr.to.int$ -- 39
+cite$ -- 284
+duplicate$ -- 3511
+empty$ -- 2575
 format.name$ -- 232
-if$ -- 7925
+if$ -- 7751
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 37
-newline$ -- 510
+newline$ -- 498
 num.names$ -- 88
-pop$ -- 1599
+pop$ -- 1566
 preamble$ -- 1
-purify$ -- 575
+purify$ -- 561
 quote$ -- 0
-skip$ -- 1243
+skip$ -- 1214
 stack$ -- 0
-substring$ -- 2454
-swap$ -- 262
+substring$ -- 2399
+swap$ -- 257
 text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1186
-warning$ -- 170
+type$ -- 1156
+warning$ -- 169
 while$ -- 79
 width$ -- 0
-write$ -- 839
-(There were 171 warnings)
+write$ -- 819
+(There were 170 warnings)

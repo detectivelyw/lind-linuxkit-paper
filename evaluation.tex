@@ -152,24 +152,50 @@ Table \ref{tab:kernel_instrumentation} presents an overview of the required modi
 \end{center}
 \end{table*}
 
+Using  the Secure Logging Kernel, we ran the 100 containers and verified that they were able to finish their normal workloads, 
+as defined in their official Dockerfiles, with, on average, less than 1\% of runtime overhead. 
+In doing so, the containers used less than 0.1\% of the unpopular paths. 
+This data strongly argues the feasibility of creating a popular-paths based host kernel to run Docker containers. 
+In other words, real-world containers can run on only the popular paths in most (>99.9\%) cases. 
+
 \subsection{Security Evaluation}
 \label{sec.evaluation.security} 
-The goal of our security evaluation is to answer the question: does restricting access only to the popular paths improve the security of running containers? 
-We already es
-We try to answer this question by studying how many CVE kernel vulnerabilities were present in the popular paths of the LinuxKit VM. 
+The main advantage of running containers on the popular paths is to leverage the security benefits. 
+The popular paths have previously been proven to contain fewer security vulnerabilities. 
+We want to verify if this still applies to containers in the face of new zero-day kernel vulnerabilities. 
+The methodology we selected for this evaluation was to examine how many CVE kernel security bugs resided in the LinuxKit popular paths. 
+If, as the metric suggests, there were fewer bugs in these paths, then our popular paths based solution would by its very design improve the security of running containers.
 
 \textbf{Experimental Setup.}
-In this paper, we used the Linux kernel version 4.14.24 when running the LinuxKit VM. 
-We examined a list of 50 CVE kernel vulnerabilities (Table \ref{tab:evaluation_cve}). 
-Our methodology for getting this list is to obtain the CVE vulnerabilities for Linux kernel version 4.14.24 and version 4.14.x from the National Vulnerability Database \cite{NVD}. 
-These 50 CVE vulnerabilities were all the available ones for our targeted kernel versions at the time of our study (April 2019). 
-For each of these CVE vulnerabilities, we looked at the patch that fixed the bug to identify the lines of kernel source code that could trigger this vulnerability. 
-Next, we compared these lines against the popular paths kernel trace of LinuxKit, and identified which vulnerabilities were present in the popular paths. 
+We obtained a list of all the available (at the time of our study) CVE kernel vulnerabilities for Linux kernel version 4.14.x from the National Vulnerability Database. 
+For each of these 50 vulnerabilities, we looked at the kernel patch that fixed the bug to identify the source line numbers that correspond to it. 
+We then compared the line numbers against the popular paths kernel trace we had for LinuxKit to verify if the bug was present.
 
 \textbf{Results.}
-In our study, we found out that only three out of all the fifty CVE vulnerabilities were detected in the popular paths of LinuxKit (Table \ref{tab:evaluation_cve}). 
-And these three vulnerabilities detected were among commonly used kernel code that were hard to avoid by any program, and more likely to be patched since they were essential code that was used a lot. 
-We describe these three kernel bugs found in the LinuxKit's popular paths in more details below.  
+Out of the 50 CVE kernel security bugs we searched for, we found only three in the LinuxKit popular paths, as shown in Table \ref{tab:evaluation_cve}. 
+These three bugs were in commonly used kernel code that,   to the best of our knowledge, cannot be avoided by any existing security systems. 
+We describe these three bugs in detail below to explain why they cannot be avoided, 
+and to demonstrate that our popular paths based strategy did its best to reduce the risk of triggering kernel bugs.
+
+\textbf{[CVE-2018-15594]}
+This bug lies in \verb|arch/x86/kernel/paravirt.c| in the Linux kernel before 4.18.1. 
+The source code mishandles certain indirect calls, which makes it easier for attackers to conduct Spectre-v2 attacks against paravirtual guests. 
+In our tests, this bug was found in the  kernel trace data, and was reached frequently by programs running in LinuxKit, 
+because the code inside of the \verb|paravirt_patch_call()| function in \verb|arch/x86/kernel/paravirt.c| is used to rewrite an indirect call with a direct call, 
+which is an essential function used to support the Linux kernel paravirtualization. 
+
+\textbf{[CVE-2018-15572]}
+The \verb|spectre_v2_select_mitigation| function in \verb|arch/x86/kernel/cpu/bugs.c| in the Linux kernel before 4.18.1 does not always fill RSB upon a context switch. 
+This makes it easier for attackers to conduct userspace-userspace spectreRSB attacks. 
+This piece of code in \verb|spectre_v2_select_mitigation(void)| function would be used by every program, as the kernel attempts to mitigate potential Spectre attacks. 
+Therefore any program that tries to mitigate the original Spectre attack would use this piece of code that contains this new CVE vulnerability. 
+That's the reason why it appeared in our LinuxKit popular paths. 
+
+\textbf{[CVE-2018-1120]}
+This vulnerability was found affecting the Linux kernel before version 4.17. by \verb|mmap()|ing a FUSE-backed file onto 
+the memory of a process containing command line arguments (or environment strings). 
+This bug appeared in the popular paths because \verb|mmap()| is commonly used by user programs. 
+Furthermore, this vulnerability involves \verb|proc_pid_cmdline_read()| and \verb|environ_read()| functions, that are commonly invoked by virtual machines and user programs.
 
 \begin{table*}[h!]
   \begin{center}
@@ -233,10 +259,36 @@ We describe these three kernel bugs found in the LinuxKit's popular paths in mor
   \end{center}
 \end{table*}
 
+By limiting the potential risk of exposure to kernel code to just these three bugs, the popular path metric already greatly reduces risks to container security. 
+While a potential user of the popular paths metric must be aware of these bugs, 
+the odds on having to deal with repeated and costly incidents from zero-day vulnerabilities become much more manageable.  
+
+It should also be noted that 49 out of the 50 bugs tested were discovered and confirmed after publication of the original popular paths study \cite{Lock-in-Pop}, 
+which shows that the metric can indeed predict where bugs are likely to occur effectively. 
+
 \subsection{Performance Evaluation}
 \label{sec.evaluation.performance} 
-We evaluated both the run-time performance overhead and the memory space overhead of using our secure logging kernel. 
+Lastly, we wanted to assure container users that utilizing our Secure Logging Kernel  would not negatively affect performance overhead costs. 
+To demonstrate this, we evaluated both the run-time performance and memory space overhead of the modified kernel.
 
 \textbf{Experimental Setup.}
+In order to measure the overhead costs of our Secure Logging Kernel, 
+we did a comparison between containers running on the original Linux kernel and ones running on our popular-paths based kernel. 
+We used the exact same running environment and configuration to ensure a fair comparison. 
+We ran the 100 most popular containers from Docker Hub on both the original kernel and our Secure Logging Kernel. 
+In each test, the container finished its workload as defined in the official Dockerfile. We measured the runtimes for both kernels and compared them. 
 
 \textbf{Results.}
+Our results show that, on average, running containers on our popular-paths based kernel incurred about 0.5\% to 1\% of extra performance overhead as compared to the original Linux kernel. Results of the top 10 containers are shown in Figure \ref{fig:performance}.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/performance.png}
+\caption{\small Runtime performance comparison for the top popular 10 containers}
+\label{fig:performance}
+\end{figure*}
+
+The original Linux kernel image used for the  LinuxKit test  is sized at 163,012,008 bytes . 
+In comparison, the popular-paths based kernel is sized at 163,622,440 bytes. Therefore, the extra memory space added by our modified kernel was only about 0.37\%. 
+
+Based on our performance evaluation, the Secure Logging Kernel has negligible overhead in both runtime and memory space. 
