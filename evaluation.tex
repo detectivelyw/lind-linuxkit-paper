@@ -98,17 +98,19 @@ For these lines, we looked at what activities they performed, and how common the
 In our analysis of the kernel trace of 10 popular Docker containers, we identified eight pieces of infrequently executed kernel code common among them. 
 These traces are presented graphically in Figure \ref{fig:cdf-marked}. 
 \begin{enumerate}
-	\item kernel/cgroup/freezer.c: a cgroup is freezing if any FREEZING flags are set.
-	\item kernel/locking/rwsem-xadd.c: waiting for a write lock to be granted. 
-	\item kernel/locking/rwsem-xadd.c: waiting for the read lock to be granted.
-	\item mm/filemap.c: process waitqueue for pages and check for a page match to prevent potential waitqueue hash collision. 
-	\item fs/exec.c: all other threads have exited, wait for the thread group leader to become inactive and to assume its PID. 
-	\item kernel/workqueue: insert a barrier work in the queue. According to the comments from the kernel source code, 
+	\item \verb|kernel/cgroup/freezer.c|: a cgroup is freezing if any FREEZING flags are set.
+	\item \verb|kernel/locking/rwsem-xadd.c|: waiting for a write lock to be granted. 
+	\item \verb|kernel/locking/rwsem-xadd.c|: waiting for the read lock to be granted.
+	\item \verb|mm/filemap.c|: process waitqueue for pages and check for a page match to prevent potential waitqueue hash collision. 
+	\item \verb|fs/exec.c|: all other threads have exited, wait for the thread group leader to become inactive and to assume its PID. 
+	\item \verb|kernel/workqueue|: insert a barrier work in the queue. According to the comments from the kernel source code, 
 	the reason for inserting a barrier work seems to be to prevent a cancellation. 
-	This is because try\_to\_grab\_pending() can not determine whether the work to be grabbed is at the head of the queue and thus can not clear LINKED flag of the previous work. 
+	This is because \\
+	\verb|try_to_grab_pending()| can not determine whether the work to be grabbed is at the head of the queue and thus can not clear LINKED flag of the previous work. 
 	There must be a valid next work after a work with a LINKED flag set. 
-	\item arch/x86/kernel/tsc.c: try to calibrate the TSC against the Programmable Interrupt Timer and return the frequency of the TSC in kHz. 
-	\item kernel/locking/mutex.c: hand off a mutex. Give up ownership to a specific task, when @task = NULL, this is equivalent to a regular unlock.
+	\item \verb|arch/x86/kernel/tsc.c|: try to calibrate the TSC \\ 
+	against the Programmable Interrupt Timer and return the frequency of the TSC in kHz. 
+	\item \verb|kernel/locking/mutex.c|: hand off a mutex. Give up ownership to a specific task, when @task = NULL, this is equivalent to a regular unlock.
 \end{enumerate}
 
 What this analysis tells us is that this infrequently used code performs essential kernel functions used by multiple containers, and therefore should still be considered popular paths, 
@@ -178,16 +180,19 @@ We describe these three bugs in detail below to explain why they cannot be avoid
 and to demonstrate that our popular paths based strategy did its best to reduce the risk of triggering kernel bugs.
 
 \textbf{[CVE-2018-15594]}
-This bug lies in \verb|arch/x86/kernel/paravirt.c| in the Linux kernel before 4.18.1. 
+This bug lies in \\
+\verb|arch/x86/kernel/paravirt.c| in the Linux kernel before 4.18.1. 
 The source code mishandles certain indirect calls, which makes it easier for attackers to conduct Spectre-v2 attacks against paravirtual guests. 
-In our tests, this bug was found in the  kernel trace data, and was reached frequently by programs running in LinuxKit, 
-because the code inside of the \verb|paravirt_patch_call()| function in \verb|arch/x86/kernel/paravirt.c| is used to rewrite an indirect call with a direct call, 
+In our tests, this bug was found in the kernel trace data, and was reached frequently by programs running in LinuxKit, 
+because the code inside of the \verb|paravirt_patch_call()| function in \\
+\verb|arch/x86/kernel/paravirt.c| is used to rewrite an indirect call with a direct call, 
 which is an essential function used to support the Linux kernel paravirtualization. 
 
 \textbf{[CVE-2018-15572]}
 The \verb|spectre_v2_select_mitigation| function in \verb|arch/x86/kernel/cpu/bugs.c| in the Linux kernel before 4.18.1 does not always fill RSB upon a context switch. 
 This makes it easier for attackers to conduct userspace-userspace spectreRSB attacks. 
-This piece of code in \verb|spectre_v2_select_mitigation(void)| function would be used by every program, as the kernel attempts to mitigate potential Spectre attacks. 
+This piece of code in \\
+\verb|spectre_v2_select_mitigation(void)| function would be used by every program, as the kernel attempts to mitigate potential Spectre attacks. 
 Therefore any program that tries to mitigate the original Spectre attack would use this piece of code that contains this new CVE vulnerability. 
 That's the reason why it appeared in our LinuxKit popular paths. 
 

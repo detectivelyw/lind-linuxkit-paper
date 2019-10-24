@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 16:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  24 OCT 2019 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1261,35 +1261,12 @@ Package pdftex.def Info: diagram/cdf-marked.png  used on input line 90.
 
 Class acmart Warning: A possible image without description on input line 93.
 
-
-Overfull \hbox (45.21088pt too wide) in paragraph at lines 106--110
-\T1/LinuxLibertineT-TLF/m/n/10 (-20) be to pre-vent a can-cel-la-tion. This is 
-be-cause try_to_grab_pending()
- []
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 123.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 123.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (7.70953pt too wide) in paragraph at lines 174--179
-[]\T1/LinuxLibertineT-TLF/b/n/10 Results. \T1/LinuxLibertineT-TLF/m/n/10 (-20) 
-Out of the 50 CVE ker-nel se-cu-rity bugs we searched
- []
-
-LaTeX Font Info:    Try loading font information for T1+zi4 on input line 181.
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 101.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 181.
+(Font)              scaled to size 10.0pt on input line 101.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1301,37 +1278,46 @@ Package microtype Info: Character `textemdash ' is missing
 (microtype)             in font `T1/zi4/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (42.7489pt too wide) in paragraph at lines 180--186
-[]\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15594] \T1/LinuxLibertineT-TLF/m/n/1
-0 (-20) This bug lies in [][]\T1/zi4/m/n/10 arch/x86/kernel/paravirt.c
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 125.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 125.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (7.70953pt too wide) in paragraph at lines 176--181
+[]\T1/LinuxLibertineT-TLF/b/n/10 Results. \T1/LinuxLibertineT-TLF/m/n/10 (-20) 
+Out of the 50 CVE ker-nel se-cu-rity bugs we searched
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7.7]
-Overfull \hbox (9.30254pt too wide) in paragraph at lines 187--193
+[7.7]
+Overfull \hbox (9.30254pt too wide) in paragraph at lines 191--198
 []\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15572] \T1/LinuxLibertineT-TLF/m/n/1
 0 (-20) The [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation
  []
 
 
-Overfull \hbox (3.14291pt too wide) in paragraph at lines 187--193
+Overfull \hbox (3.14291pt too wide) in paragraph at lines 191--198
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) switch. This makes it eas-ier for at-tack-
 ers to con-duct userspace-
  []
 
 
-Overfull \hbox (128.53954pt too wide) in paragraph at lines 187--193
-\T1/LinuxLibertineT-TLF/m/n/10 (-20) userspace spec-tr-eRSB at-tacks. This piec
-e of code in [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation(void)
+Overfull \hbox (2.0487pt too wide) in paragraph at lines 191--198
+[][]\T1/zi4/m/n/10 spectre_v2_select_mitigation(void) []\T1/LinuxLibertineT-TLF
+/m/n/10 (-20) func-tion would be
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (9.90231pt too wide) in paragraph at lines 194--199
+Overfull \hbox (9.90231pt too wide) in paragraph at lines 199--204
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) volves [][]\T1/zi4/m/n/10 proc_pid_cmdline
 _read() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) and [][]\T1/zi4/m/n/10 environ_r
 ead() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) func-
@@ -1339,19 +1325,19 @@ ead() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) func-
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 200.
+surrounding objects on input line 205.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 200.
+surrounding objects on input line 205.
 
 
-Overfull \hbox (5.79922pt too wide) in paragraph at lines 204--259
+Overfull \hbox (5.79922pt too wide) in paragraph at lines 209--264
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 7.59998pt on input line 260.
+LaTeX Warning: Float too large for page by 7.59998pt on input line 265.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1366,19 +1352,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [9.9 <./diagram/cdf-marked.png>]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 285.
+surrounding objects on input line 290.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 285.
+surrounding objects on input line 290.
 
 <diagram/performance.png, id=51, 980.66376pt x 667.49374pt>
 File: diagram/performance.png Graphic file (type png)
 <use diagram/performance.png>
-Package pdftex.def Info: diagram/performance.png  used on input line 286.
+Package pdftex.def Info: diagram/performance.png  used on input line 291.
 (pdftex.def)             Requested size: 361.41748pt x 246.00124pt.
 
-Class acmart Warning: A possible image without description on input line 289.
+Class acmart Warning: A possible image without description on input line 294.
 
 ) (./limitation.tex) (./related_work.tex [10.10]) (./conclusion.tex)
 (./paper.bbl
@@ -1559,7 +1545,7 @@ ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on paper.pdf (13 pages, 1933472 bytes).
+Output written on paper.pdf (13 pages, 1934418 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
