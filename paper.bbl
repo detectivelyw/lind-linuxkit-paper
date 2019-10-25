@@ -58,7 +58,8 @@
 \newblock
 \newblock
 \urldef\tempurl%
-\url{https://www.zdnet.com/article/dirty-cow-vulnerability-discovered-in-android-malware-campaign-for-the-first-time/}
+\url{https://www.zdnet.com/article/dirty-cow-vulnerability-discovered-in-android-malware-campaign-for\\
+  -the-first-time/}
 \showURL{%
 \tempurl}
 
@@ -350,7 +351,8 @@ Retrieved April, 2019 from \tempurl}
 \newblock
 \newblock
 \urldef\tempurl%
-\url{https://www.bleepingcomputer.com/news/security/runc-vulnerability-gives-attackers-root-access-on-docker-kubernetes-hosts/}
+\url{https://www.bleepingcomputer.com/news/security/runc-vulnerability-gives-attackers-root-access-on-docker-kubernetes\\
+  -hosts/}
 \showURL{%
 \tempurl}
 
@@ -456,7 +458,8 @@ Retrieved April, 2019 from \tempurl}
 \newblock
 \newblock
 \urldef\tempurl%
-\url{https://tech.vijayp.ca/linux-kernel-bug-delivers-corrupt-tcp-ip-data-to-mesos-kubernetes-docker-containers-4986f88f7a19}
+\url{https://tech.vijayp.ca/linux-kernel-bug-delivers-corrupt-tcp-ip-data-to-mesos-kubernetes\\
+  -docker-containers-4986f88f7a19}
 \showURL{%
 \tempurl}
 
