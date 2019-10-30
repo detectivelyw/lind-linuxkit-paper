@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 OCT 2019 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  30 OCT 2019 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1112,17 +1112,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1.1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-])
-(./motivation.tex
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./design.tex
+(./motivation.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1.
- [2.2]
+(Font)              scaled to size 7.0pt on input line 26.
+ [2.2])
+(./design.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 17.
@@ -1206,7 +1206,13 @@ Overfull \hbox (48.98456pt too wide) in paragraph at lines 46--55
  [] 
  []
 
-[5.5]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5.5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1278,6 +1284,9 @@ Package microtype Info: Character `textemdash ' is missing
 (microtype)             in font `T1/zi4/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 
+Underfull \vbox (badness 1424) has occurred while \output is active []
+
+
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 125.
@@ -1295,7 +1304,13 @@ Overfull \hbox (7.70953pt too wide) in paragraph at lines 176--181
 Out of the 50 CVE ker-nel se-cu-rity bugs we searched
  []
 
-[7.7]
+
+Underfull \vbox (badness 1406) has occurred while \output is active []
+
+ [7.7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (9.30254pt too wide) in paragraph at lines 191--198
 []\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15572] \T1/LinuxLibertineT-TLF/m/n/1
 0 (-20) The [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation
@@ -1316,7 +1331,7 @@ Overfull \hbox (2.0487pt too wide) in paragraph at lines 191--198
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+ [8.8 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
 Overfull \hbox (9.90231pt too wide) in paragraph at lines 199--204
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) volves [][]\T1/zi4/m/n/10 proc_pid_cmdline
 _read() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) and [][]\T1/zi4/m/n/10 environ_r
@@ -1340,11 +1355,10 @@ Overfull \hbox (5.79922pt too wide) in paragraph at lines 209--264
 LaTeX Warning: Float too large for page by 7.59998pt on input line 265.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8.8 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1366,7 +1380,17 @@ Package pdftex.def Info: diagram/performance.png  used on input line 291.
 
 Class acmart Warning: A possible image without description on input line 294.
 
-) (./limitation.tex) (./related_work.tex [10.10]) (./conclusion.tex)
+) (./limitation.tex) (./related_work.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10.10])
+(./conclusion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
 (./paper.bbl
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 50.
@@ -1382,6 +1406,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--51
 m/n/8 (+20) h^^]ps : / / blog . paranoidso^^\ware . com /
  []
 
+[11.11 <./diagram/performance.png>]
 LaTeX Info: Redefining \tempurl on input line 62.
 
 Overfull \hbox (5.99075pt too wide) in paragraph at lines 55--65
@@ -1397,10 +1422,6 @@ LaTeX Info: Redefining \tempurl on input line 122.
 LaTeX Info: Redefining \tempurl on input line 134.
 LaTeX Info: Redefining \tempurl on input line 146.
 LaTeX Info: Redefining \tempurl on input line 158.
-
-Underfull \vbox (badness 4846) has occurred while \output is active []
-
- [11.11 <./diagram/performance.png>]
 LaTeX Info: Redefining \tempurl on input line 170.
 LaTeX Info: Redefining \tempurl on input line 182.
 
@@ -1475,6 +1496,9 @@ root-[]access-[]on-[]docker-[]kubernetes \
 LaTeX Info: Redefining \tempurl on input line 368.
 LaTeX Info: Redefining \tempurl on input line 395.
 LaTeX Info: Redefining \tempurl on input line 417.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Info: Redefining \tempurl on input line 429.
 LaTeX Info: Redefining \tempurl on input line 447.
 LaTeX Info: Redefining \tempurl on input line 462.
@@ -1483,9 +1507,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--465
 \T1/LinuxBiolinumT-TLF/m/n/8 (-14) linux-[]kernel-[]bug-[]delivers-[]corrupt-[]
 tcp-[]ip-[]data-[]to-[]mesos-[]kubernetes \
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \tempurl on input line 482.
 LaTeX Info: Redefining \tempurl on input line 494.
@@ -1524,11 +1545,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
 Here is how much of TeX's memory you used:
  18168 strings out of 492649
  275371 string characters out of 6129622
- 416937 words of memory out of 5000000
+ 418938 words of memory out of 5000000
  21281 multiletter control sequences out of 15000+600000
  118539 words of font info for 249 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,94p,796b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/
 usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/u
@@ -1544,7 +1565,7 @@ ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on paper.pdf (13 pages, 1934506 bytes).
+Output written on paper.pdf (13 pages, 1934630 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream

@@ -33,7 +33,9 @@ so we could determine whether such paths are essential to their functionality.
 And, secondly, it built into our instantiation of the modified kernel a way for users to detect potentially dangerous program behaviors and make decisions about whether or not to block executions in unpopular paths. 
 
 An evaluation of our findings affirmed that popular Docker containers experience no loss of functionality when using just the popular paths. 
-Indeed, for the official Docker containers’ default workload, the popular paths were used more than 99.9\% of the time. 
+Indeed, for the official Docker containers’ default workload, the Secure Logging Kernel was able to run it smoothly. 
+And our data shows that the popular paths were used more than 99.9\% of the time. In the case of less than 0.1\% of the time, unpopular lines were used, 
+and were captured by the Secure Logging Kernel with security logs generated. 
 Our security evaluation confirmed that using the popular paths to run Docker containers can effectively prevent most kernel bugs from being triggered, 
 as only three of the 50 CVE kernel security vulnerabilities we checked for were found in those LinuxKit paths. 
 And, in our performance evaluation, we found that running our Secure Logging Kernel only incurred about 1\% of runtime overhead, while the memory space overhead was only about 0.37\%. 
@@ -43,5 +45,5 @@ In summary, we make the following contributions in this paper:
 \begin{itemize}
 	\item We systematically identify and capture the ``popular paths'' data from Docker containers running in the LinuxKit VM. 
 	\item We design and implement a Secure Logging System, that utilizes the popular paths data to create a modified Linux kernel (Secure Logging Kernel). This instrumented kernel outputs security warning messages whenever there is an attempt to reach and trigger unpopular paths. 
-	\item Using the Secure Logging Kernel, we demonstrate that popular Docker containers were able to run their default workload normally using the popular paths more than 99.9\% of the time, with negligible (less than 1\%) performance overhead.
+	\item Using the Secure Logging Kernel, we demonstrate that popular Docker containers were able to run their default workload normally all the time with negligible (less than 1\%) performance overhead. Popular paths were used more than 99.9\% of the time. Unpopular paths were reached only less than 0.1\% of the time, and were recorded by the Secure Logging Kernel with security logs to warn the users about potential malicious program behavior. 
 \end{itemize}
