@@ -55,22 +55,6 @@ These skipped and failed tests were due to the inherent issues of the LinuxKit V
 \end{center}
 \end{table}
 
-\subsubsection{Testing functionality on real-world container applications}
-\label{sec.evaluation.functionality.containers} 
-\textbf{Experimental Setup.}
-To confirm that our Secure Logging Kernel works in real-world practices, we tested the 100 most downloaded containers from Docker Hub. 
-We ran the experiment in the same version of the LinuxKit virtual machine as in 4.1.1. 
-Each Docker container was run in the LinuxKit VM using the commands in its Dockerfile from its official Docker image. 
-To take into account any potential variances, each container was run in the exact same environment for 10 times. 
-
-\textbf{Results.}
-One of the more important results of this initial test was that it showed most containers shared the same kernel footprint. 
-This means that the kernel trace, or the record of all kernel code executed, of a sample of containers can represent the trace of many more. 
-We used the CDF (Cumulative Distribution Function) to analyze how soon the kernel trace of different containers would converge. 
-Results of the CDF, as visualized  in Figure \ref{fig:pp-cdf}, 
-points out that the trace of the top six popular containers covered about 98\% of the total kernel trace for 25 containers. 
-This offers additional corroboration that the popular paths data we collected is valid not only for the few containers we ran, but also for hundreds of containers on Docker Hub.  
-
 \begin{figure*}
 \centering
 \includegraphics[width=1.5\columnwidth]{diagram/pp-individuals.png}
@@ -91,6 +75,22 @@ This offers additional corroboration that the popular paths data we collected is
 \caption{\small Common kernel code identified across different containers}
 \label{fig:cdf-marked}
 \end{figure*}
+
+\subsubsection{Testing functionality on real-world container applications}
+\label{sec.evaluation.functionality.containers} 
+\textbf{Experimental Setup.}
+To confirm that our Secure Logging Kernel works in real-world practices, we tested the 100 most downloaded containers from Docker Hub. 
+We ran the experiment in the same version of the LinuxKit virtual machine as in 4.1.1. 
+Each Docker container was run in the LinuxKit VM using the commands in its Dockerfile from its official Docker image. 
+To take into account any potential variances, each container was run in the exact same environment for 10 times. 
+
+\textbf{Results.}
+One of the more important results of this initial test was that it showed most containers shared the same kernel footprint. 
+This means that the kernel trace, or the record of all kernel code executed, of a sample of containers can represent the trace of many more. 
+We used the CDF (Cumulative Distribution Function) to analyze how soon the kernel trace of different containers would converge. 
+Results of the CDF, as visualized  in Figure \ref{fig:pp-cdf}, 
+points out that the trace of the top six popular containers covered about 98\% of the total kernel trace for 25 containers. 
+This offers additional corroboration that the popular paths data we collected is valid not only for the few containers we ran, but also for hundreds of containers on Docker Hub.  
 
 In addition to the always used popular paths, which we identified as the common kernel lines that appeared each and every time, 
 we also discovered certain lines of kernel code that showed up sporadically. 
@@ -120,9 +120,6 @@ despite the fact that they are infrequently execute.
 On closer examination, we learn they are not always executed during each run because they are race-condition related code that depend on locks, and system conditions may vary during different runs. 
 As the Secure Logging System profiles and identifies these infrequently-executed popular paths, as well as the always-executed ones, 
 our tests show that the Secure Logging Kernel functions in a correct manner.
-
-Based on the comprehensive popular paths data obtained, the Secure Logging System was able to create a customized Secure Logging Kernel for the LinuxKit VM. 
-Table \ref{tab:kernel_instrumentation} presents an overview of the required modifications. 
 
 \begin{table*}[h!]
 \begin{center}
@@ -156,55 +153,15 @@ Table \ref{tab:kernel_instrumentation} presents an overview of the required modi
 \end{center}
 \end{table*}
 
+Based on the comprehensive popular paths data obtained, the Secure Logging System was able to create a customized Secure Logging Kernel for the LinuxKit VM. 
+Table \ref{tab:kernel_instrumentation} presents an overview of the required modifications. 
+
 Using  the Secure Logging Kernel, we ran the 100 containers and verified that they were able to finish their normal workloads, 
 as defined in their official Dockerfiles, with, on average, less than 1\% of runtime overhead. 
 In doing so, the containers used less than 0.1\% of the unpopular paths. 
 A total number of 50 lines of unpopular paths were reached and recorded by the Secure Logging Kernel. 
 This data strongly argues the feasibility of creating a popular-paths based host kernel to run Docker containers. 
 In other words, real-world containers can run on only the popular paths in most (>99.9\%) cases. 
-
-\subsection{Security Evaluation}
-\label{sec.evaluation.security} 
-The main advantage of running containers on the popular paths is to leverage the security benefits. 
-The popular paths have previously been proven to contain fewer security vulnerabilities. 
-We want to verify if this still applies to containers in the face of new zero-day kernel vulnerabilities. 
-The methodology we selected for this evaluation was to examine how many CVE kernel security bugs resided in the LinuxKit popular paths. 
-If, as the metric suggests, there were fewer bugs in these paths, then our popular paths based solution would by its very design improve the security of running containers.
-
-\textbf{Experimental Setup.}
-We obtained a list of all the available (at the time of our study) CVE kernel vulnerabilities for Linux kernel version 4.14.x from the National Vulnerability Database. 
-For each of these 50 vulnerabilities, we looked at the kernel patch that fixed the bug to identify the source line numbers that correspond to it. 
-We then compared the line numbers against the popular paths kernel trace we had for LinuxKit to verify if the bug was present.
-
-\textbf{Results.}
-Out of the 50 CVE kernel security bugs we searched for, we found only three in the LinuxKit popular paths (lines occurred in any of the training runs), 
-as shown in Table \ref{tab:evaluation_cve}. 
-These three bugs were in commonly used kernel code that,   to the best of our knowledge, cannot be avoided by any existing security systems. 
-We describe these three bugs in detail below to explain why they cannot be avoided, 
-and to demonstrate that our popular paths based strategy did its best to reduce the risk of triggering kernel bugs.
-
-\textbf{[CVE-2018-15594]}
-This bug lies in \\
-\verb|arch/x86/kernel/paravirt.c| in the Linux kernel before 4.18.1. 
-The source code mishandles certain indirect calls, which makes it easier for attackers to conduct Spectre-v2 attacks against paravirtual guests. 
-In our tests, this bug was found in the kernel trace data, and was reached frequently by programs running in LinuxKit, 
-because the code inside of the \verb|paravirt_patch_call()| function in \\
-\verb|arch/x86/kernel/paravirt.c| is used to rewrite an indirect call with a direct call, 
-which is an essential function used to support the Linux kernel paravirtualization. 
-
-\textbf{[CVE-2018-15572]}
-The \verb|spectre_v2_select_mitigation| function in \verb|arch/x86/kernel/cpu/bugs.c| in the Linux kernel before 4.18.1 does not always fill RSB upon a context switch. 
-This makes it easier for attackers to conduct userspace-userspace spectreRSB attacks. 
-This piece of code in \\
-\verb|spectre_v2_select_mitigation(void)| function would be used by every program, as the kernel attempts to mitigate potential Spectre attacks. 
-Therefore any program that tries to mitigate the original Spectre attack would use this piece of code that contains this new CVE vulnerability. 
-That's the reason why it appeared in our LinuxKit popular paths. 
-
-\textbf{[CVE-2018-1120]}
-This vulnerability was found affecting the Linux kernel before version 4.17. by \verb|mmap()|ing a FUSE-backed file onto 
-the memory of a process containing command line arguments (or environment strings). 
-This bug appeared in the popular paths because \verb|mmap()| is commonly used by user programs. 
-Furthermore, this vulnerability involves \verb|proc_pid_cmdline_read()| and \verb|environ_read()| functions, that are commonly invoked by virtual machines and user programs.
 
 \begin{table*}[h!]
   \begin{center}
@@ -268,6 +225,56 @@ Furthermore, this vulnerability involves \verb|proc_pid_cmdline_read()| and \ver
   \end{center}
 \end{table*}
 
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/performance.png}
+\caption{\small Runtime performance comparison for the top popular 10 containers}
+\label{fig:performance}
+\end{figure*}
+
+\subsection{Security Evaluation}
+\label{sec.evaluation.security} 
+The main advantage of running containers on the popular paths is to leverage the security benefits. 
+The popular paths have previously been proven to contain fewer security vulnerabilities. 
+We want to verify if this still applies to containers in the face of new zero-day kernel vulnerabilities. 
+The methodology we selected for this evaluation was to examine how many CVE kernel security bugs resided in the LinuxKit popular paths. 
+If, as the metric suggests, there were fewer bugs in these paths, then our popular paths based solution would by its very design improve the security of running containers.
+
+\textbf{Experimental Setup.}
+We obtained a list of all the available (at the time of our study) CVE kernel vulnerabilities for Linux kernel version 4.14.x from the National Vulnerability Database. 
+For each of these 50 vulnerabilities, we looked at the kernel patch that fixed the bug to identify the source line numbers that correspond to it. 
+We then compared the line numbers against the popular paths kernel trace we had for LinuxKit to verify if the bug was present.
+
+\textbf{Results.}
+Out of the 50 CVE kernel security bugs we searched for, we found only three in the LinuxKit popular paths (lines occurred in any of the training runs), 
+as shown in Table \ref{tab:evaluation_cve}. 
+These three bugs were in commonly used kernel code that,   to the best of our knowledge, cannot be avoided by any existing security systems. 
+We describe these three bugs in detail below to explain why they cannot be avoided, 
+and to demonstrate that our popular paths based strategy did its best to reduce the risk of triggering kernel bugs.
+
+\textbf{[CVE-2018-15594]}
+This bug lies in \\
+\verb|arch/x86/kernel/paravirt.c| in the Linux kernel before 4.18.1. 
+The source code mishandles certain indirect calls, which makes it easier for attackers to conduct Spectre-v2 attacks against paravirtual guests. 
+In our tests, this bug was found in the kernel trace data, and was reached frequently by programs running in LinuxKit, 
+because the code inside of the \verb|paravirt_patch_call()| function in \\
+\verb|arch/x86/kernel/paravirt.c| is used to rewrite an indirect call with a direct call, 
+which is an essential function used to support the Linux kernel paravirtualization. 
+
+\textbf{[CVE-2018-15572]}
+The \verb|spectre_v2_select_mitigation| function in \verb|arch/x86/kernel/cpu/bugs.c| in the Linux kernel before 4.18.1 does not always fill RSB upon a context switch. 
+This makes it easier for attackers to conduct userspace-userspace spectreRSB attacks. 
+This piece of code in \\
+\verb|spectre_v2_select_mitigation(void)| function would be used by every program, as the kernel attempts to mitigate potential Spectre attacks. 
+Therefore any program that tries to mitigate the original Spectre attack would use this piece of code that contains this new CVE vulnerability. 
+That's the reason why it appeared in our LinuxKit popular paths. 
+
+\textbf{[CVE-2018-1120]}
+This vulnerability was found affecting the Linux kernel before version 4.17. by \verb|mmap()|ing a FUSE-backed file onto 
+the memory of a process containing command line arguments (or environment strings). 
+This bug appeared in the popular paths because \verb|mmap()| is commonly used by user programs. 
+Furthermore, this vulnerability involves \verb|proc_pid_cmdline_read()| and \verb|environ_read()| functions, that are commonly invoked by virtual machines and user programs.
+
 By limiting the potential risk of exposure to kernel code to just these three bugs, the popular path metric already greatly reduces risks to container security. 
 While a potential user of the popular paths metric must be aware of these bugs, 
 the odds on having to deal with repeated and costly incidents from zero-day vulnerabilities become much more manageable.  
@@ -289,13 +296,6 @@ In each test, the container finished its workload as defined in the official Doc
 
 \textbf{Results.}
 Our results show that, on average, running containers on our popular-paths based kernel incurred about 0.5\% to 1\% of extra performance overhead as compared to the original Linux kernel. Results of the top 10 containers are shown in Figure \ref{fig:performance}.
-
-\begin{figure*}
-\centering
-\includegraphics[width=1.5\columnwidth]{diagram/performance.png}
-\caption{\small Runtime performance comparison for the top popular 10 containers}
-\label{fig:performance}
-\end{figure*}
 
 The original Linux kernel image used for the  LinuxKit test  is sized at 163,012,008 bytes . 
 In comparison, the popular-paths based kernel is sized at 163,622,440 bytes. Therefore, the extra memory space added by our modified kernel was only about 0.37\%. 

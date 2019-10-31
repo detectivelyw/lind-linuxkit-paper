@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1125,74 +1125,87 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (./design.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 17.
+surrounding objects on input line 5.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 17.
+surrounding objects on input line 5.
 
 <diagram/design.png, id=17, 903.375pt x 715.67375pt>
 File: diagram/design.png Graphic file (type png)
 <use diagram/design.png>
-Package pdftex.def Info: diagram/design.png  used on input line 18.
+Package pdftex.def Info: diagram/design.png  used on input line 6.
 (pdftex.def)             Requested size: 361.41748pt x 286.32994pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 19.
+(Font)              scaled to size 9.0pt on input line 7.
 
-Class acmart Warning: A possible image without description on input line 21.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 52.
+Class acmart Warning: A possible image without description on input line 9.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 52.
+surrounding objects on input line 12.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 12.
 
 <diagram/linuxkit-kernel-profiler.png, id=18, 648.4225pt x 534.99875pt>
 File: diagram/linuxkit-kernel-profiler.png Graphic file (type png)
 <use diagram/linuxkit-kernel-profiler.png>
 Package pdftex.def Info: diagram/linuxkit-kernel-profiler.png  used on input li
-ne 53.
+ne 13.
 (pdftex.def)             Requested size: 361.41748pt x 298.20131pt.
 
-Class acmart Warning: A possible image without description on input line 56.
-
-[3.3] [4.4 <./diagram/design.png> <./diagram/linuxkit-kernel-profiler.png>]
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 85.
+Class acmart Warning: A possible image without description on input line 16.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 85.
+surrounding objects on input line 36.
 
-<diagram/linuxkit-kernel-modifier.png, id=25, 1257.69875pt x 1117.17375pt>
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 36.
+
+<diagram/linuxkit-kernel-modifier.png, id=19, 1257.69875pt x 1117.17375pt>
 File: diagram/linuxkit-kernel-modifier.png Graphic file (type png)
 <use diagram/linuxkit-kernel-modifier.png>
 Package pdftex.def Info: diagram/linuxkit-kernel-modifier.png  used on input li
-ne 86.
+ne 37.
 (pdftex.def)             Requested size: 361.41748pt x 321.02301pt.
 
-Class acmart Warning: A possible image without description on input line 89.
+Class acmart Warning: A possible image without description on input line 40.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 92.
+surrounding objects on input line 43.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 92.
+surrounding objects on input line 43.
 
-<diagram/kvm_hypercall.png, id=26, 828.09375pt x 383.4325pt>
+<diagram/kvm_hypercall.png, id=20, 828.09375pt x 383.4325pt>
 File: diagram/kvm_hypercall.png Graphic file (type png)
 <use diagram/kvm_hypercall.png>
-Package pdftex.def Info: diagram/kvm_hypercall.png  used on input line 93.
+Package pdftex.def Info: diagram/kvm_hypercall.png  used on input line 44.
 (pdftex.def)             Requested size: 361.41748pt x 167.34761pt.
 
-Class acmart Warning: A possible image without description on input line 96.
+Class acmart Warning: A possible image without description on input line 47.
 
-) (./evaluation.tex [5.5]
+
+Underfull \vbox (badness 1406) has occurred while \output is active []
+
+ [3.3]
+[4.4 <./diagram/design.png> <./diagram/linuxkit-kernel-profiler.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5.5 <./diagram/linuxkit-kernel-modifier.png> <./diagram/kvm_hypercall.png>])
+(./evaluation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 42.
@@ -1207,64 +1220,62 @@ Overfull \hbox (48.98456pt too wide) in paragraph at lines 46--55
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6.6 <./diagram/linuxkit-kernel-modifier.png> <./diagram/kvm_hypercall.png>]
-
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 75.
+surrounding objects on input line 59.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 75.
+surrounding objects on input line 59.
 
-<diagram/pp-individuals.png, id=33, 1238.6275pt x 759.83875pt>
+<diagram/pp-individuals.png, id=30, 1238.6275pt x 759.83875pt>
 File: diagram/pp-individuals.png Graphic file (type png)
 <use diagram/pp-individuals.png>
-Package pdftex.def Info: diagram/pp-individuals.png  used on input line 76.
+Package pdftex.def Info: diagram/pp-individuals.png  used on input line 60.
 (pdftex.def)             Requested size: 361.41748pt x 221.7157pt.
 
-Class acmart Warning: A possible image without description on input line 79.
+Class acmart Warning: A possible image without description on input line 63.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 82.
+surrounding objects on input line 66.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 82.
+surrounding objects on input line 66.
 
-<diagram/pp-cdf.png, id=35, 1276.77pt x 740.7675pt>
+<diagram/pp-cdf.png, id=32, 1276.77pt x 740.7675pt>
 File: diagram/pp-cdf.png Graphic file (type png)
 <use diagram/pp-cdf.png>
-Package pdftex.def Info: diagram/pp-cdf.png  used on input line 83.
+Package pdftex.def Info: diagram/pp-cdf.png  used on input line 67.
 (pdftex.def)             Requested size: 361.41748pt x 209.68542pt.
 
-Class acmart Warning: A possible image without description on input line 86.
+Class acmart Warning: A possible image without description on input line 70.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 89.
+surrounding objects on input line 73.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 89.
+surrounding objects on input line 73.
 
-<diagram/cdf-marked.png, id=36, 1008.76875pt x 733.74126pt>
+<diagram/cdf-marked.png, id=33, 1008.76875pt x 733.74126pt>
 File: diagram/cdf-marked.png Graphic file (type png)
 <use diagram/cdf-marked.png>
-Package pdftex.def Info: diagram/cdf-marked.png  used on input line 90.
+Package pdftex.def Info: diagram/cdf-marked.png  used on input line 74.
 (pdftex.def)             Requested size: 361.41748pt x 262.8815pt.
 
-Class acmart Warning: A possible image without description on input line 93.
+Class acmart Warning: A possible image without description on input line 77.
 
+[6.6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7.7 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
 LaTeX Font Info:    Try loading font information for T1+zi4 on input line 103.
+
 (/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
@@ -1281,111 +1292,109 @@ Package microtype Info: Character `textemdash ' is missing
 (microtype)             in font `T1/zi4/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 127.
+surrounding objects on input line 124.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 127.
+surrounding objects on input line 124.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 1406) has occurred while \output is active []
+Underfull \vbox (badness 6204) has occurred while \output is active []
 
- [7.7]
-Overfull \hbox (7.70953pt too wide) in paragraph at lines 179--185
+ [8.8 <./diagram/cdf-marked.png>]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 166.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 166.
+
+
+Overfull \hbox (5.79922pt too wide) in paragraph at lines 170--225
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 7.59998pt on input line 226.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 229.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 229.
+
+<diagram/performance.png, id=48, 980.66376pt x 667.49374pt>
+File: diagram/performance.png Graphic file (type png)
+<use diagram/performance.png>
+Package pdftex.def Info: diagram/performance.png  used on input line 230.
+(pdftex.def)             Requested size: 361.41748pt x 246.00124pt.
+
+Class acmart Warning: A possible image without description on input line 233.
+
+
+Overfull \hbox (7.70953pt too wide) in paragraph at lines 248--254
 []\T1/LinuxLibertineT-TLF/b/n/10 Results. \T1/LinuxLibertineT-TLF/m/n/10 (-20) 
 Out of the 50 CVE ker-nel se-cu-rity bugs we searched
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8.8 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
-Overfull \hbox (9.30254pt too wide) in paragraph at lines 195--202
+Overfull \hbox (9.30254pt too wide) in paragraph at lines 264--271
 []\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15572] \T1/LinuxLibertineT-TLF/m/n/1
 0 (-20) The [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation
  []
 
 
-Overfull \hbox (3.14291pt too wide) in paragraph at lines 195--202
+Overfull \hbox (3.14291pt too wide) in paragraph at lines 264--271
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) switch. This makes it eas-ier for at-tack-
 ers to con-duct userspace-
  []
 
 
-Overfull \hbox (2.0487pt too wide) in paragraph at lines 195--202
+Overfull \hbox (2.0487pt too wide) in paragraph at lines 264--271
 [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation(void) []\T1/LinuxLibertineT-TLF
 /m/n/10 (-20) func-tion would be
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (9.90231pt too wide) in paragraph at lines 203--208
+Overfull \hbox (9.90231pt too wide) in paragraph at lines 272--277
 \T1/LinuxLibertineT-TLF/m/n/10 (-20) volves [][]\T1/zi4/m/n/10 proc_pid_cmdline
 _read() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) and [][]\T1/zi4/m/n/10 environ_r
 ead() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) func-
  []
 
 
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 209.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 209.
-
-
-Overfull \hbox (5.79922pt too wide) in paragraph at lines 213--268
- [] 
- []
-
-
-LaTeX Warning: Float too large for page by 7.59998pt on input line 269.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9.9 <./diagram/cdf-marked.png>]
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 294.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 294.
-
-<diagram/performance.png, id=51, 980.66376pt x 667.49374pt>
-File: diagram/performance.png Graphic file (type png)
-<use diagram/performance.png>
-Package pdftex.def Info: diagram/performance.png  used on input line 295.
-(pdftex.def)             Requested size: 361.41748pt x 246.00124pt.
-
-Class acmart Warning: A possible image without description on input line 298.
-
-) (./limitation.tex
+ [9.9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./related_work.tex
+(./limitation.tex) (./related_work.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10.10])
-(./conclusion.tex
+ [10.10 <./diagram/performance.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) [11.11 <./diagram/performance.png>] (./paper.bbl
+)
+(./conclusion.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11.11]
+(./paper.bbl
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 50.
 
@@ -1487,9 +1496,6 @@ root-[]access-[]on-[]docker-[]kubernetes \
  []
 
 LaTeX Info: Redefining \tempurl on input line 368.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Info: Redefining \tempurl on input line 395.
 LaTeX Info: Redefining \tempurl on input line 417.
 LaTeX Info: Redefining \tempurl on input line 429.
@@ -1558,7 +1564,7 @@ ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on paper.pdf (13 pages, 1935422 bytes).
+Output written on paper.pdf (13 pages, 1935321 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream

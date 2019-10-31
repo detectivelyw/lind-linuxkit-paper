@@ -1,6 +1,20 @@
 \section{Design and Implementation}
 \label{sec.design}
 
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/design.png}
+\caption{\small Design overview of our Secure Logging System}
+\label{fig:design}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/linuxkit-kernel-profiler.png}
+\caption{\small Implementation of the Kernel Profiler}
+\label{fig:linuxkit-kernel-profiler}
+\end{figure*}
+
 Designing an implementation of the popular paths metric for use with containers required completion of two separate tasks. 
 First, we had to find the popular paths for the underlying host operating system. 
 And, second, once we knew where these paths were, we needed a way to log / block the unpopular paths to warn and keep containers away from these less-used and potentially buggy code paths. 
@@ -13,17 +27,24 @@ This module identifies the lines of code in the host kernel that are executed wh
 Such a workload is often defined in the configuration files (Dockerfiles) that come with the container images. 
 We collected  ``popular paths kernel traces,'' as we named them, from a set of the containers, as  ranked ``most popular'' by the number of user downloads. 
 
-\begin{figure*}
-\centering
-\includegraphics[width=1.5\columnwidth]{diagram/design.png}
-\caption{\small Design overview of our Secure Logging System}
-\label{fig:design}
-\end{figure*}
-
 In effect, the Profiler sets out a map highlighting places in the kernel that are safe for an application to access. 
 The second module, the Kernel Modifier,  uses this map to instrument the rarely used unpopular paths to either generate security warning messages / logs, or to block code execution on these paths. 
 When both modules are implemented, the result is an instrumented Linux kernel with security monitors and checks inserted at the non-popular paths. 
 This Secure Logging Kernel can then be used to run containers without any required changes to the containers themselves.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/linuxkit-kernel-modifier.png}
+\caption{\small Implementation of the Kernel Modifier}
+\label{fig:linuxkit-kernel-modifier}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/kvm_hypercall.png}
+\caption{\small Our KVM\_HYPERCALL kernel instrumentation}
+\label{fig:kvm_hypercall}
+\end{figure*}
 
 \subsection{Implementation}
 \label{sec.design.implementation}
@@ -47,13 +68,6 @@ Our Kernel Profiler works in the following way:
 	\item Using the lcov \cite{lcov} tool to process the kernel trace data collected from the host system, the profiler generates formatted data about which lines of code were executed in the kernel source files. 
 	These files will be used by the  Kernel Modifier to identify the unpopular paths that must trigger an alert if used. 
 \end{enumerate}
-
-\begin{figure*}
-\centering
-\includegraphics[width=1.5\columnwidth]{diagram/linuxkit-kernel-profiler.png}
-\caption{\small Implementation of the Kernel Profiler}
-\label{fig:linuxkit-kernel-profiler}
-\end{figure*}
 
 \subsubsection{Implementing the Kernel Modifier}
 \label{sec.design.implementation.kernel_modifier}
@@ -80,17 +94,3 @@ It operates in the following way:
 	Our kernel modification works at the source-code level. 
 	The kernel source files are directly modified, and then compiled to produce the Secure Logging Kernel, which can be directly used to run Docker containers in the LinuxKit VM. 
 \end{enumerate}
-
-\begin{figure*}
-\centering
-\includegraphics[width=1.5\columnwidth]{diagram/linuxkit-kernel-modifier.png}
-\caption{\small Implementation of the Kernel Modifier}
-\label{fig:linuxkit-kernel-modifier}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=1.5\columnwidth]{diagram/kvm_hypercall.png}
-\caption{\small Our KVM\_HYPERCALL kernel instrumentation}
-\label{fig:kvm_hypercall}
-\end{figure*}
