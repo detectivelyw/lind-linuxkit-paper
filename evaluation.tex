@@ -27,7 +27,7 @@ The test script we ran consisted of 798 test cases that verified the correctness
 such as memory allocation, network connection, file system access, locking, and more. 
 Using the test suites, we ran our experiments inside of a LinuxKit version 0.2+ virtual machine. 
 The machine was built using Docker version 18.03.0-ce running on a host operating system of Ubuntu 16.04 LTS, with Linux kernel 4.13.0-36-generic. 
-A QEMU emulator version 2.5.0 served as the local hypervisor. 
+A QEMU emulator version 2.5.0 (Debian 1:2.5+dfsg-5ubuntu10.41) served as the local hypervisor, using the KVM Linux kernel modules with KVM acceleration enabled.  
 
 \textbf{Results.}
 The Secure Logging Kernel was able to complete all of the 798 test cases. 
@@ -97,6 +97,8 @@ we also discovered certain lines of kernel code that showed up sporadically.
 For these lines, we looked at what activities they performed, and how common they were across different containers. 
 In our analysis of the kernel trace of 10 popular Docker containers, we identified eight pieces of infrequently executed kernel code common among them. 
 These traces are presented graphically in Figure \ref{fig:cdf-marked}. 
+Each numbered line (from 1 to 8) in the graph represents a piece of infrequently executed code. 
+The kernel function that corresponds with each of the eight pieces is explained below: 
 \begin{enumerate}
 	\item \verb|kernel/cgroup/freezer.c|: a cgroup is freezing if any FREEZING flags are set.
 	\item \verb|kernel/locking/rwsem-xadd.c|: waiting for a write lock to be granted. 
@@ -117,7 +119,7 @@ What this analysis tells us is that this infrequently used code performs essenti
 despite the fact that they are infrequently execute. 
 On closer examination, we learn they are not always executed during each run because they are race-condition related code that depend on locks, and system conditions may vary during different runs. 
 As the Secure Logging System profiles and identifies these infrequently-executed popular paths, as well as the always-executed ones, 
-our tests can guarantee that the Secure Logging Kernel functions in a correct manner.
+our tests show that the Secure Logging Kernel functions in a correct manner.
 
 Based on the comprehensive popular paths data obtained, the Secure Logging System was able to create a customized Secure Logging Kernel for the LinuxKit VM. 
 Table \ref{tab:kernel_instrumentation} presents an overview of the required modifications. 
@@ -157,6 +159,7 @@ Table \ref{tab:kernel_instrumentation} presents an overview of the required modi
 Using  the Secure Logging Kernel, we ran the 100 containers and verified that they were able to finish their normal workloads, 
 as defined in their official Dockerfiles, with, on average, less than 1\% of runtime overhead. 
 In doing so, the containers used less than 0.1\% of the unpopular paths. 
+A total number of 50 lines of unpopular paths were reached and recorded by the Secure Logging Kernel. 
 This data strongly argues the feasibility of creating a popular-paths based host kernel to run Docker containers. 
 In other words, real-world containers can run on only the popular paths in most (>99.9\%) cases. 
 
@@ -174,7 +177,8 @@ For each of these 50 vulnerabilities, we looked at the kernel patch that fixed t
 We then compared the line numbers against the popular paths kernel trace we had for LinuxKit to verify if the bug was present.
 
 \textbf{Results.}
-Out of the 50 CVE kernel security bugs we searched for, we found only three in the LinuxKit popular paths, as shown in Table \ref{tab:evaluation_cve}. 
+Out of the 50 CVE kernel security bugs we searched for, we found only three in the LinuxKit popular paths (lines occurred in any of the training runs), 
+as shown in Table \ref{tab:evaluation_cve}. 
 These three bugs were in commonly used kernel code that,   to the best of our knowledge, cannot be avoided by any existing security systems. 
 We describe these three bugs in detail below to explain why they cannot be avoided, 
 and to demonstrate that our popular paths based strategy did its best to reduce the risk of triggering kernel bugs.
