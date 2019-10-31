@@ -5,7 +5,7 @@ As a follow-up we wanted to test the feasibility of applying this popular paths 
 We came up with a new strategy to enhance container security, leveraging the popular paths metric. 
 First, our Secure Logging System obtains the popular paths of the LinuxKit virtual machine by profiling popular Docker containers, 
 and then creates a Secure Logging Kernel that automatically logs an application’s attempt to access any unpopular path. 
-By using this  reformulated kernel, we found out that less than 1\% of the unpopular paths were accessed by the container applications tested. 
+By using this  reformulated kernel, we found out that less than 0.1\% of the unpopular paths were accessed by the container applications tested. 
 The result verifies that most of the workload can be managed without using the riskier paths. 
 We also demonstrate that, consistent with previous findings, the popular paths in the host kernel do contain fewer security vulnerabilities, and thus are inherently more secure. 
 Given that hundreds of zero-day vulnerabilities are discovered every year, we believe that our popular paths based kernel will provide a practical solution for containers to avoid potential vulnerabilities, 
