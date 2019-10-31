@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1375,7 +1375,7 @@ Package pdftex.def Info: diagram/performance.png  used on input line 295.
 Class acmart Warning: A possible image without description on input line 298.
 
 ) (./limitation.tex
-Underfull \vbox (badness 1558) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
 (./related_work.tex
@@ -1558,7 +1558,7 @@ ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on paper.pdf (13 pages, 1935468 bytes).
+Output written on paper.pdf (13 pages, 1935427 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
