@@ -1,13 +1,19 @@
 \section{Limitations}
 \label{sec.limitation}
-While our results and analysis indicate that our dataset was representative of the workload users perform when using container applications, 
-the sample size was somewhat limited and therefore, so was the data. 
-Additional runs and a larger sample base could potentially capture the race-condition related kernel footprint more comprehensively, thus rendering more accurate popular paths data. 
+While our results and analysis indicate that our dataset was representative of the workload container applications perform, the sample size was somewhat limited and therefore, 
+so was the amount of data gathered. Additional runs and a larger sample base could potentially capture the race-condition related kernel footprint more comprehensively, 
+thus rendering more accurate data. 
 
-Another factor that could have affected our work was the type of images we used. 
-We limited our selection to official container images from Docker Hub, yet there are a number of open source project images we did not access. 
-The methodology used in this work run in these additional containers might have given us a broader spectrum of results.
+Another factor that could have affected our results was the type of images we used. We limited our selection to official container images from Docker Hub, 
+yet there are a number of open source project images we did not access. If we had run these additional images using the same methodology, 
+it might have yielded a broader spectrum of results.
 
-Lastly, in this work, we ran our system and produced results with Linux kernel version 4.14.24. 
-For future work, we plan to extend our system so that it can automatically work with different kernel versions. 
-This will generalize the application of our work, and potentially help a lot more users to secure their containers.
+Our implementation is currently focused only on warning users whenever there is a potentially dangerous attempt to trigger an unpopular line of code. 
+There are certainly more ways we could have explored to deal with risky attempts to reach unpopular lines. 
+For example, we could have instrumented the kernel to try to exit the VM and block the container from executing more code to avoid any further security breach. 
+Another possible strategy is to first monitor any attempt to access the unpopular lines, and then dynamically remove the unpopular code binary from the memory at runtime 
+to prevent potential exploitation of bugs. We leave evaluation of these options as future work.
+
+Lastly, all the research documented in this paper was conducted only with Linux kernel version 4.14.24. 
+For future work, we plan to extend our system so that it can automatically work with other kernel versions. 
+This will generalize the application of our work, and potentially help a lot more users secure their containers. 
