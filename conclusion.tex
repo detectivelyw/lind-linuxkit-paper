@@ -1,12 +1,14 @@
 \section{Conclusion}
 \label{sec.conclusion}
-In earlier work, we found that running applications using only frequently used popular paths could greatly improve the security of virtual machines. 
+In earlier work, we found that running applications using only frequently used popular paths could improve the security of virtual machines. 
 As a follow-up we wanted to test the feasibility of applying this popular paths metric to existing containers. 
-We came up with a new strategy to enhance container security, leveraging the popular paths metric. 
-First, our Secure Logging System obtains the popular paths of the LinuxKit virtual machine by profiling popular Docker containers, 
-and then creates a Secure Logging Kernel that automatically logs an application’s attempt to access any unpopular path. 
-By using this  reformulated kernel, we found out that less than 0.1\% of the unpopular paths were accessed by the container applications tested. 
-The result verifies that most of the workload can be managed without using the riskier paths. 
-We also demonstrate that, consistent with previous findings, the popular paths in the host kernel do contain fewer security vulnerabilities, and thus are inherently more secure. 
-Given that hundreds of zero-day vulnerabilities are discovered every year, we believe that our popular paths based kernel will provide a practical solution for containers to avoid potential vulnerabilities, 
-and thus enhance the security of running containers significantly. 
+To do so, we developed a methodology to systematically profile and obtain the popular paths data of widely-used container applications. 
+Using this data, we were not only able to create UnPAK, a modified Linux kernel that could alert users whenever potentially dangerous unpopular lines are about to be triggered, 
+but  also identify ways to improve security at various levels of granularity. By allowing users to improve container security with steps as simple as eliminating unused files, 
+it means that those who can not do the more labor intensive work of eliminating bugs at the line of code level do not need to remain completely vulnerable. 
+Security thus stops being an ``all or nothing'' proposition, but instead can be tailored to the security sensitivity of the application and the available resources of the user. 
+
+We were also able to verify that, consistent with previous findings, the popular paths in the host kernel for frequently used Docker containers do contain fewer security vulnerabilities, 
+and thus are inherently more secure. Equally important, usingUnPAK, we were able to prove that  these containers were able to run their default workload using the popular paths 
+more than 99.9\% of the time, with only a negligible (less than 1\%) performance overhead based on its current action configuration. 
+Compared with three other current kernel tailoring strategies, we demonstrate that UnPAK was an efficient solution in reducing the kernel attack surface, with relatively fewer limitations. 
