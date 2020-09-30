@@ -63,22 +63,27 @@ The process used to obtain the kernel trace can be broken down into the followin
 The Modifier has three main parts: the Clang compiler, the Clang analyzer, and the kernel instrumenting tool (shown in Figure \ref{fig:linuxkit-kernel-modifier}). 
 Its function is to identify the correct places in the source files to instrument, based on data extracted from the Profiler, and then to modify the code as needed. 
 
-The modifier operates in the following way: 
-\begin{enumerate}
-	\item The Clang C compiler from the Clang / LLVM project \cite{llvm}, along with a BEAR \cite{bear} tool compiles the Linux kernel source. Using BEAR, we can generate a compilation database containing all the compile flags and options needed for the process. In turn, this database will be used by our Clang analyzer to perform source code parsing in the next step.
-	\item The Clang analyzer performs static analysis on the kernel source code to obtain the control flow graph for each function in the files. The analyzer leverages Clang's LibTooling \cite{clang-libtooling} to construct the AST tree from the kernel source code, and then obtain the control flow graph. With this graph, we can identify the corresponding source line number for each basic block. Furthermore, the beginning lines of all the blocks in the source files are candidates for places to add security logging code. Here, a \textbf{\textit{basic block}} refers to a straight-line code sequence with no branches in except to the entry and no branches out except at the exit. Thus, if a basic block is unpopular, it is sufficient to insert only one piece of secure logging code where it begins in order to alert users of any attempt to reach that code. This approach can optimize instrumentation by  avoiding redundancy in code injection. 
-	\item The instrumenting tool executes modifications based on both the basic blocks, and the collected popular paths data. The algorithm for kernel modification directs the user through the basic blocks in the kernel source files. If none of the lines in a block are in the popular paths data, the block is considered unpopular , and the  instrumenting tool will add the security logging code,  a kvm hypercall from the LinuxKit kernel into the host Linux kernel (as shown in Figure \ref{fig:kvm_hypercall}) at the beginning. If we discover that an entire function has no lines in the popular paths data, we consider this an unpopular function, and just add our security logging code once where it starts. This allows us to avoid adding redundant and unnecessary code. These markers can guarantee minimal effect on the LinuxKit kernel functionality, while still being able to generate secure logging whenever unpopular paths are reached.  
-	\item The Modifier automatically inserts secure logging code at the beginning of the unpopular paths in the Linux kernel source files and then recompiles the kernel to produce UnPAK. For non-popular functions that contained zero lines of popular code, we inserted one line of warning using the kvm hypercall at the beginning of each function. For popular functions, which have at least one line of popular code, we took the fine-grained approach to insert one line of warning code before each basic block that was unpopular. This tailored kernel can then be used to run Docker containers in the LinuxKit VM. 
-\end{enumerate}
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/linuxkit-kernel-modifier.png}
+\caption{\small Implementation of the Modifier}
+\label{fig:linuxkit-kernel-modifier}
+\end{figure*}
 
-Table \ref{tab:kernel_instrumentation} presents an overview of the number of lines we inserted as security ``warnings'' in our kernel logging version implementation of UnPAK.  
+\begin{figure*}
+\centering
+\includegraphics[width=1.5\columnwidth]{diagram/kvm_hypercall.png}
+\caption{\small the KVM\_HYPERCALL implementation}
+\label{fig:kvm_hypercall}
+\end{figure*}
 
-\begin{table*}[h!]
-\begin{center}
+\begin{table}
+%\begin{center}
 \caption{Instrumentation code added to UnPAK}
 \label{tab:kernel_instrumentation}
 \begin{tabular}{c|c|c|c}
- kernel dir & unpopular functions & popular functions & total lines inserted \\
+ kernel dir & unpopular & popular & total lines \\
+ & functions & functions & inserted \\
  \hline
  arch & 1502 & 931 & 3325 \\
  \hline
@@ -102,5 +107,15 @@ Table \ref{tab:kernel_instrumentation} presents an overview of the number of lin
  \hline
  \textbf{total} & \textbf{20464} & \textbf{10165} & \textbf{40803} \\
 \end{tabular}
-\end{center}
-\end{table*}
+%\end{center}
+\end{table}
+
+The modifier operates in the following way: 
+\begin{enumerate}
+	\item The Clang C compiler from the Clang / LLVM project \cite{llvm}, along with a BEAR \cite{bear} tool compiles the Linux kernel source. Using BEAR, we can generate a compilation database containing all the compile flags and options needed for the process. In turn, this database will be used by our Clang analyzer to perform source code parsing in the next step.
+	\item The Clang analyzer performs static analysis on the kernel source code to obtain the control flow graph for each function in the files. The analyzer leverages Clang's LibTooling \cite{clang-libtooling} to construct the AST tree from the kernel source code, and then obtain the control flow graph. With this graph, we can identify the corresponding source line number for each basic block. Furthermore, the beginning lines of all the blocks in the source files are candidates for places to add security logging code. Here, a \textbf{\textit{basic block}} refers to a straight-line code sequence with no branches in except to the entry and no branches out except at the exit. Thus, if a basic block is unpopular, it is sufficient to insert only one piece of secure logging code where it begins in order to alert users of any attempt to reach that code. This approach can optimize instrumentation by  avoiding redundancy in code injection. 
+	\item The instrumenting tool executes modifications based on both the basic blocks, and the collected popular paths data. The algorithm for kernel modification directs the user through the basic blocks in the kernel source files. If none of the lines in a block are in the popular paths data, the block is considered unpopular , and the  instrumenting tool will add the security logging code,  a kvm hypercall from the LinuxKit kernel into the host Linux kernel (as shown in Figure \ref{fig:kvm_hypercall}) at the beginning. If we discover that an entire function has no lines in the popular paths data, we consider this an unpopular function, and just add our security logging code once where it starts. This allows us to avoid adding redundant and unnecessary code. These markers can guarantee minimal effect on the LinuxKit kernel functionality, while still being able to generate secure logging whenever unpopular paths are reached.  
+	\item The Modifier automatically inserts secure logging code at the beginning of the unpopular paths in the Linux kernel source files and then recompiles the kernel to produce UnPAK. For non-popular functions that contained zero lines of popular code, we inserted one line of warning using the kvm hypercall at the beginning of each function. For popular functions, which have at least one line of popular code, we took the fine-grained approach to insert one line of warning code before each basic block that was unpopular. This tailored kernel can then be used to run Docker containers in the LinuxKit VM. 
+\end{enumerate}
+
+Table \ref{tab:kernel_instrumentation} presents an overview of the number of lines we inserted as security ``warnings'' in our kernel logging version implementation of UnPAK.  
