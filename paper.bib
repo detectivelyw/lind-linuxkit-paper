@@ -573,3 +573,132 @@
  address = {New York, NY, USA},
  keywords = {functional programming, hypervisor, microkernel},
 } 
+
+@inproceedings{DBLP:conf/ccs/GhaffariniaH19,
+  author    = {Masoud Ghaffarinia and
+               Kevin W. Hamlen},
+  editor    = {Lorenzo Cavallaro and
+               Johannes Kinder and
+               XiaoFeng Wang and
+               Jonathan Katz},
+  title     = {Binary Control-Flow Trimming},
+  booktitle = {Proceedings of the 2019 {ACM} {SIGSAC} Conference on Computer and
+               Communications Security, {CCS} 2019, London, UK, November 11-15, 2019},
+  pages     = {1009--1022},
+  publisher = {{ACM}},
+  year      = {2019},
+  url       = {https://doi.org/10.1145/3319535.3345665},
+  doi       = {10.1145/3319535.3345665},
+  timestamp = {Fri, 06 Mar 2020 13:19:56 +0100},
+  biburl    = {https://dblp.org/rec/conf/ccs/GhaffariniaH19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings {Debloating-Software,
+author = {Anh Quach and Aravind Prakash and Lok Yan},
+title = {Debloating Software through Piece-Wise Compilation and Loading},
+booktitle = {27th {USENIX} Security Symposium ({USENIX} Security 18)},
+year = {2018},
+isbn = {978-1-939133-04-5},
+address = {Baltimore, MD},
+pages = {869--886},
+url = {https://www.usenix.org/conference/usenixsecurity18/presentation/quach},
+publisher = {{USENIX} Association},
+month = aug,
+}
+
+@inproceedings {RAZOR,
+author = {Chenxiong Qian and Hong Hu and Mansour Alharthi and Pak Ho Chung and Taesoo Kim and Wenke Lee},
+title = {{RAZOR}: A Framework for Post-deployment Software Debloating},
+booktitle = {28th {USENIX} Security Symposium ({USENIX} Security 19)},
+year = {2019},
+isbn = {978-1-939133-06-9},
+address = {Santa Clara, CA},
+pages = {1733--1750},
+url = {https://www.usenix.org/conference/usenixsecurity19/presentation/qian},
+publisher = {{USENIX} Association},
+month = aug,
+}
+
+@inproceedings{Kernel-Debloating,
+title = "Set the Configuration for the Heart of the OS: On the Practicality of Operating System Kernel Debloating",
+abstract = "This paper presents a study on the practicality of operating system (OS) kernel debloating-reducing kernel code that is not needed by the target applications-in real-world systems. Despite their significant benefits regarding security (attack surface reduction) and performance (fast boot times and reduced memory footprints), the state-of-the-art OS kernel debloating techniques are seldom adopted in practice, especially in production systems. We identify the limitations of existing kernel debloating techniques that hinder their practical adoption, including both accidental and essential limitations. To understand these limitations, we build an advanced debloating framework named Cozart which enables us to conduct a number of experiments on different types of OS kernels (including Linux and the L4 microkernel) with a wide variety of applications (including HTTPD, Memcached, MySQL, NGINX, PHP and Redis). Our experimental results reveal the challenges and opportunities towards making kernel debloating techniques practical for realworld systems. The main goal of this paper is to share these insights and our experiences to shed light on addressing the limitations of kernel debloating in future research and development efforts. ",
+keywords = "configuration, debloating, kernel, operating system, os, specialization",
+author = "Kuo, {Hsuan Chi} and Jianyan Chen and Sibin Mohan and Tianyin Xu",
+year = "2020",
+month = jun,
+day = "8",
+doi = "10.1145/3393691.3394215",
+language = "English (US)",
+pages = "87--88",
+booktitle = "Abstracts of the 2020 SIGMETRICS/Performance Joint International Conference on Measurement and Modeling of Computer Systems",
+publisher = "Association for Computing Machinery, Inc",
+note = "2020 SIGMETRICS/Performance Joint International Conference on Measurement and Modeling of Computer Systems, SIGMETRICS 2020 ; Conference date: 08-06-2020 Through 12-06-2020",
+}
+
+@inproceedings{SALAD18,
+ author = {Mansour Alharthi and Hong Hu and Hyungon Moon and Taesoo Kim},
+ title = {On the Effectiveness of Kernel Debloating via Compile-time Configuration},
+ booktitle = {Proceedings of the 1st Workshop on SoftwAre debLoating And Delayering},
+ series = {SALAD'18},
+ year = {2018},
+ location = {Amsterdam, Netherlands},
+} 
+
+@inproceedings{NDSS13,
+ author = {Anil Kurmus and Reinhard Tartler and Daniela Dorneanu and Bernhard Heinloth and Valentin Rothberg and Andreas Ruprecht and Daniel Lohmann},
+ title = {Attack Surface Metrics and Automated Compile-Time OS Kernel Tailoring},
+ booktitle = {Proceedings of the 20th Annual Network and Distributed System Security Symposium},
+ series = {NDSS'13},
+ year = {2013},
+ location = {San Diego, California, USA},
+} 
+
+@MISC{Linux-Kernel-Tailoring-Framework,
+   title =             {Linux Kernel Tailoring Framework},
+   year =           {2018},
+   url =              {https://github.com/ultract/linux-kernel-tailoring-framework},
+ }
+ 
+ @ARTICLE{5560680,
+  author={Y. {Shin} and A. {Meneely} and L. {Williams} and J. A. {Osborne}},
+  journal={IEEE Transactions on Software Engineering}, 
+  title={Evaluating Complexity, Code Churn, and Developer Activity Metrics as Indicators of Software Vulnerabilities}, 
+  year={2011},
+  volume={37},
+  number={6},
+  pages={772-787},}
+  
+  @inproceedings{SAC10,
+ author = {Istehad Chowdhury and Mohammad Zulkernine},
+ title = {Can complexity, coupling, and cohesion metrics be used as early indicators of vulnerabilities?},
+ booktitle = {Proceedings of the 2010 ACM Symposium on Applied Computing},
+ series = {SAC'10},
+ year = {2010},
+ location = {Sierre Switzerland},
+}
+ 
+@article{Imtiaz2018TowardsDV,
+  title={Towards data-driven vulnerability prediction for requirements},
+  author={S. Imtiaz and T. Bhowmik},
+  journal={Proceedings of the 2018 26th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+  year={2018}
+}
+
+@INPROCEEDINGS{4459644,
+  author={H. {Zhang} and X. {Zhang} and M. {Gu}},
+  booktitle={13th Pacific Rim International Symposium on Dependable Computing (PRDC 2007)}, 
+  title={Predicting Defective Software Components from Code Complexity Measures}, 
+  year={2007},
+  volume={},
+  number={},
+  pages={93-96},}
+  
+ @article{Alenezi2015EvaluatingSM,
+  title={Evaluating Software Metrics as Predictors of Software Vulnerabilities},
+  author={Mamdouh Alenezi and Ibrahim Abunadi and S. Arabia},
+  journal={International journal of security and its applications},
+  year={2015},
+  volume={9},
+  pages={231-240}
+}

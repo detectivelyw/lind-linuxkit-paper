@@ -1,29 +1,27 @@
 \section{Background and Motivation}
 \label{sec.motivation}
-The concept of full virtualization, where a guest operating system runs programs in isolation, has been around for several decades \cite{OS-Level-Virtualization}. 
-Yet, the emergence of container programs \cite{Containers_and_VirtualMachines}, which directly utilize the host kernel code to perform OS functionality, and therefore have a lower overhead than full virtual machines, 
-has spurred  growth in  container popularity.  Docker \cite{Docker}, LinuxKit \cite{LinuxKit}, and Kubernetes \cite{Kubernetes} have all seen wide adoption over the past few years. 
-For example, Docker Hub \cite{DockerHub} now holds more than two million container images, and the most popular ones have been downloaded by more than ten million users. 
-Many users prefer using containers over traditional full-scale virtual machines, such as VMware workstation \cite{VMWare-Workstation} and VirtualBox \cite{VirtualBox}, 
-because containers allow them to test and develop their software programs with relatively low overhead. 
-In addition, the idea of running their programs in a “contained” environment tends to make developers feel they have sufficiently secured them against potential threats. 
+To understand the central hypothesis of our work, that containers can be designed  to run with only limited access to the OS kernel, 
+it is important to understand the design idea  on which it was built. Various metrics have been proposed over the last few decades as a way to predict where bugs may lie. 
+Chou et al. \cite{Chou} focused on a particular part of the code, the device drivers, and argued that this component was the most likely place to find bugs. 
+Ozment and Schechter \cite{Ozment} examined the age of code to see if that worked as a predictor of vulnerability in the OpenBSD \cite{OpenBSD}. 
+Other researchers have also considered software engineering elements, such as the complexity of the code or how often a developer rewrites the code, 
+as factors tied to bugs \cite{5560680, SAC10, Imtiaz2018TowardsDV, 4459644, Alenezi2015EvaluatingSM}. In terms of our current research, 
+none of the above options have explored the feasibility of reducing the attack surface of the host OS kernel for containers. 
+To enhance container security effectively, we need a security metric that could help identify where zero-day vulnerabilities are located in the kernel. 
 
-This perception has been bolstered over the years by the deployment of a number of security and isolation mechanisms designed to protect the programs running inside of them. 
-Linux introduced Namespaces \cite{namespaces} to the kernel between versions 2.6.15 and 2.6.26, to provide a global system resource abstraction that helps achieve isolation between different containers. 
-Docker and LXC \cite{LXC} containers also use this technique. 
-Another key Linux feature called control groups \cite{cgroups} can be used to limit, account for, and isolate important system resources, such as memory, CPU, and disk I/O, to each container.  
-This feature not only controls resources, but also helps prevent denial-of-service attacks. 
+The Popular Paths metric described in \cite{Lock-in-Pop} serves as a solid basis for us to protect containers from a vulnerable host OS kernel. 
+It takes a quantitative approach, and evaluates security at the fine-grained  line-of-code level. 
+It posits that lines of code in the kernel used to run popular software programs are less  likely  to contain security bugs. 
+The study involved asking subjects to run  daily tasks, such as writing, spell checking, printing in a text editor, sending and receiving emails, and using an image processing program, 
+on applications from the 50 most popular packages in Debian 7.0. Tests were conducted over a period of 5 calendar days for 20 hours of total use. 
+In addition, the authors also had students use the workstation as their desktop machine for a one-week period to do their homework, develop software, communicate with friends 
+and family, and so on. 
+These combined experiments documented that only 2.5\% of zero-day bugs were found in these popular paths, demonstrating that this is indeed the safest part of the kernel.  
 
-When Linux kernel capabilities \cite{linux-kernel-capabilities} were introduced, container systems, such as Docker were also able to restrict permissions on specific resources, such as network and file system. 
-Another option for enhancing kernel security has emerged, with the development of kernel hardening systems, such as AppArmor \cite{AppArmor}, SELinux \cite{SELinux}, GRSEC \cite{GRSEC}, and PAX \cite{PAX}. 
-Acknowledging that buggy code is likely unavoidable,  these systems look to make the kernel code resilient enough to attacks that any resident bugs cannot be exploited. 
-GRSEC and PAX add safety checks at compile-time and run-time of the kernel. Docker ships a template that works with AppArmor, and also has SELinux policies working with Red Hat \cite{red-hat}. 
-These kernel hardening systems are mostly access control mechanisms that provide safety in a way similar to that of capabilities. 
+In addition, the study documented in \cite{Lock-in-Pop} that in practice, it is possible to design and build a virtualization system that can run large and complex legacy programs 
+using only the popular paths. 
+The system instantiated in the study was tested  on Tor and Apache, as well as on widely used tools, such as GNU Grep, GNU Wget, GNU Coreutils, GNU Netcat, and K\&R Cat. 
+Results from the paper \cite{Lock-in-Pop} shows that the incurred performance overhead was around 2.5x to 5x, or about the same magnitude as existing state-of-the-art library OS systems. 
 
-These existing mechanisms do improve security to a certain degree, but do not address the aforementioned access problem. 
-Unlike in a full-scale virtual machine, the host kernel is shared among all the containers and the host operating system. 
-This magnifies the damage a kernel vulnerability could cause, in addition to, breaking the isolation that users expect from using a container. 
-
-The design initiative  described in the next section was launched specifically to enhance container security by preventing zero-day kernel bugs from being triggered inside containers, 
-while still allowing containers to perform their assigned  workload. Having already established in a previous paper that leveraging the popular paths metric could identify and neutralize the threat of these bugs \cite{Lock-in-Pop}, 
-we proposed that container security can be enhanced in the same manner. To prove this point, we designed and implemented the Secure Logging System. 
+Most significantly, the study \cite{Lock-in-Pop} showed that leveraging the popular paths metric to design and build new architecture can lead to a more secure virtualization environment. 
+This newer work explores the feasibility of utilizing this metric on an existing container system to improve security, and provide a solid standard for container security evaluation. 
