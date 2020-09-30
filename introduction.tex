@@ -2,48 +2,67 @@
 \label{sec.introduction}
 Containers continue to grow in popularity, with one industry survey suggesting the technology could become a \$2.7 billion market by 2020 \cite{451-Research}. 
 This widespread adoption of containers, such as Docker \cite{Docker} and LinuxKit \cite{LinuxKit}, can be attributed to several factors, 
-including portability and elimination of the need for a separate operating system \cite{what-containers-do}. 
-In addition, the perceived isolation and security they provide to the user programs running inside of them is reassuring to users looking to protect their data and operation. 
-However, this perception may be false, as several recent incidents have demonstrated it is possible to trigger zero-day kernel bugs from inside of a container \cite{containers-kernel-bug-tcp, containers-runc-vulnerability}. 
-Furthermore, since the kernel is the critical and privileged code shared by containers and the host system, exploitation of such bugs could lead to severe security problems, such as privilege escalation. 
-The famous ``Dirty COW'' vulnerability that emerged in 2016, reported as CVE-2016-5195, allow attackers to escape from a Docker container and access files on the host system \cite{dirty-cow}. 
+including portability and elimination of the need for a separate operating system \cite{what-containers-do}.
+In addition, the perceived isolation and security they provide to the programs running inside of them is reassuring to users looking to protect their data and operations. 
+However, several recent incidents in which zero-day kernel bugs have been triggered from inside of a container \cite{containers-kernel-bug-tcp, containers-runc-vulnerability} 
+suggest this perception may not be completely true. 
+Furthermore, since the kernel is the critical and privileged code shared by containers and the host system, exploitation of such bugs could lead to severe security problems, 
+such as privilege escalation. 
+The famous ``Dirty COW'' vulnerability that emerged in 2016, reported as CVE-2016-5195, allowed attackers to escape from a Docker container and access files 
+on the host system \cite{dirty-cow}. 
 This vulnerability affected all of the Linux-based operating systems that used older versions of the Linux kernel, including Android. 
-One analysis, conducted a year after it was first reported, found the bug in more than 1200 malicious Android apps, affecting users in at least 40 countries \cite{dirty-cow-impact}. 
+One analysis, conducted a year after it was first reported, found the bug was being exploited in more than 1200 malicious Android apps, affecting users in at least 40 countries \cite{dirty-cow-impact}. 
 
 The fundamental reason such exploits can occur is that existing containers are designed to directly access the underlying host operating system kernel on which they are run. 
-This design, which makes containers more efficient and lightweight to use—features that make them so attractive to end-users— 
-unfortunately exposes them to zero-day bugs within the kernel itself \cite{containers-kernel-bug-tcp}. 
-To this point, there has been little or no effort to limit such contact, in part because there was no efficient way to identify where these bugs might be. 
-If one knew which part of the kernel was free of zero-day bugs — or at the very least was less likely to host this threat— then restricting a container to touch only this part of the kernel would greatly improve security. 
+This design makes containers more efficient and lightweight to use—features that make them so attractive to end-users. 
+Unfortunately, this access also exposes containers to zero-day bugs within the kernel itself \cite{containers-kernel-bug-tcp}. And, with one OS kernel servicing a number of containers, 
+it is common for its code to become bloated, a risk to both security and efficiency. 
+While a number of research initiatives have looked at code debloating \cite{DBLP:conf/ccs/GhaffariniaH19, Debloating-Software, RAZOR, Kernel-Debloating}, 
+most of these efforts are not broadly applicable, and perform inconsistently, 
+Furthermore, they do not eliminate bloat at the line of code level, nor can these approaches broadly identify which parts of the kernel are less likely to host zero day bugs. 
+To improve security, the issue is not just reducing the total amount of code, but figuring out which parts of the kernel should be targeted in such a reduction. 
 
-Yet, targeting where the bugs are likely to be has been an elusive goal for many years. 
-A number of researchers have promoted metrics \cite{Chou, Ozment} that claim to be able to predict the presence of bugs, but most have proven only minimally effective. 
-That is, until two years ago when a study \cite{Lock-in-Pop} demonstrated a powerful correlation between the popularity of a kernel code path and its likelihood to contain a security flaw. 
+Over the years, several  researchers \cite{Chou, Ozment} have proposed metrics that point to where buggy code might be within the kernel, 
+and these strategies have provided some useful  design guidance. 
+One such study \cite{Lock-in-Pop}, released three years ago, suggested a powerful correlation between kernel lines accessed by widely-used programs and their likelihood to contain security flaws. 
 Furthermore, the study \cite{Lock-in-Pop} demonstrated that these frequently used kernel paths can be leveraged to design and construct secure virtualization systems. 
 Building on these results, we ask the question, can we apply the popular paths metric to  securing existing containers? 
-And, if such an application is possible, could it provide stronger security and truer isolation than the existing design of container systems permits? 
-To do so, we would first have to answer the question: Can applications in containers run without access to the whole kernel?
 
-In this paper, we document our efforts to answer those questions by studying the feasibility of using the popular paths metric to secure the LinuxKit container toolkit. 
-This entailed first, finding a way to identify the parts of the underlying kernel that are less likely to contain security bugs. We were able to demonstrate a systematic way to gather data on popular paths, 
-and affirmed that this data is representative of hundreds of popular Docker containers from Docker Hub \cite{DockerHub}. 
-Next, we produced a Secure Logging Kernel designed to log any attempt to access the unpopular paths, and to warn users away from code found in the less-used paths. 
-The Secure Logging Kernel contributed to our study in two ways. Firstly, it provided usable data on how often applications used these risky paths, 
-so we could determine whether such paths are essential to their functionality. 
-And, secondly, it built into our instantiation of the modified kernel a way for users to detect potentially dangerous program behaviors and make decisions about whether or not to block executions in unpopular paths. 
+In this paper, we study the feasibility of using the popular paths metric to secure the LinuxKit container toolkit. 
+The study required a number of steps, starting with finding a  systematic way to gather data on popular paths, 
+and affirming that this data is representative of hundreds of widely-used containers from Docker Hub \cite{DockerHub}. 
+By analyzing this data at three different levels of granularity—file, function, and lines of code—we found that 
+each can provide data values that collectively form a hierarchy of security options from which users can choose, 
+based on the security sensitivity of the application. A user can choose to simply analyze the data at the file level to quickly eliminate a significant portion of all security risks, 
+or use data gathered at the lines of code level to obtain a broader picture of where bugs are located, and how to avoid them.
 
-An evaluation of our findings affirmed that popular Docker containers experience no loss of functionality when using just the popular paths. 
-Indeed, for the official Docker containers’ default workload, the Secure Logging Kernel was able to run it smoothly. 
-And our data shows that the popular paths were used more than 99.9\% of the time. In the case of less than 0.1\% of the time, unpopular lines were used, 
-and were captured by the Secure Logging Kernel with security logs generated. 
-Our security evaluation confirmed that using the popular paths to run Docker containers can effectively prevent most kernel bugs from being triggered, 
-as only three of the 50 CVE kernel security vulnerabilities we checked for were found in those LinuxKit paths. 
-And, in our performance evaluation, we found that running our Secure Logging Kernel only incurred about 1\% of runtime overhead, while the memory space overhead was only about 0.37\%. 
-Thus, greater security could be achieved with very little perceived difference in operation efficiency or cost. 
+Using the raw popular paths data, we were also able to design the \textbf{\textit{UnPopular Action Kernel (UnPAK)}}, 
+a modified version of the Linux kernel which is tailored to register any attempt to access infrequently used paths. 
+Developing and testing UnPAK contributed to our study in two ways. 
+Firstly, it provided usable data on how often applications accessed risky paths, so we could determine how essential such access is for their functionality. 
+And, secondly, it offered a chance to program a number of responses into the operations of the kernel, such as a warning system. 
+While initially UnPAK  was instrumented to warn users of potentially dangerous behaviors so they can make informed decisions on whether or not to execute it, 
+it could also be programmed for other actions, such as automatically refusing such an execution.
 
-In summary, we make the following contributions in this paper: 
+When tested at all three of the granularity levels mentioned above, we confirmed that UnPAK can effectively prevent most kernel bugs from being triggered when running Docker containers. 
+Only three of the 50 CVE kernel vulnerabilities checked for were found in those LinuxKit paths. 
+Even at the file level, our tests showed that security can be improved by simply removing unloaded / unused drivers, and unused architectures, 
+as more than half of the kernel bugs reside in these files. 
+Better still, an evaluation of our findings affirmed that frequently used Docker containers experience no loss of functionality when using just the popular paths. 
+Indeed, we found these paths were used more than 99.9\% of the time to run the official Docker containers' default workload. 
+In addition, UnPAK compared favorably as a debloating strategy when run against instantiations of three current kernel tailoring strategies \cite{SALAD18, NDSS13, Linux-Kernel-Tailoring-Framework}. 
+It reduced the largest amount of attack surface while offering similar runtime performance. 
+UnPAK also offers more flexibility, as many of the existing strategies are tied to a specific application, or to addressing a particular subset of bugs.
+
+Lastly, in our performance evaluation, we found that running UnPAK as currently designed only incurred about 1\% of runtime overhead, 
+while the memory space overhead was only about 0.37\%. 
+Thus, reduced exposure to bugs could be achieved with very little perceived difference in operation efficiency or cost.
+
+In summary, we make the following contributions in this paper:
 \begin{itemize}
-	\item We systematically identify and capture the ``popular paths'' data from Docker containers running in the LinuxKit VM. 
-	\item We design and implement a Secure Logging System, that utilizes the popular paths data to create a modified Linux kernel (Secure Logging Kernel). This instrumented kernel outputs security warning messages whenever there is an attempt to reach and trigger unpopular paths. 
-	\item Using the Secure Logging Kernel, we demonstrate that popular Docker containers were able to run their default workload normally all the time with negligible (less than 1\%) performance overhead. Popular paths were used more than 99.9\% of the time. Unpopular paths were reached only less than 0.1\% of the time, and were recorded by the Secure Logging Kernel with security logs to warn the users about potential malicious program behavior. 
+	\item We develop a methodology to systematically identify and capture the ``popular paths'' data for widely-used container applications, and verify that the technique works for the most downloaded Docker containers run inside of the LinuxKit VM.  
+	\item We evaluate popular paths data at different levels of granularity (line, function, and file) and find that, at each level, following the popular paths metric can provide opportunities to identify and eliminate kernel vulnerabilities.
+	\item We use the popular paths data to design and implement UnPAK, a modified version of the Linux kernel. This instrumented kernel logs attempts to trigger unpopular paths and can respond with a number of defensive actions, from sending warning messages to denying execution of the program.
+	\item We demonstrate that frequently-used Docker containers were able to run their default workload using the popular paths more than 99.9\% of the time, with only a negligible (less than 1\%) performance overhead. 
+	\item We compare the UnPAK strategy to three other kernel tailoring approaches and find that, as currently configured, it can reduce the largest amount of attack surface, and is more adaptable to a wider variety of applications.
 \end{itemize}
