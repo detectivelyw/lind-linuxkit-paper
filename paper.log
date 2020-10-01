@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  30 SEP 2020 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,9 +831,9 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
-Package hyperref Info: Option `draft' set `true' on input line 12.
-Package hyperref Info: Option `colorlinks' set `true' on input line 14.
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 14.
+Package hyperref Info: Option `draft' set `true' on input line 11.
+Package hyperref Info: Option `colorlinks' set `true' on input line 13.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 13.
 
 \c@theorem=\count134
 
@@ -845,61 +845,61 @@ Include comment 'screenonly' Excluding comment 'printonly'
 Include comment 'anonsuppress' (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 14.
-LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 14
+LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 13.
+LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 13
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/omlnxlmi.fd
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 14.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 13.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 13.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 14.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 13.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 14
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 13.
+LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 13
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 13.
 LaTeX Font Info:    Try loading font information for LMX+ntxexx on input line 1
-4.
+3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 14.
+(Font)              scaled to size 8.0pt on input line 13.
 LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineT-TLF on
- input line 14.
+ input line 13.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TLF.
 fd
@@ -907,42 +907,42 @@ File: OT1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for OT1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 14.
+(Font)              scaled to size 8.0pt on input line 13.
 <<ot1.cmap>>
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 14.
+(Font)              scaled to size 6.2pt on input line 13.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 14.
+(Font)              scaled to size 5.5pt on input line 13.
 <<oml.cmap>>
-LaTeX Font Info:    Try loading font information for U+msa on input line 14.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 14.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 14.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 13.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2016/01/31 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsym on input line 14.
+LaTeX Font Info:    Try loading font information for U+ntxsym on input line 13.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 14.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 13.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Info: Redefining \microtypecontext on input line 14.
+LaTeX Info: Redefining \microtypecontext on input line 13.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -963,7 +963,7 @@ ABD: EveryShipout initializing macros
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring ON on input line 14.
+Package hyperref Info: Link coloring ON on input line 13.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -972,9 +972,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count135
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1049,56 +1049,29 @@ tim
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Class acmart Info: Suppressing bibformat on input line 16.
+Class acmart Info: Suppressing bibformat on input line 15.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 36.
+(Font)              scaled to size 20.74pt on input line 35.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 20.74pt on input line 36.
+(Font)              scaled to size 20.74pt on input line 35.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 36.
+surrounding objects on input line 35.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 36.
+surrounding objects on input line 35.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 36.
-LaTeX Font Info:    Try loading font information for T1+LinuxBiolinumT-TLF on i
-nput line 36.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/libertine/T1LinuxBiolinumT-TLF.fd
-File: T1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/Lin
-uxBiolinumT-TLF.
-)
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 36.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 36.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 36.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
+(Font)              scaled to size 12.0pt on input line 35.
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 36.
+surrounding objects on input line 35.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 36.
+surrounding objects on input line 35.
 
 (./abstract.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
@@ -1110,19 +1083,33 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
 ) (./introduction.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [1.1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 63.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.3pt on input line 63.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+))
 (./motivation.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 26.
- [2.2])
-(./design.tex
+(Font)              scaled to size 7.0pt on input line 12.
+ [2.2]) (./design.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 5.
@@ -1131,11 +1118,11 @@ surrounding objects on input line 5.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 5.
 
-<diagram/design.png, id=17, 903.375pt x 715.67375pt>
+<diagram/design.png, id=16, 903.375pt x 626.34pt>
 File: diagram/design.png Graphic file (type png)
 <use diagram/design.png>
 Package pdftex.def Info: diagram/design.png  used on input line 6.
-(pdftex.def)             Requested size: 361.41748pt x 286.32994pt.
+(pdftex.def)             Requested size: 481.88998pt x 334.11853pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 7.
 
@@ -1149,138 +1136,46 @@ surrounding objects on input line 12.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 12.
 
-<diagram/linuxkit-kernel-profiler.png, id=18, 648.4225pt x 534.99875pt>
-File: diagram/linuxkit-kernel-profiler.png Graphic file (type png)
-<use diagram/linuxkit-kernel-profiler.png>
-Package pdftex.def Info: diagram/linuxkit-kernel-profiler.png  used on input li
-ne 13.
-(pdftex.def)             Requested size: 361.41748pt x 298.20131pt.
+<diagram/UnPAK-action.png, id=17, 1393.205pt x 224.84pt>
+File: diagram/UnPAK-action.png Graphic file (type png)
+<use diagram/UnPAK-action.png>
+Package pdftex.def Info: diagram/UnPAK-action.png  used on input line 13.
+(pdftex.def)             Requested size: 530.07825pt x 85.54643pt.
+
+Overfull \hbox (24.18825pt too wide) in paragraph at lines 13--14
+ [][] 
+ []
+
 
 Class acmart Warning: A possible image without description on input line 16.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 36.
+surrounding objects on input line 19.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 36.
+surrounding objects on input line 19.
 
-<diagram/linuxkit-kernel-modifier.png, id=19, 1257.69875pt x 1117.17375pt>
-File: diagram/linuxkit-kernel-modifier.png Graphic file (type png)
-<use diagram/linuxkit-kernel-modifier.png>
-Package pdftex.def Info: diagram/linuxkit-kernel-modifier.png  used on input li
-ne 37.
-(pdftex.def)             Requested size: 361.41748pt x 321.02301pt.
+<diagram/linuxkit-kernel-profiler.png, id=18, 648.4225pt x 534.99875pt>
+File: diagram/linuxkit-kernel-profiler.png Graphic file (type png)
+<use diagram/linuxkit-kernel-profiler.png>
+Package pdftex.def Info: diagram/linuxkit-kernel-profiler.png  used on input li
+ne 20.
+(pdftex.def)             Requested size: 361.41748pt x 298.20131pt.
 
-Class acmart Warning: A possible image without description on input line 40.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 43.
+Class acmart Warning: A possible image without description on input line 23.
 
 
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 43.
+Underfull \vbox (badness 4279) has occurred while \output is active []
 
-<diagram/kvm_hypercall.png, id=20, 828.09375pt x 383.4325pt>
-File: diagram/kvm_hypercall.png Graphic file (type png)
-<use diagram/kvm_hypercall.png>
-Package pdftex.def Info: diagram/kvm_hypercall.png  used on input line 44.
-(pdftex.def)             Requested size: 361.41748pt x 167.34761pt.
-
-Class acmart Warning: A possible image without description on input line 47.
-
-
-Underfull \vbox (badness 1406) has occurred while \output is active []
-
- [3.3]
-[4.4 <./diagram/design.png> <./diagram/linuxkit-kernel-profiler.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5.5 <./diagram/linuxkit-kernel-modifier.png> <./diagram/kvm_hypercall.png>])
-(./evaluation.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 42.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 42.
-
-
-Overfull \hbox (48.98456pt too wide) in paragraph at lines 46--55
- [] 
- []
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 59.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 59.
-
-<diagram/pp-individuals.png, id=30, 1238.6275pt x 759.83875pt>
-File: diagram/pp-individuals.png Graphic file (type png)
-<use diagram/pp-individuals.png>
-Package pdftex.def Info: diagram/pp-individuals.png  used on input line 60.
-(pdftex.def)             Requested size: 361.41748pt x 221.7157pt.
-
-Class acmart Warning: A possible image without description on input line 63.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 66.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 66.
-
-<diagram/pp-cdf.png, id=32, 1276.77pt x 740.7675pt>
-File: diagram/pp-cdf.png Graphic file (type png)
-<use diagram/pp-cdf.png>
-Package pdftex.def Info: diagram/pp-cdf.png  used on input line 67.
-(pdftex.def)             Requested size: 361.41748pt x 209.68542pt.
-
-Class acmart Warning: A possible image without description on input line 70.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 73.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 73.
-
-<diagram/cdf-marked.png, id=33, 1008.76875pt x 733.74126pt>
-File: diagram/cdf-marked.png Graphic file (type png)
-<use diagram/cdf-marked.png>
-Package pdftex.def Info: diagram/cdf-marked.png  used on input line 74.
-(pdftex.def)             Requested size: 361.41748pt x 262.8815pt.
-
-Class acmart Warning: A possible image without description on input line 77.
-
-[6.6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7.7 <./diagram/pp-individuals.png> <./diagram/pp-cdf.png>]
-LaTeX Font Info:    Try loading font information for T1+zi4 on input line 103.
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 57.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 103.
+(Font)              scaled to size 10.0pt on input line 57.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1291,241 +1186,491 @@ Package microtype Info: Character `textendash ' is missing
 Package microtype Info: Character `textemdash ' is missing
 (microtype)             in font `T1/zi4/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
+ [3.3]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 67.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 67.
+
+<diagram/linuxkit-kernel-modifier.png, id=23, 1257.69875pt x 1117.17375pt>
+File: diagram/linuxkit-kernel-modifier.png Graphic file (type png)
+<use diagram/linuxkit-kernel-modifier.png>
+Package pdftex.def Info: diagram/linuxkit-kernel-modifier.png  used on input li
+ne 68.
+(pdftex.def)             Requested size: 361.41748pt x 321.02301pt.
+
+Class acmart Warning: A possible image without description on input line 71.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 74.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 74.
+
+<diagram/kvm_hypercall.png, id=24, 828.09375pt x 383.4325pt>
+File: diagram/kvm_hypercall.png Graphic file (type png)
+<use diagram/kvm_hypercall.png>
+Package pdftex.def Info: diagram/kvm_hypercall.png  used on input line 75.
+(pdftex.def)             Requested size: 361.41748pt x 167.34761pt.
+
+Class acmart Warning: A possible image without description on input line 78.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 82.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 82.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 124.
+ [4.4 <./diagram/design.png> <./diagram/UnPAK-action.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 124.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ [5.5 <./diagram/linuxkit-kernel-profiler.png>]) (./evaluation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 6204) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8.8 <./diagram/cdf-marked.png>]
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 166.
+ [6.6 <./diagram/linuxkit-kernel-modifier.png> <./diagram/kvm_hypercall.png>]
+Overfull \hbox (1.81963pt too wide) in paragraph at lines 60--63
+[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) The files des-ig-nated as ``par-tially p
+op-u-lar,'' which ac-counted
+ []
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 166.
+surrounding objects on input line 65.
 
 
-Overfull \hbox (5.79922pt too wide) in paragraph at lines 170--225
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 65.
+
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 96.
+
+Overfull \hbox (9.36475pt too wide) in paragraph at lines 67--96
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7.7]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 116.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 116.
+
+
+Overfull \hbox (26.73474pt too wide) in paragraph at lines 118--147
+ [][] 
+ []
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 150.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 150.
+
+
+Overfull \hbox (5.79922pt too wide) in paragraph at lines 153--208
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 7.59998pt on input line 226.
+LaTeX Warning: Float too large for page by 7.59998pt on input line 209.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (2.0487pt too wide) in paragraph at lines 233--242
+\T1/zi4/m/n/10 spectre_v2_select_mitigation(void) \T1/LinuxLibertineT-TLF/m/n/1
+0 (-20) func-tion would be
+ []
+
+[8.8] [9.9]
+Overfull \hbox (3.98662pt too wide) in paragraph at lines 264--270
+\T1/LinuxLibertineT-TLF/b/n/10 Are there suf-fi-cient com-mon-al-i-ties across 
+dif-fer-ent con-
+ []
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 229.
+surrounding objects on input line 276.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 229.
+surrounding objects on input line 276.
 
-<diagram/performance.png, id=48, 980.66376pt x 667.49374pt>
+<diagram/pp-cdf.png, id=46, 1276.77pt x 740.7675pt>
+File: diagram/pp-cdf.png Graphic file (type png)
+<use diagram/pp-cdf.png>
+Package pdftex.def Info: diagram/pp-cdf.png  used on input line 277.
+(pdftex.def)             Requested size: 361.41748pt x 209.68542pt.
+
+Class acmart Warning: A possible image without description on input line 280.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 304.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 304.
+
+<diagram/cdf-marked.png, id=48, 1008.76875pt x 733.74126pt>
+File: diagram/cdf-marked.png Graphic file (type png)
+<use diagram/cdf-marked.png>
+Package pdftex.def Info: diagram/cdf-marked.png  used on input line 305.
+(pdftex.def)             Requested size: 361.41748pt x 262.8815pt.
+
+Class acmart Warning: A possible image without description on input line 308.
+
+[10.10]
+Underfull \vbox (badness 1590) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11.11 <./diagram/pp-cdf.png> <./diagram/cdf-marked.png>]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 345.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 345.
+
+[12.12]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 424.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 424.
+
+<diagram/performance.png, id=60, 980.66376pt x 667.49374pt>
 File: diagram/performance.png Graphic file (type png)
 <use diagram/performance.png>
-Package pdftex.def Info: diagram/performance.png  used on input line 230.
+Package pdftex.def Info: diagram/performance.png  used on input line 425.
 (pdftex.def)             Requested size: 361.41748pt x 246.00124pt.
 
-Class acmart Warning: A possible image without description on input line 233.
+Class acmart Warning: A possible image without description on input line 428.
 
 
-Overfull \hbox (7.70953pt too wide) in paragraph at lines 248--254
-[]\T1/LinuxLibertineT-TLF/b/n/10 Results. \T1/LinuxLibertineT-TLF/m/n/10 (-20) 
-Out of the 50 CVE ker-nel se-cu-rity bugs we searched
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 445.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 445.
+
+
+Overfull \hbox (53.92459pt too wide) in paragraph at lines 448--470
+ [] 
  []
 
+[13.13]
 
-Overfull \hbox (9.30254pt too wide) in paragraph at lines 264--271
-[]\T1/LinuxLibertineT-TLF/b/n/10 [CVE-2018-15572] \T1/LinuxLibertineT-TLF/m/n/1
-0 (-20) The [][]\T1/zi4/m/n/10 spectre_v2_select_mitigation
- []
-
-
-Overfull \hbox (3.14291pt too wide) in paragraph at lines 264--271
-\T1/LinuxLibertineT-TLF/m/n/10 (-20) switch. This makes it eas-ier for at-tack-
-ers to con-duct userspace-
- []
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 503.
 
 
-Overfull \hbox (2.0487pt too wide) in paragraph at lines 264--271
-[][]\T1/zi4/m/n/10 spectre_v2_select_mitigation(void) []\T1/LinuxLibertineT-TLF
-/m/n/10 (-20) func-tion would be
- []
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 503.
 
 
-Overfull \hbox (9.90231pt too wide) in paragraph at lines 272--277
-\T1/LinuxLibertineT-TLF/m/n/10 (-20) volves [][]\T1/zi4/m/n/10 proc_pid_cmdline
-_read() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) and [][]\T1/zi4/m/n/10 environ_r
-ead() []\T1/LinuxLibertineT-TLF/m/n/10 (-20) func-
+Overfull \hbox (30.33461pt too wide) in paragraph at lines 505--517
+ [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9.9]
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 520.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 520.
+
+
+Overfull \hbox (39.78922pt too wide) in paragraph at lines 522--540
+ [][] 
+ []
+
+
+Overfull \hbox (1.2587pt too wide) in paragraph at lines 548--549
+[]\T1/LinuxLibertineT-TLF/b/n/10 Coarse-grained trac-ing: \T1/LinuxLibertineT-T
+LF/m/n/10 (-20) Some ap-proaches only work
+ []
+
+[14.14 <./diagram/performance.png>]) (./limitation.tex) (./related_work.tex
+Overfull \hbox (4.57648pt too wide) in paragraph at lines 8--15
+[]\T1/LinuxLibertineT-TLF/b/n/10 Estimating and pre-dict-ing vul-ner-a-bil-i-ti
+es. \T1/LinuxLibertineT-TLF/m/n/10 (-20) Met-rics that
+ []
+
+
+Underfull \vbox (badness 6348) has occurred while \output is active []
+
+ [15.15]
+Overfull \hbox (2.01646pt too wide) in paragraph at lines 28--35
+[]\T1/LinuxLibertineT-TLF/b/n/10 Operating Sys-tem ker-nel se-cu-rity en-hance-
+ment. \T1/LinuxLibertineT-TLF/m/n/10 (-20) One
+ []
+
+
+Overfull \hbox (2.85162pt too wide) in paragraph at lines 28--35
+\T1/LinuxLibertineT-TLF/m/n/10 (-20) schemes, such as ad-dress space lay-out ra
+n-dom-iza-tion (KASLR)
+ []
+
+
+Overfull \hbox (17.8789pt too wide) in paragraph at lines 64--71
+[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) Many re-searchers [[], []--[], [], []] h
+ave ex-plored a configuration-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16.16]
+Overfull \hbox (11.87498pt too wide) in paragraph at lines 72--85
+[]\T1/LinuxLibertineT-TLF/b/n/10 Container se-cu-rity en-hance-ment. \T1/LinuxL
+ibertineT-TLF/m/n/10 (-20) Ex-ist-ing se-cu-rity mech-
+ []
+
+) (./conclusion.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./limitation.tex) (./related_work.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10.10 <./diagram/performance.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-(./conclusion.tex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11.11]
 (./paper.bbl
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 50.
+LaTeX Font Info:    Try loading font information for T1+LinuxBiolinumT-TLF on i
+nput line 49.
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--51
+(/usr/local/texlive/2018/texmf-dist/tex/latex/libertine/T1LinuxBiolinumT-TLF.fd
+File: T1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/Lin
+uxBiolinumT-TLF.
+)
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 49.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Info: Redefining \tempurl on input line 59.
+LaTeX Info: Redefining \tempurl on input line 72.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--75
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) 2016.  Dirty COW - (CVE-2016-5195) - Dock
 er Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--51
+Underfull \hbox (badness 10000) in paragraph at lines 66--75
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) tainer Es-cape.    $\T1/LinuxBiolinumT-TLF/
 m/n/8 (+20) h^^]ps : / / blog . paranoidso^^\ware . com /
  []
 
-LaTeX Info: Redefining \tempurl on input line 62.
+LaTeX Info: Redefining \tempurl on input line 84.
+LaTeX Info: Redefining \tempurl on input line 98.
 
-Overfull \hbox (5.99075pt too wide) in paragraph at lines 55--65
+Overfull \hbox (5.99075pt too wide) in paragraph at lines 91--101
 \T1/LinuxBiolinumT-TLF/m/n/8 (-20) dirty-[]cow-[]vulnerability-[]discovered-[]i
 n-[]android-[]malware-[]campaign-[]for \
  []
 
-LaTeX Info: Redefining \tempurl on input line 74.
-LaTeX Info: Redefining \tempurl on input line 86.
-LaTeX Info: Redefining \tempurl on input line 98.
 LaTeX Info: Redefining \tempurl on input line 110.
-LaTeX Info: Redefining \tempurl on input line 122.
-LaTeX Info: Redefining \tempurl on input line 134.
-LaTeX Info: Redefining \tempurl on input line 146.
-LaTeX Info: Redefining \tempurl on input line 158.
-LaTeX Info: Redefining \tempurl on input line 170.
-LaTeX Info: Redefining \tempurl on input line 182.
 
-Underfull \hbox (badness 2529) in paragraph at lines 177--185
+Underfull \hbox (badness 10000) in paragraph at lines 105--113
+[]\T1/LinuxLibertineT-TLF/m/n/8 (+20) 2017.  A Prac-ti-cal Ap-proach of Tai-lor
+-ing Linux Ker-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--113
+\T1/LinuxLibertineT-TLF/m/n/8 (+20) nel.    $\T1/LinuxBiolinumT-TLF/m/n/8 (+20)
+ h^^]ps : / / ossna2017 . sched . com / event / BCsG /
+ []
+
+
+Overfull \hbox (99.80984pt too wide) in paragraph at lines 105--113
+\T1/LinuxBiolinumT-TLF/m/n/8 (-20) a-[]practical-[]approach-[]of-[]tailoring-[]
+linux-[]kernel-[]junghwan-[]kang-[]national-[]security-[]research-[]institute$ 
+
+ []
+
+LaTeX Info: Redefining \tempurl on input line 123.
+
+Underfull \hbox (badness 4366) in paragraph at lines 117--126
+[]\T1/LinuxLibertineT-TLF/m/n/8 (+20) 2018.  An Em-pir-i-cal Study of an Ad-van
+ced Ker-nel Tai-lor-
+ []
+
+
+Underfull \hbox (badness 6876) in paragraph at lines 117--126
+\T1/LinuxLibertineT-TLF/m/n/8 (+20) ing Frame-work.    $\T1/LinuxBiolinumT-TLF/
+m/n/8 (+20) h^^]ps : / / ossna18 . sched . com / event / FAN5 /
+ []
+
+
+Overfull \hbox (209.98302pt too wide) in paragraph at lines 117--126
+\T1/LinuxBiolinumT-TLF/m/n/8 (-20) an-[]empirical-[]study-[]of-[]an-[]advanced-
+[]kernel-[]tailoring-[]framework-[]junghwan-[]kang-[]national-[]security-[]rese
+arch-[]institute-[]of-[]south-[]korea$ 
+ []
+
+LaTeX Info: Redefining \tempurl on input line 135.
+
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+ [17.17]
+LaTeX Info: Redefining \tempurl on input line 147.
+LaTeX Info: Redefining \tempurl on input line 159.
+LaTeX Info: Redefining \tempurl on input line 171.
+LaTeX Info: Redefining \tempurl on input line 183.
+LaTeX Info: Redefining \tempurl on input line 195.
+LaTeX Info: Redefining \tempurl on input line 207.
+LaTeX Info: Redefining \tempurl on input line 219.
+LaTeX Info: Redefining \tempurl on input line 231.
+LaTeX Info: Redefining \tempurl on input line 243.
+LaTeX Info: Redefining \tempurl on input line 255.
+LaTeX Info: Redefining \tempurl on input line 267.
+
+Underfull \hbox (badness 2529) in paragraph at lines 262--270
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) 2019.  Linux Test-ing Project (LTP).    $
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) h^^]ps : / / github . com /
  []
 
-LaTeX Info: Redefining \tempurl on input line 194.
-LaTeX Info: Redefining \tempurl on input line 206.
-LaTeX Info: Redefining \tempurl on input line 218.
-LaTeX Info: Redefining \tempurl on input line 230.
-LaTeX Info: Redefining \tempurl on input line 242.
-LaTeX Info: Redefining \tempurl on input line 254.
-LaTeX Info: Redefining \tempurl on input line 266.
-LaTeX Info: Redefining \tempurl on input line 278.
+LaTeX Info: Redefining \tempurl on input line 279.
+LaTeX Info: Redefining \tempurl on input line 291.
+LaTeX Info: Redefining \tempurl on input line 303.
+LaTeX Info: Redefining \tempurl on input line 315.
+LaTeX Info: Redefining \tempurl on input line 327.
+LaTeX Info: Redefining \tempurl on input line 339.
+LaTeX Info: Redefining \tempurl on input line 351.
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--281
+Underfull \hbox (badness 10000) in paragraph at lines 346--354
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) 451 Re-search 2017.  Cloud-Enabling Tech-
 nolo-gies Mar-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--281
+Underfull \hbox (badness 10000) in paragraph at lines 346--354
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) ket Mon-i-tor Re-port.    Re-trieved April,
  2019 from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--281
+Underfull \hbox (badness 10000) in paragraph at lines 346--354
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) h^^]ps : / / 451research . com / images / Ma
 rketing / press _ releases /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--281
+Underfull \hbox (badness 10000) in paragraph at lines 346--354
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) Application-[]container-[]market-[]will-[]re
 ach-[]2-[]7bn-[]in-[]2020 _ final _
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 291.
-LaTeX Info: Redefining \tempurl on input line 297.
-LaTeX Info: Redefining \tempurl on input line 309.
-LaTeX Info: Redefining \tempurl on input line 321.
-LaTeX Info: Redefining \tempurl on input line 341.
-LaTeX Info: Redefining \tempurl on input line 355.
+(Font)              scaled to size 8.0pt on input line 365.
+LaTeX Info: Redefining \tempurl on input line 400.
+LaTeX Info: Redefining \tempurl on input line 418.
+LaTeX Info: Redefining \tempurl on input line 441.
+LaTeX Info: Redefining \tempurl on input line 454.
+LaTeX Info: Redefining \tempurl on input line 466.
+LaTeX Info: Redefining \tempurl on input line 486.
+LaTeX Info: Redefining \tempurl on input line 500.
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--358
+Underfull \hbox (badness 10000) in paragraph at lines 492--503
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) Sergiu Gat-lan. 2019.  RunC Vul-ner-a-bil
 -ity Gives At-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--358
+Underfull \hbox (badness 10000) in paragraph at lines 492--503
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) tack-ers Root Ac-cess on Docker, Ku-ber-net
 es Hosts.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--358
+Underfull \hbox (badness 10000) in paragraph at lines 492--503
 \T1/LinuxBiolinumT-TLF/m/n/8 (+20) h^^]ps : / / www . bleepingcomputer . com / 
 news / security /
  []
 
 
-Overfull \hbox (2.50955pt too wide) in paragraph at lines 347--358
+Overfull \hbox (2.50955pt too wide) in paragraph at lines 492--503
 \T1/LinuxBiolinumT-TLF/m/n/8 (-20) runc-[]vulnerability-[]gives-[]a^^]ackers-[]
 root-[]access-[]on-[]docker-[]kubernetes \
  []
 
-LaTeX Info: Redefining \tempurl on input line 368.
-LaTeX Info: Redefining \tempurl on input line 395.
-LaTeX Info: Redefining \tempurl on input line 417.
-LaTeX Info: Redefining \tempurl on input line 429.
-LaTeX Info: Redefining \tempurl on input line 447.
-LaTeX Info: Redefining \tempurl on input line 462.
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--465
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \tempurl on input line 519.
+LaTeX Info: Redefining \tempurl on input line 537.
+LaTeX Info: Redefining \tempurl on input line 569.
+LaTeX Info: Redefining \tempurl on input line 593.
+LaTeX Info: Redefining \tempurl on input line 634.
+LaTeX Info: Redefining \tempurl on input line 669.
+LaTeX Info: Redefining \tempurl on input line 689.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18.18]
+LaTeX Info: Redefining \tempurl on input line 713.
+LaTeX Info: Redefining \tempurl on input line 731.
+LaTeX Info: Redefining \tempurl on input line 746.
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--749
 \T1/LinuxBiolinumT-TLF/m/n/8 (-14) linux-[]kernel-[]bug-[]delivers-[]corrupt-[]
 tcp-[]ip-[]data-[]to-[]mesos-[]kubernetes \
  []
 
-LaTeX Info: Redefining \tempurl on input line 482.
-LaTeX Info: Redefining \tempurl on input line 494.
+LaTeX Info: Redefining \tempurl on input line 765.
+LaTeX Info: Redefining \tempurl on input line 784.
+LaTeX Info: Redefining \tempurl on input line 802.
+LaTeX Info: Redefining \tempurl on input line 819.
+LaTeX Info: Redefining \tempurl on input line 832.
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--497
+Underfull \hbox (badness 10000) in paragraph at lines 826--835
 []\T1/LinuxLibertineT-TLF/m/n/8 (+20) P. Rubens. 2017.  What are con-tain-ers a
 nd why do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--497
+Underfull \hbox (badness 10000) in paragraph at lines 826--835
 \T1/LinuxLibertineT-TLF/m/n/8 (+20) you need them?    $\T1/LinuxBiolinumT-TLF/m
 /n/8 (+20) h^^]ps : / / www . cio . com / article / 2924995 /
  []
 
-LaTeX Info: Redefining \tempurl on input line 513.
-LaTeX Info: Redefining \tempurl on input line 535.
-LaTeX Info: Redefining \tempurl on input line 546.
-LaTeX Info: Redefining \tempurl on input line 560.
-LaTeX Info: Redefining \tempurl on input line 573.
+LaTeX Info: Redefining \tempurl on input line 865.
+LaTeX Info: Redefining \tempurl on input line 885.
+LaTeX Info: Redefining \tempurl on input line 908.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 )
 
 Class acmart Warning: Some images may lack descriptions.
@@ -1534,25 +1679,29 @@ Class acmart Warning: Some images may lack descriptions.
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
-[12.12] [13.13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
+[19.19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 51.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 50.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 50.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 18168 strings out of 492649
- 275371 string characters out of 6129622
- 418938 words of memory out of 5000000
- 21281 multiletter control sequences out of 15000+600000
- 118539 words of font info for 249 fonts, out of 8000000 for 9000
+ 18322 strings out of 492649
+ 278744 string characters out of 6129622
+ 423304 words of memory out of 5000000
+ 21357 multiletter control sequences out of 15000+600000
+ 126805 words of font info for 301 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,94p,796b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
-}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/
-usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/u
-sr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/us
+ 60i,11n,94p,1009b,645s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
+}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/u
+sr/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/us
 r/local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr
 /local/texlive/2018/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}</usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.p
@@ -1564,10 +1713,10 @@ ibertineTB.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/libertine
 ertine/LinLibertineTI.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on paper.pdf (13 pages, 1935321 bytes).
+Output written on paper.pdf (19 pages, 1826236 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  34357 words of extra memory for PDF output out of 35830 (max. 10000000)
 

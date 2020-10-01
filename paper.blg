@@ -6,7 +6,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: paper.bib
 Warning--string name "j-ieee-trans-softw-eng" is undefined
---line 524 of file paper.bib
+--line 532 of file paper.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in dirty-cow
 Warning--no author, editor, organization, or key in dirty-cow
@@ -14,33 +14,12 @@ Warning--to sort, need author or key in dirty-cow
 Warning--no key, author in dirty-cow-impact
 Warning--no author, editor, organization, or key in dirty-cow-impact
 Warning--to sort, need author or key in dirty-cow-impact
-Warning--no key, author in namespaces
-Warning--no author, editor, organization, or key in namespaces
-Warning--to sort, need author or key in namespaces
-Warning--no key, author in LXC
-Warning--no author, editor, organization, or key in LXC
-Warning--to sort, need author or key in LXC
-Warning--no key, author in cgroups
-Warning--no author, editor, organization, or key in cgroups
-Warning--to sort, need author or key in cgroups
-Warning--no key, author in linux-kernel-capabilities
-Warning--no author, editor, organization, or key in linux-kernel-capabilities
-Warning--to sort, need author or key in linux-kernel-capabilities
-Warning--no key, author in AppArmor
-Warning--no author, editor, organization, or key in AppArmor
-Warning--to sort, need author or key in AppArmor
-Warning--no key, author in SELinux
-Warning--no author, editor, organization, or key in SELinux
-Warning--to sort, need author or key in SELinux
-Warning--no key, author in GRSEC
-Warning--no author, editor, organization, or key in GRSEC
-Warning--to sort, need author or key in GRSEC
-Warning--no key, author in PAX
-Warning--no author, editor, organization, or key in PAX
-Warning--to sort, need author or key in PAX
-Warning--no key, author in red-hat
-Warning--no author, editor, organization, or key in red-hat
-Warning--to sort, need author or key in red-hat
+Warning--no key, author in Linux-Kernel-Tailoring-Framework
+Warning--no author, editor, organization, or key in Linux-Kernel-Tailoring-Framework
+Warning--to sort, need author or key in Linux-Kernel-Tailoring-Framework
+Warning--no key, author in OpenBSD
+Warning--no author, editor, organization, or key in OpenBSD
+Warning--to sort, need author or key in OpenBSD
 Warning--no key, author in gcov
 Warning--no author, editor, organization, or key in gcov
 Warning--to sort, need author or key in gcov
@@ -59,17 +38,58 @@ Warning--to sort, need author or key in clang-libtooling
 Warning--no key, author in LTP
 Warning--no author, editor, organization, or key in LTP
 Warning--to sort, need author or key in LTP
-Warning--no key, author in OpenBSD
-Warning--no author, editor, organization, or key in OpenBSD
-Warning--to sort, need author or key in OpenBSD
+Warning--no key, author in KASLR
+Warning--no author, editor, organization, or key in KASLR
+Warning--to sort, need author or key in KASLR
+Warning--no key, author in KIBSD
+Warning--no author, editor, organization, or key in KIBSD
+Warning--to sort, need author or key in KIBSD
+Warning--no key, author in ARM-TrustZone
+Warning--no author, editor, organization, or key in ARM-TrustZone
+Warning--to sort, need author or key in ARM-TrustZone
 Warning--no key, author in OCaml
 Warning--no author, editor, organization, or key in OCaml
 Warning--to sort, need author or key in OCaml
+Warning--no key, author in kernel-configuration-17
+Warning--no author, editor, organization, or key in kernel-configuration-17
+Warning--to sort, need author or key in kernel-configuration-17
+Warning--no key, author in kernel-tailor-17
+Warning--no author, editor, organization, or key in kernel-tailor-17
+Warning--to sort, need author or key in kernel-tailor-17
+Warning--no key, author in kernel-tailor-18
+Warning--no author, editor, organization, or key in kernel-tailor-18
+Warning--to sort, need author or key in kernel-tailor-18
+Warning--no key, author in namespaces
+Warning--no author, editor, organization, or key in namespaces
+Warning--to sort, need author or key in namespaces
+Warning--no key, author in linux-kernel-capabilities
+Warning--no author, editor, organization, or key in linux-kernel-capabilities
+Warning--to sort, need author or key in linux-kernel-capabilities
+Warning--no key, author in cgroups
+Warning--no author, editor, organization, or key in cgroups
+Warning--to sort, need author or key in cgroups
+Warning--no key, author in AppArmor
+Warning--no author, editor, organization, or key in AppArmor
+Warning--to sort, need author or key in AppArmor
+Warning--no key, author in SELinux
+Warning--no author, editor, organization, or key in SELinux
+Warning--to sort, need author or key in SELinux
+Warning--no key, author in GRSEC
+Warning--no author, editor, organization, or key in GRSEC
+Warning--to sort, need author or key in GRSEC
+Warning--no key, author in PAX
+Warning--no author, editor, organization, or key in PAX
+Warning--to sort, need author or key in PAX
+Warning--no key, author in red-hat
+Warning--no author, editor, organization, or key in red-hat
+Warning--to sort, need author or key in red-hat
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Warning--no key, author in AppArmor
 Warning--no key, author in AppArmor
+Warning--no key, author in ARM-TrustZone
+Warning--no key, author in ARM-TrustZone
 Warning--no key, author in bear
 Warning--no key, author in bear
 Warning--no key, author in cgroups
@@ -84,16 +104,25 @@ Warning--no key, author in gcov
 Warning--no key, author in gcov
 Warning--no key, author in GRSEC
 Warning--no key, author in GRSEC
+Warning--no key, author in KASLR
+Warning--no key, author in KASLR
+Warning--no key, author in kernel-configuration-17
+Warning--no key, author in kernel-configuration-17
+Warning--no key, author in kernel-tailor-17
+Warning--no key, author in kernel-tailor-18
+Warning--no key, author in kernel-tailor-18
+Warning--no key, author in KIBSD
+Warning--no key, author in KIBSD
 Warning--no key, author in lcov
 Warning--no key, author in lcov
+Warning--no key, author in Linux-Kernel-Tailoring-Framework
+Warning--no key, author in Linux-Kernel-Tailoring-Framework
 Warning--no key, author in linux-kernel-capabilities
 Warning--no key, author in linux-kernel-capabilities
 Warning--no key, author in llvm
 Warning--no key, author in llvm
 Warning--no key, author in LTP
 Warning--no key, author in LTP
-Warning--no key, author in LXC
-Warning--no key, author in LXC
 Warning--no key, author in namespaces
 Warning--no key, author in namespaces
 Warning--no key, author in OCaml
@@ -107,15 +136,36 @@ Warning--no key, author in red-hat
 Warning--no key, author in SELinux
 Warning--no key, author in SELinux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in KASLR
+Warning--no author, editor, organization, or key in KASLR
+Warning--empty author in KASLR
+Warning--no key, author in KIBSD
+Warning--no author, editor, organization, or key in KIBSD
+Warning--empty author in KIBSD
 Warning--no key, author in dirty-cow
 Warning--no author, editor, organization, or key in dirty-cow
 Warning--empty author in dirty-cow
+Warning--no key, author in kernel-configuration-17
+Warning--no author, editor, organization, or key in kernel-configuration-17
+Warning--empty author in kernel-configuration-17
 Warning--no key, author in dirty-cow-impact
 Warning--no author, editor, organization, or key in dirty-cow-impact
 Warning--empty author in dirty-cow-impact
+Warning--no key, author in kernel-tailor-17
+Warning--no author, editor, organization, or key in kernel-tailor-17
+Warning--empty author in kernel-tailor-17
+Warning--no key, author in kernel-tailor-18
+Warning--no author, editor, organization, or key in kernel-tailor-18
+Warning--empty author in kernel-tailor-18
+Warning--no key, author in Linux-Kernel-Tailoring-Framework
+Warning--no author, editor, organization, or key in Linux-Kernel-Tailoring-Framework
+Warning--empty author in Linux-Kernel-Tailoring-Framework
 Warning--no key, author in AppArmor
 Warning--no author, editor, organization, or key in AppArmor
 Warning--empty author in AppArmor
+Warning--no key, author in ARM-TrustZone
+Warning--no author, editor, organization, or key in ARM-TrustZone
+Warning--empty author in ARM-TrustZone
 Warning--no key, author in bear
 Warning--no author, editor, organization, or key in bear
 Warning--empty author in bear
@@ -146,9 +196,6 @@ Warning--empty author in LTP
 Warning--no key, author in llvm
 Warning--no author, editor, organization, or key in llvm
 Warning--empty author in llvm
-Warning--no key, author in LXC
-Warning--no author, editor, organization, or key in LXC
-Warning--empty author in LXC
 Warning--no key, author in OCaml
 Warning--no author, editor, organization, or key in OCaml
 Warning--empty author in OCaml
@@ -165,61 +212,80 @@ Warning--no key, author in SELinux
 Warning--no author, editor, organization, or key in SELinux
 Warning--empty author in SELinux
 Warning--empty author in 451-Research
+Warning--empty publisher in SALAD18
+Warning--empty address in SALAD18
+Warning--page numbers missing in both pages and numpages fields in SALAD18
+Warning--numpages field, but no articleno or eid field, in 10.1145/2660267.2660350
 Warning--numpages field, but no articleno or eid field, in Chou
+Warning--empty publisher in SAC10
+Warning--empty address in SAC10
+Warning--page numbers missing in both pages and numpages fields in SAC10
+Warning--empty author in CVSS
 Warning--empty author in Docker
 Warning--empty author in DockerHub
 Warning--numpages field, but no articleno or eid field, in Engler:1995:EOS:224056.224076
-Warning--empty author in Kubernetes
+Warning--empty address in DBLP:conf/ccs/GhaffariniaH19
+Warning--no number and no volume in Imtiaz2018TowardsDV
+Warning--page numbers missing in both pages and numpages fields in Imtiaz2018TowardsDV
+Warning--empty address in Kernel-Debloating
+Warning--empty publisher in NDSS13
+Warning--empty address in NDSS13
+Warning--page numbers missing in both pages and numpages fields in NDSS13
 Warning--empty author in LinuxKit
+Warning--empty publisher in 8416432
+Warning--empty address in 8416432
 Warning--numpages field, but no articleno or eid field, in Madhavapeddy:2013:ULO:2451116.2451167
-Warning--empty author in OS-Level-Virtualization
+Warning--numpages field, but no articleno or eid field, in 10.1145/3132747.3132763
+Warning--empty publisher in 7346869
+Warning--empty address in 7346869
+Warning--empty author in NVD
 Warning--articleno or eid field, but no numpages field, in Ozment
 Warning--page numbers missing in both pages and numpages fields in Ozment
 Warning--articleno or eid, but no pages or numpages field in Ozment
 Warning--numpages field, but no articleno or eid field, in Porter:2011:RLO:1950365.1950399
 Warning--no journal in Shin:2011:ECC
-Warning--empty author in VirtualBox
-Warning--empty author in VMWare-Workstation
-Warning--empty author in Containers_and_VirtualMachines
-You've used 39 entries,
+Warning--page numbers missing in both pages and numpages fields in 179459
+Warning--empty publisher in 4459644
+Warning--empty address in 4459644
+You've used 61 entries,
             5732 wiz_defined-function locations,
-            1652 strings with 22863 characters,
-and the built_in function-call counts, 32969 in all, are:
-= -- 3368
-> -- 594
+            1801 strings with 29065 characters,
+and the built_in function-call counts, 60169 in all, are:
+= -- 6295
+> -- 1741
 < -- 0
-+ -- 235
-- -- 210
-* -- 2282
-:= -- 2606
-add.period$ -- 167
-call.type$ -- 39
-change.case$ -- 210
-chr.to.int$ -- 39
-cite$ -- 284
-duplicate$ -- 3511
-empty$ -- 2575
-format.name$ -- 232
-if$ -- 7751
-int.to.chr$ -- 2
++ -- 624
+- -- 586
+* -- 4431
+:= -- 5336
+add.period$ -- 272
+call.type$ -- 61
+change.case$ -- 382
+chr.to.int$ -- 60
+cite$ -- 395
+duplicate$ -- 5974
+empty$ -- 4290
+format.name$ -- 684
+if$ -- 14142
+int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 37
-newline$ -- 498
-num.names$ -- 88
-pop$ -- 1566
+missing$ -- 126
+newline$ -- 714
+num.names$ -- 242
+pop$ -- 2628
 preamble$ -- 1
-purify$ -- 561
+purify$ -- 929
 quote$ -- 0
-skip$ -- 1214
+skip$ -- 2089
 stack$ -- 0
-substring$ -- 2399
-swap$ -- 257
+substring$ -- 4203
+swap$ -- 514
 text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1156
-warning$ -- 169
-while$ -- 79
+type$ -- 1754
+warning$ -- 235
+while$ -- 195
 width$ -- 0
-write$ -- 819
-(There were 170 warnings)
+write$ -- 1243
+(There were 236 warnings)

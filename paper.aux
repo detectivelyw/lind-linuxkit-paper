@@ -24,96 +24,151 @@
 \citation{dirty-cow}
 \citation{dirty-cow-impact}
 \citation{containers-kernel-bug-tcp}
+\citation{DBLP:conf/ccs/GhaffariniaH19,Debloating-Software,RAZOR,Kernel-Debloating}
 \citation{Chou,Ozment}
 \citation{Lock-in-Pop}
 \citation{Lock-in-Pop}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{sec.introduction}{{1}{1}{Introduction}{section.1}{}}
 \citation{DockerHub}
-\citation{OS-Level-Virtualization}
-\citation{Containers_and_VirtualMachines}
-\citation{Docker}
-\citation{LinuxKit}
-\citation{Kubernetes}
-\citation{DockerHub}
-\citation{VMWare-Workstation}
-\citation{VirtualBox}
-\citation{namespaces}
-\citation{LXC}
-\citation{cgroups}
-\citation{linux-kernel-capabilities}
-\citation{AppArmor}
-\citation{SELinux}
-\citation{GRSEC}
-\citation{PAX}
-\citation{red-hat}
+\citation{SALAD18,NDSS13,Linux-Kernel-Tailoring-Framework}
+\citation{Chou}
+\citation{Ozment}
+\citation{OpenBSD}
+\citation{5560680,SAC10,Imtiaz2018TowardsDV,4459644,Alenezi2015EvaluatingSM}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background and Motivation}{2}{section.2}}
 \newlabel{sec.motivation}{{2}{2}{Background and Motivation}{section.2}{}}
 \citation{Lock-in-Pop}
+\citation{Lock-in-Pop}
+\citation{Lock-in-Pop}
+\citation{Lock-in-Pop}
 \citation{gcov}
 \citation{lcov}
-\citation{llvm}
-\citation{bear}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Design and Implementation}{3}{section.3}}
 \newlabel{sec.design}{{3}{3}{Design and Implementation}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Design of Our ``Secure Logging System''}{3}{subsection.3.1}}
-\newlabel{sec.design.secure_logging_system}{{3.1}{3}{Design of Our ``Secure Logging System''}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Design}{3}{subsection.3.1}}
+\newlabel{sec.design.design}{{3.1}{3}{Design}{subsection.3.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Implementation}{3}{subsection.3.2}}
 \newlabel{sec.design.implementation}{{3.2}{3}{Implementation}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Implementing the Kernel Profiler}{3}{subsubsection.3.2.1}}
-\newlabel{sec.design.implementation.kernel_profiler}{{3.2.1}{3}{Implementing the Kernel Profiler}{subsubsection.3.2.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Implementing the Kernel Modifier}{3}{subsubsection.3.2.2}}
-\newlabel{sec.design.implementation.kernel_modifier}{{3.2.2}{3}{Implementing the Kernel Modifier}{subsubsection.3.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \small  Design overview of our Secure Logging System\relax }}{4}{figure.caption.2}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:design}{{1}{4}{\small Design overview of our Secure Logging System\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \small  Implementation of the Kernel Profiler\relax }}{4}{figure.caption.3}}
-\newlabel{fig:linuxkit-kernel-profiler}{{2}{4}{\small Implementation of the Kernel Profiler\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Implementing the Profiler}{3}{subsubsection.3.2.1}}
+\newlabel{sec.implementation.profiler}{{3.2.1}{3}{Implementing the Profiler}{subsubsection.3.2.1}{}}
+\citation{llvm}
+\citation{bear}
 \citation{clang-libtooling}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \small  Implementation of the Kernel Modifier\relax }}{5}{figure.caption.4}}
-\newlabel{fig:linuxkit-kernel-modifier}{{3}{5}{\small Implementation of the Kernel Modifier\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \small  Our KVM\_HYPERCALL kernel instrumentation\relax }}{5}{figure.caption.5}}
-\newlabel{fig:kvm_hypercall}{{4}{5}{\small Our KVM\_HYPERCALL kernel instrumentation\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \small  Design overview of the UnPAK system\relax }}{4}{figure.caption.2}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:design}{{1}{4}{\small Design overview of the UnPAK system\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \small  Example of UnPAK actions\relax }}{4}{figure.caption.3}}
+\newlabel{fig:UnPAKaction}{{2}{4}{\small Example of UnPAK actions\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Implementing the Modifier}{4}{subsubsection.3.2.2}}
+\newlabel{sec.implementation.modifier}{{3.2.2}{4}{Implementing the Modifier}{subsubsection.3.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \small  Setting up Gcov profiler in LinuxKit\relax }}{5}{figure.caption.4}}
+\newlabel{fig:linuxkit-kernel-profiler}{{3}{5}{\small Setting up Gcov profiler in LinuxKit\relax }{figure.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Instrumentation code added to UnPAK\relax }}{5}{table.caption.7}}
+\newlabel{tab:kernel_instrumentation}{{1}{5}{Instrumentation code added to UnPAK\relax }{table.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \small  Implementation of the Modifier\relax }}{6}{figure.caption.5}}
+\newlabel{fig:linuxkit-kernel-modifier}{{4}{6}{\small Implementation of the Modifier\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \small  the KVM\_HYPERCALL implementation\relax }}{6}{figure.caption.6}}
+\newlabel{fig:kvm_hypercall}{{5}{6}{\small the KVM\_HYPERCALL implementation\relax }{figure.caption.6}{}}
+\citation{DockerHub}
+\citation{NVD}
+\citation{Lock-in-Pop}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation}{7}{section.4}}
+\newlabel{sec.evaluation}{{4}{7}{Evaluation}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Can popular paths data for containers be collected in a systematic way?}{7}{subsection.4.1}}
+\newlabel{sec.evaluation.1}{{4.1}{7}{Can popular paths data for containers be collected in a systematic way?}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}What security benefits can be obtained from using the popular paths data?}{7}{subsection.4.2}}
+\newlabel{sec.evaluation.2}{{4.2}{7}{What security benefits can be obtained from using the popular paths data?}{subsection.4.2}{}}
+\citation{CVSS}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces CVE bugs located in Unpopular and Popular kernel files\relax }}{8}{table.caption.8}}
+\newlabel{tab:cve_files}{{2}{8}{CVE bugs located in Unpopular and Popular kernel files\relax }{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces CVE bugs located in Unpopular and Popular kernel functions\relax }}{8}{table.caption.9}}
+\newlabel{tab:cve_functions}{{3}{8}{CVE bugs located in Unpopular and Popular kernel functions\relax }{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Evaluation of the CVE vulnerabilities at the line level\relax }}{9}{table.caption.10}}
+\newlabel{tab:evaluation_cve}{{4}{9}{Evaluation of the CVE vulnerabilities at the line level\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Can real-world containers run only on the popular paths with no loss of functionality?}{10}{subsection.4.3}}
+\newlabel{sec.evaluation.3}{{4.3}{10}{Can real-world containers run only on the popular paths with no loss of functionality?}{subsection.4.3}{}}
 \citation{LTP}
 \citation{LinuxKit}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation}{6}{section.4}}
-\newlabel{sec.evaluation}{{4}{6}{Evaluation}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Functionality Evaluation}{6}{subsection.4.1}}
-\newlabel{sec.evaluation.functionality}{{4.1}{6}{Functionality Evaluation}{subsection.4.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Testing functionality with the LTP test suites}{6}{subsubsection.4.1.1}}
-\newlabel{sec.evaluation.functionality.ltp}{{4.1.1}{6}{Testing functionality with the LTP test suites}{subsubsection.4.1.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces LTP tests\relax }}{6}{table.caption.6}}
-\newlabel{tab:evaluation_ltp_results}{{1}{6}{LTP tests\relax }{table.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \small  Popular paths for individual Docker containers\relax }}{7}{figure.caption.7}}
-\newlabel{fig:pp-individuals}{{5}{7}{\small Popular paths for individual Docker containers\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \small  CDF of the popular paths of Docker containers showing most share the same kernel footprint\relax }}{7}{figure.caption.8}}
-\newlabel{fig:pp-cdf}{{6}{7}{\small CDF of the popular paths of Docker containers showing most share the same kernel footprint\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Testing functionality on real-world container applications}{7}{subsubsection.4.1.2}}
-\newlabel{sec.evaluation.functionality.containers}{{4.1.2}{7}{Testing functionality on real-world container applications}{subsubsection.4.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \small  Common kernel code identified across different containers\relax }}{8}{figure.caption.9}}
-\newlabel{fig:cdf-marked}{{7}{8}{\small Common kernel code identified across different containers\relax }{figure.caption.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Instrumentation code added in our Secure Logging Kernel\relax }}{9}{table.caption.10}}
-\newlabel{tab:kernel_instrumentation}{{2}{9}{Instrumentation code added in our Secure Logging Kernel\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Security Evaluation}{9}{subsection.4.2}}
-\newlabel{sec.evaluation.security}{{4.2}{9}{Security Evaluation}{subsection.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \small  CDF of the popular paths of Docker containers showing most share the same kernel footprint\relax }}{11}{figure.caption.11}}
+\newlabel{fig:pp-cdf}{{6}{11}{\small CDF of the popular paths of Docker containers showing most share the same kernel footprint\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \small  Common kernel code identified across different containers\relax }}{11}{figure.caption.12}}
+\newlabel{fig:cdf-marked}{{7}{11}{\small Common kernel code identified across different containers\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Functionality evaluation of UnPAK with logging and warning actions}{11}{subsubsection.4.3.1}}
+\newlabel{sec.evaluation.3.1}{{4.3.1}{11}{Functionality evaluation of UnPAK with logging and warning actions}{subsubsection.4.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces LTP test results\relax }}{12}{table.caption.13}}
+\newlabel{tab:evaluation_ltp_results}{{5}{12}{LTP test results\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Discussion on alternative actions}{12}{subsubsection.4.3.2}}
+\newlabel{sec.evaluation.3.2}{{4.3.2}{12}{Discussion on alternative actions}{subsubsection.4.3.2}{}}
+\citation{SALAD18}
+\citation{NDSS13}
+\citation{Linux-Kernel-Tailoring-Framework}
+\citation{SALAD18}
 \citation{Lock-in-Pop}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \small  Runtime performance comparison for the top popular 10 containers\relax }}{10}{figure.caption.12}}
-\newlabel{fig:performance}{{8}{10}{\small Runtime performance comparison for the top popular 10 containers\relax }{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Performance Evaluation}{10}{subsection.4.3}}
-\newlabel{sec.evaluation.performance}{{4.3}{10}{Performance Evaluation}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Limitations}{10}{section.5}}
-\newlabel{sec.limitation}{{5}{10}{Limitations}{section.5}{}}
+\citation{NDSS13}
+\citation{Linux-Kernel-Tailoring-Framework}
+\citation{Linux-Kernel-Tailoring-Framework}
+\citation{NDSS13}
+\citation{Linux-Kernel-Tailoring-Framework}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Performance Evaluation}{13}{subsection.4.4}}
+\newlabel{sec.evaluation.4}{{4.4}{13}{Performance Evaluation}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Comparison with existing kernel tailoring approaches}{13}{subsection.4.5}}
+\newlabel{sec.evaluation.5}{{4.5}{13}{Comparison with existing kernel tailoring approaches}{subsection.4.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Existing Kernel Tailoring Approaches\relax }}{13}{table.caption.15}}
+\newlabel{tab:existing-approaches}{{6}{13}{Existing Kernel Tailoring Approaches\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Goals and approaches of current strategies}{13}{subsubsection.4.5.1}}
+\newlabel{sec.evaluation.5.1}{{4.5.1}{13}{Goals and approaches of current strategies}{subsubsection.4.5.1}{}}
+\citation{Linux-Kernel-Tailoring-Framework}
+\citation{Linux-Kernel-Tailoring-Framework}
+\citation{NDSS13}
+\citation{SALAD18}
+\citation{SALAD18}
+\citation{NDSS13}
+\citation{Linux-Kernel-Tailoring-Framework}
+\citation{SALAD18}
+\citation{NDSS13}
+\citation{Linux-Kernel-Tailoring-Framework}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \small  Runtime performance comparison for the top 10 containers\relax }}{14}{figure.caption.14}}
+\newlabel{fig:performance}{{8}{14}{\small Runtime performance comparison for the top 10 containers\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}How do the tailored kernels compare by percent of tailoring and reduction of attack surface?}{14}{subsubsection.4.5.2}}
+\newlabel{sec.evaluation.5.2}{{4.5.2}{14}{How do the tailored kernels compare by percent of tailoring and reduction of attack surface?}{subsubsection.4.5.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Comparison of the Tailored Kernels\relax }}{14}{table.caption.16}}
+\newlabel{tab:tailored-kernels}{{7}{14}{Comparison of the Tailored Kernels\relax }{table.caption.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Are there differences in limitations?}{14}{subsubsection.4.5.3}}
+\newlabel{sec.evaluation.5.3}{{4.5.3}{14}{Are there differences in limitations?}{subsubsection.4.5.3}{}}
 \citation{Chou}
 \citation{Ozment}
 \citation{OpenBSD}
 \citation{Lock-in-Pop}
+\citation{Chou,Ozment}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Limitations Comparison\relax }}{15}{table.caption.17}}
+\newlabel{tab:limitations}{{8}{15}{Limitations Comparison\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Limitations}{15}{section.5}}
+\newlabel{sec.limitation}{{5}{15}{Limitations}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{15}{section.6}}
+\newlabel{sec.related_work}{{6}{15}{Related Work}{section.6}{}}
 \citation{Shin:2011:ECC}
-\citation{Lock-in-Pop}
+\citation{SAC10}
+\citation{Imtiaz2018TowardsDV}
+\citation{4459644}
+\citation{Alenezi2015EvaluatingSM}
+\citation{180231,KASLR,KIBSD,10.1145/3277592}
+\citation{KASLR}
+\citation{KIBSD}
+\citation{180231}
+\citation{10.1145/3277592}
+\citation{10.1145/2660267.2660350}
+\citation{ARM-TrustZone}
 \citation{Engler:1995:EOS:224056.224076}
 \citation{Madhavapeddy:2013:ULO:2451116.2451167}
 \citation{OCaml}
 \citation{Porter:2011:RLO:1950365.1950399}
 \citation{Tsai:2014:CSI:2592798.2592812}
+\citation{10.1145/1972551.1972557}
+\citation{Debloating-Software}
+\citation{NDSS13}
+\citation{SALAD18}
+\citation{kernel-configuration-17,kernel-tailor-17,kernel-tailor-18,10.1145/3132747.3132763,179459,Linux-Kernel-Tailoring-Framework}
 \citation{namespaces}
 \citation{linux-kernel-capabilities}
 \citation{cgroups}
@@ -122,57 +177,77 @@
 \citation{GRSEC}
 \citation{PAX}
 \citation{red-hat}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{11}{section.6}}
-\newlabel{sec.related_work}{{6}{11}{Related Work}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}}
-\newlabel{sec.conclusion}{{7}{11}{Conclusion}{section.7}{}}
+\citation{8416432}
+\citation{7346869}
 \bibstyle{ACM-Reference-Format}
 \bibdata{paper}
-\bibcite{dirty-cow}{{1}{2016}{{dir}}{{??}}}
-\bibcite{dirty-cow-impact}{{2}{2017}{{dir}}{{??}}}
-\bibcite{AppArmor}{{3}{2019}{{App}}{{??}}}
-\bibcite{bear}{{4}{2019}{{bea}}{{??}}}
-\bibcite{clang-libtooling}{{5}{2019}{{cla}}{{??}}}
-\bibcite{gcov}{{6}{2019}{{gco}}{{??}}}
-\bibcite{GRSEC}{{7}{2019}{{GRS}}{{??}}}
-\bibcite{lcov}{{8}{2019}{{lco}}{{??}}}
-\bibcite{cgroups}{{9}{2019}{{cgr}}{{??}}}
-\bibcite{linux-kernel-capabilities}{{10}{2019}{{lin}}{{??}}}
-\bibcite{namespaces}{{11}{2019}{{nam}}{{??}}}
-\bibcite{LTP}{{12}{2019}{{LTP}}{{??}}}
-\bibcite{llvm}{{13}{2019}{{llv}}{{??}}}
-\bibcite{LXC}{{14}{2019}{{LXC}}{{??}}}
-\bibcite{OCaml}{{15}{2019}{{OCa}}{{??}}}
-\bibcite{OpenBSD}{{16}{2019}{{Ope}}{{??}}}
-\bibcite{PAX}{{17}{2019}{{PAX}}{{??}}}
-\bibcite{red-hat}{{18}{2019}{{red}}{{??}}}
-\bibcite{SELinux}{{19}{2019}{{SEL}}{{??}}}
-\bibcite{451-Research}{{20}{2017}{{451 Research}}{{451 Research}}}
-\bibcite{Chou}{{21}{2001}{{Chou et~al\unhbox \voidb@x \hbox {.}}}{{Chou, Yang, Chelf, Hallem, and Engler}}}
-\bibcite{Docker}{{22}{2019}{{Docker}}{{Docker}}}
-\bibcite{DockerHub}{{23}{2019}{{Docker Hub}}{{Docker Hub}}}
-\bibcite{Engler:1995:EOS:224056.224076}{{24}{1995}{{Engler et~al\unhbox \voidb@x \hbox {.}}}{{Engler, Kaashoek, and O'Toole}}}
-\bibcite{containers-runc-vulnerability}{{25}{2019}{{Gatlan}}{{Gatlan}}}
-\bibcite{Kubernetes}{{26}{2019}{{Kubernetes}}{{Kubernetes}}}
-\bibcite{Lock-in-Pop}{{27}{2017}{{Li et~al\unhbox \voidb@x \hbox {.}}}{{Li, Dolan-Gavitt, Weber, and Cappos}}}
-\bibcite{LinuxKit}{{28}{2019}{{LinuxKit}}{{LinuxKit}}}
-\bibcite{Madhavapeddy:2013:ULO:2451116.2451167}{{29}{2013}{{Madhavapeddy et~al\unhbox \voidb@x \hbox {.}}}{{Madhavapeddy, Mortier, Rotsos, Scott, Singh, Gazagnaire, Smith, Hand, and Crowcroft}}}
-\bibcite{OS-Level-Virtualization}{{30}{2019}{{OS Level Virtualization}}{{OS Level Virtualization}}}
-\bibcite{Ozment}{{31}{2006}{{Ozment and Schechter}}{{Ozment and Schechter}}}
-\bibcite{containers-kernel-bug-tcp}{{32}{2016}{{Pandurangan}}{{Pandurangan}}}
-\bibcite{Porter:2011:RLO:1950365.1950399}{{33}{2011}{{Porter et~al\unhbox \voidb@x \hbox {.}}}{{Porter, Boyd-Wickizer, Howell, Olinsky, and Hunt}}}
-\bibcite{what-containers-do}{{34}{2017}{{Rubens.}}{{Rubens.}}}
-\bibcite{Shin:2011:ECC}{{35}{2011}{{Shin et~al\unhbox \voidb@x \hbox {.}}}{{Shin, Meneely, Williams, and Osborne}}}
-\bibcite{Tsai:2014:CSI:2592798.2592812}{{36}{2014}{{Tsai et~al\unhbox \voidb@x \hbox {.}}}{{Tsai, Arora, Bandi, Jain, Jannen, John, Kalodner, Kulkarni, Oliveira, and Porter}}}
-\bibcite{VirtualBox}{{37}{2019}{{VirtualBox}}{{VirtualBox}}}
-\bibcite{VMWare-Workstation}{{38}{2019}{{VMWare Workstation}}{{VMWare Workstation}}}
-\bibcite{Containers_and_VirtualMachines}{{39}{2016}{{W.G. Wong}}{{W.G. Wong}}}
+\bibcite{KASLR}{{1}{2013}{{KAS}}{{??}}}
+\bibcite{KIBSD}{{2}{2015}{{KIB}}{{??}}}
+\bibcite{dirty-cow}{{3}{2016}{{dir}}{{??}}}
+\bibcite{kernel-configuration-17}{{4}{2017a}{{ker}}{{??}}}
+\bibcite{dirty-cow-impact}{{5}{2017}{{dir}}{{??}}}
+\bibcite{kernel-tailor-17}{{6}{2017b}{{ker}}{{??}}}
+\bibcite{kernel-tailor-18}{{7}{2018}{{ker}}{{??}}}
+\bibcite{Linux-Kernel-Tailoring-Framework}{{8}{2018}{{Lin}}{{??}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}}
+\newlabel{sec.conclusion}{{7}{17}{Conclusion}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{References}{17}{section*.19}}
+\bibcite{AppArmor}{{9}{2019}{{App}}{{??}}}
+\bibcite{ARM-TrustZone}{{10}{2019}{{ARM}}{{??}}}
+\bibcite{bear}{{11}{2019}{{bea}}{{??}}}
+\bibcite{clang-libtooling}{{12}{2019}{{cla}}{{??}}}
+\bibcite{gcov}{{13}{2019}{{gco}}{{??}}}
+\bibcite{GRSEC}{{14}{2019}{{GRS}}{{??}}}
+\bibcite{lcov}{{15}{2019}{{lco}}{{??}}}
+\bibcite{cgroups}{{16}{2019}{{cgr}}{{??}}}
+\bibcite{linux-kernel-capabilities}{{17}{2019}{{lin}}{{??}}}
+\bibcite{namespaces}{{18}{2019}{{nam}}{{??}}}
+\bibcite{LTP}{{19}{2019}{{LTP}}{{??}}}
+\bibcite{llvm}{{20}{2019}{{llv}}{{??}}}
+\bibcite{OCaml}{{21}{2019}{{OCa}}{{??}}}
+\bibcite{OpenBSD}{{22}{2019}{{Ope}}{{??}}}
+\bibcite{PAX}{{23}{2019}{{PAX}}{{??}}}
+\bibcite{red-hat}{{24}{2019}{{red}}{{??}}}
+\bibcite{SELinux}{{25}{2019}{{SEL}}{{??}}}
+\bibcite{451-Research}{{26}{2017}{{451 Research}}{{451 Research}}}
+\bibcite{Alenezi2015EvaluatingSM}{{27}{2015}{{Alenezi et~al\unhbox \voidb@x \hbox {.}}}{{Alenezi, Abunadi, and Arabia}}}
+\bibcite{SALAD18}{{28}{2018}{{Alharthi et~al\unhbox \voidb@x \hbox {.}}}{{Alharthi, Hu, Moon, and Kim}}}
+\bibcite{10.1145/2660267.2660350}{{29}{2014}{{Azab et~al\unhbox \voidb@x \hbox {.}}}{{Azab, Ning, Shah, Chen, Bhutkar, Ganesh, Ma, and Shen}}}
+\bibcite{Chou}{{30}{2001}{{Chou et~al\unhbox \voidb@x \hbox {.}}}{{Chou, Yang, Chelf, Hallem, and Engler}}}
+\bibcite{SAC10}{{31}{2010}{{Chowdhury and Zulkernine}}{{Chowdhury and Zulkernine}}}
+\bibcite{CVSS}{{32}{2020}{{CVSS}}{{CVSS}}}
+\bibcite{Docker}{{33}{2019}{{Docker}}{{Docker}}}
+\bibcite{DockerHub}{{34}{2019}{{Docker Hub}}{{Docker Hub}}}
+\bibcite{Engler:1995:EOS:224056.224076}{{35}{1995}{{Engler et~al\unhbox \voidb@x \hbox {.}}}{{Engler, Kaashoek, and O'Toole}}}
+\bibcite{containers-runc-vulnerability}{{36}{2019}{{Gatlan}}{{Gatlan}}}
+\bibcite{DBLP:conf/ccs/GhaffariniaH19}{{37}{2019}{{Ghaffarinia and Hamlen}}{{Ghaffarinia and Hamlen}}}
+\bibcite{180231}{{38}{2012}{{Giuffrida et~al\unhbox \voidb@x \hbox {.}}}{{Giuffrida, Kuijsten, and Tanenbaum}}}
+\bibcite{Imtiaz2018TowardsDV}{{39}{2018}{{Imtiaz and Bhowmik}}{{Imtiaz and Bhowmik}}}
+\bibcite{Kernel-Debloating}{{40}{2020}{{Kuo et~al\unhbox \voidb@x \hbox {.}}}{{Kuo, Chen, Mohan, and Xu}}}
+\bibcite{10.1145/1972551.1972557}{{41}{2011}{{Kurmus et~al\unhbox \voidb@x \hbox {.}}}{{Kurmus, Sorniotti, and Kapitza}}}
+\bibcite{NDSS13}{{42}{2013}{{Kurmus et~al\unhbox \voidb@x \hbox {.}}}{{Kurmus, Tartler, Dorneanu, Heinloth, Rothberg, Ruprecht, and Lohmann}}}
+\bibcite{Lock-in-Pop}{{43}{2017}{{Li et~al\unhbox \voidb@x \hbox {.}}}{{Li, Dolan-Gavitt, Weber, and Cappos}}}
+\bibcite{LinuxKit}{{44}{2019}{{LinuxKit}}{{LinuxKit}}}
+\bibcite{8416432}{{45}{2018}{{{Loukidis-Andreou} et~al\unhbox \voidb@x \hbox {.}}}{{{Loukidis-Andreou}, {Giannakopoulos}, {Doka}, and {Koziris}}}}
+\bibcite{Madhavapeddy:2013:ULO:2451116.2451167}{{46}{2013}{{Madhavapeddy et~al\unhbox \voidb@x \hbox {.}}}{{Madhavapeddy, Mortier, Rotsos, Scott, Singh, Gazagnaire, Smith, Hand, and Crowcroft}}}
+\bibcite{10.1145/3132747.3132763}{{47}{2017}{{Manco et~al\unhbox \voidb@x \hbox {.}}}{{Manco, Lupu, Schmidt, Mendes, Kuenzer, Sati, Yasukata, Raiciu, and Huici}}}
+\bibcite{7346869}{{48}{2015}{{{Mattetti} et~al\unhbox \voidb@x \hbox {.}}}{{{Mattetti}, {Shulman-Peleg}, {Allouche}, {Corradi}, {Dolev}, and {Foschini}}}}
+\bibcite{NVD}{{49}{2019}{{NVD}}{{NVD}}}
+\bibcite{Ozment}{{50}{2006}{{Ozment and Schechter}}{{Ozment and Schechter}}}
+\bibcite{containers-kernel-bug-tcp}{{51}{2016}{{Pandurangan}}{{Pandurangan}}}
+\bibcite{10.1145/3277592}{{52}{2019}{{Pomonis et~al\unhbox \voidb@x \hbox {.}}}{{Pomonis, Petsios, Keromytis, Polychronakis, and Kemerlis}}}
+\bibcite{Porter:2011:RLO:1950365.1950399}{{53}{2011}{{Porter et~al\unhbox \voidb@x \hbox {.}}}{{Porter, Boyd-Wickizer, Howell, Olinsky, and Hunt}}}
+\bibcite{RAZOR}{{54}{2019}{{Qian et~al\unhbox \voidb@x \hbox {.}}}{{Qian, Hu, Alharthi, Chung, Kim, and Lee}}}
+\bibcite{Debloating-Software}{{55}{2018}{{Quach et~al\unhbox \voidb@x \hbox {.}}}{{Quach, Prakash, and Yan}}}
+\bibcite{what-containers-do}{{56}{2017}{{Rubens.}}{{Rubens.}}}
+\bibcite{5560680}{{57}{2011}{{{Shin} et~al\unhbox \voidb@x \hbox {.}}}{{{Shin}, {Meneely}, {Williams}, and {Osborne}}}}
+\bibcite{Shin:2011:ECC}{{58}{2011}{{Shin et~al\unhbox \voidb@x \hbox {.}}}{{Shin, Meneely, Williams, and Osborne}}}
+\bibcite{179459}{{59}{2012}{{Tartler et~al\unhbox \voidb@x \hbox {.}}}{{Tartler, Kurmus, Heinloth, Rothberg, Ruprecht, Dorneanu, Kapitza, Schr{\"o}der-Preikschat, and Lohmann}}}
+\bibcite{Tsai:2014:CSI:2592798.2592812}{{60}{2014}{{Tsai et~al\unhbox \voidb@x \hbox {.}}}{{Tsai, Arora, Bandi, Jain, Jannen, John, Kalodner, Kulkarni, Oliveira, and Porter}}}
+\bibcite{4459644}{{61}{2007}{{{Zhang} et~al\unhbox \voidb@x \hbox {.}}}{{{Zhang}, {Zhang}, and {Gu}}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{4.65pt}
 \newlabel{tocindent2}{11.49998pt}
 \newlabel{tocindent3}{18.34998pt}
-\@writefile{toc}{\contentsline {section}{References}{12}{section*.14}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Evaluation of the CVE vulnerabilities for the Linux kernel\relax }}{13}{table.caption.11}}
-\newlabel{tab:evaluation_cve}{{3}{13}{Evaluation of the CVE vulnerabilities for the Linux kernel\relax }{table.caption.11}{}}
-\newlabel{TotPages}{{13}{13}{}{page.13}{}}
+\newlabel{TotPages}{{19}{19}{}{page.19}{}}

@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{39}
+\begin{thebibliography}{61}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,6 +37,30 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[\protect\citeauthoryear{??}{KAS}{2013}]%
+        {KASLR}
+ \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{title}{Kernel address space layout randomization}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://lwn.net/Articles/569635/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{KIB}{2015}]%
+        {KIBSD}
+ \bibinfo{year}{2015}\natexlab{}.
+\newblock \bibinfo{title}{Kernel W xor X improvements in OpenBSD}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.openbsd.org/papers/hackfest2015-w-xor-x.pdf}
+\showURL{%
+\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{??}{dir}{2016}]%
         {dirty-cow}
  \bibinfo{year}{2016}\natexlab{}.
@@ -46,6 +70,18 @@
 \newblock
 \urldef\tempurl%
 \url{https://blog.paranoidsoftware.com/dirty-cow-cve-2016-5195-docker-container-escape/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{ker}{2017a}]%
+        {kernel-configuration-17}
+ \bibinfo{year}{2017}\natexlab{a}.
+\newblock \bibinfo{title}{A different approach to kernel configuration}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://lwn.net/Articles/733405/}
 \showURL{%
 \tempurl}
 
@@ -64,6 +100,43 @@
 \tempurl}
 
 
+\bibitem[\protect\citeauthoryear{??}{ker}{2017b}]%
+        {kernel-tailor-17}
+ \bibinfo{year}{2017}\natexlab{b}.
+\newblock \bibinfo{title}{A Practical Approach of Tailoring Linux Kernel}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://ossna2017.sched.com/event/BCsG/a-practical-approach-of-tailoring-linux-kernel-junghwan-kang-national-security-research-institute}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{ker}{2018}]%
+        {kernel-tailor-18}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{An Empirical Study of an Advanced Kernel Tailoring
+  Framework}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://ossna18.sched.com/event/FAN5/an-empirical-study-of-an-advanced-kernel-tailoring-framework-junghwan-kang-national-security-research-institute-of-south-korea}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{Lin}{2018}]%
+        {Linux-Kernel-Tailoring-Framework}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Linux Kernel Tailoring Framework}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/ultract/linux-kernel-tailoring-framework}
+\showURL{%
+\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{??}{App}{2019}]%
         {AppArmor}
  \bibinfo{year}{2019}\natexlab{}.
@@ -72,6 +145,18 @@
 \newblock
 \urldef\tempurl%
 \url{https://wiki.ubuntu.com/AppArmor}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{??}{ARM}{2019}]%
+        {ARM-TrustZone}
+ \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{ARM TrustZone}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://developer.arm.com/ip-products/security-ip/trustzone}
 \showURL{%
 \tempurl}
 
@@ -196,18 +281,6 @@
 \tempurl}
 
 
-\bibitem[\protect\citeauthoryear{??}{LXC}{2019}]%
-        {LXC}
- \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{title}{LXC}.
-\newblock
-\newblock
-\urldef\tempurl%
-\url{https://linuxcontainers.org}
-\showURL{%
-\tempurl}
-
-
 \bibitem[\protect\citeauthoryear{??}{OCa}{2019}]%
         {OCaml}
  \bibinfo{year}{2019}\natexlab{}.
@@ -280,6 +353,54 @@
 Retrieved April, 2019 from \tempurl}
 
 
+\bibitem[\protect\citeauthoryear{Alenezi, Abunadi, and Arabia}{Alenezi
+  et~al\mbox{.}}{2015}]%
+        {Alenezi2015EvaluatingSM}
+\bibfield{author}{\bibinfo{person}{Mamdouh Alenezi}, \bibinfo{person}{Ibrahim
+  Abunadi}, {and} \bibinfo{person}{S. Arabia}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Evaluating Software Metrics as Predictors of
+  Software Vulnerabilities}.
+\newblock \bibinfo{journal}{\emph{International journal of security and its
+  applications}}  \bibinfo{volume}{9} (\bibinfo{year}{2015}),
+  \bibinfo{pages}{231--240}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Alharthi, Hu, Moon, and Kim}{Alharthi
+  et~al\mbox{.}}{2018}]%
+        {SALAD18}
+\bibfield{author}{\bibinfo{person}{Mansour Alharthi}, \bibinfo{person}{Hong
+  Hu}, \bibinfo{person}{Hyungon Moon}, {and} \bibinfo{person}{Taesoo Kim}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{On the Effectiveness of Kernel Debloating via
+  Compile-time Configuration}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  1st Workshop on SoftwAre debLoating And Delayering}}
+  \emph{(\bibinfo{series}{SALAD'18})}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Azab, Ning, Shah, Chen, Bhutkar, Ganesh, Ma,
+  and Shen}{Azab et~al\mbox{.}}{2014}]%
+        {10.1145/2660267.2660350}
+\bibfield{author}{\bibinfo{person}{Ahmed~M. Azab}, \bibinfo{person}{Peng Ning},
+  \bibinfo{person}{Jitesh Shah}, \bibinfo{person}{Quan Chen},
+  \bibinfo{person}{Rohan Bhutkar}, \bibinfo{person}{Guruprasad Ganesh},
+  \bibinfo{person}{Jia Ma}, {and} \bibinfo{person}{Wenbo Shen}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Hypervision Across Worlds: Real-Time Kernel
+  Protection from the ARM TrustZone Secure World}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2014 ACM SIGSAC Conference on
+  Computer and Communications Security}} \emph{(\bibinfo{series}{CCS '14})}.
+  \bibinfo{publisher}{Association for Computing Machinery},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{90–102}.
+\newblock
+\showISBNx{9781450329576}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2660267.2660350}
+\showDOI{\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{Chou, Yang, Chelf, Hallem, and Engler}{Chou
   et~al\mbox{.}}{2001}]%
         {Chou}
@@ -296,6 +417,30 @@ Retrieved April, 2019 from \tempurl}
 \urldef\tempurl%
 \url{https://doi.org/10.1145/502034.502042}
 \showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Chowdhury and Zulkernine}{Chowdhury and
+  Zulkernine}{2010}]%
+        {SAC10}
+\bibfield{author}{\bibinfo{person}{Istehad Chowdhury} {and}
+  \bibinfo{person}{Mohammad Zulkernine}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Can complexity, coupling, and cohesion metrics be
+  used as early indicators of vulnerabilities?}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2010 ACM Symposium on Applied
+  Computing}} \emph{(\bibinfo{series}{SAC'10})}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{CVSS}{CVSS}{2020}]%
+        {CVSS}
+CVSS \bibinfo{year}{2020}\natexlab{}.
+\newblock \bibinfo{title}{Common Vulnerability Scoring System}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.first.org/cvss/}
+\showURL{%
+Retrieved September, 2020 from \tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Docker}{Docker}{2019}]%
@@ -357,17 +502,111 @@ Retrieved April, 2019 from \tempurl}
 \tempurl}
 
 
-\bibitem[\protect\citeauthoryear{Kubernetes}{Kubernetes}{2019}]%
-        {Kubernetes}
-Kubernetes \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{title}{An open-source system for automating deployment,
-  scaling, and management of containerized applications.}
-\newblock
+\bibitem[\protect\citeauthoryear{Ghaffarinia and Hamlen}{Ghaffarinia and
+  Hamlen}{2019}]%
+        {DBLP:conf/ccs/GhaffariniaH19}
+\bibfield{author}{\bibinfo{person}{Masoud Ghaffarinia} {and}
+  \bibinfo{person}{Kevin~W. Hamlen}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Binary Control-Flow Trimming}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2019 {ACM} {SIGSAC} Conference
+  on Computer and Communications Security, {CCS} 2019, London, UK, November
+  11-15, 2019}}, \bibfield{editor}{\bibinfo{person}{Lorenzo Cavallaro},
+  \bibinfo{person}{Johannes Kinder}, \bibinfo{person}{XiaoFeng Wang}, {and}
+  \bibinfo{person}{Jonathan Katz}} (Eds.). \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{1009--1022}.
 \newblock
 \urldef\tempurl%
-\url{https://kubernetes.io}
+\url{https://doi.org/10.1145/3319535.3345665}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Giuffrida, Kuijsten, and Tanenbaum}{Giuffrida
+  et~al\mbox{.}}{2012}]%
+        {180231}
+\bibfield{author}{\bibinfo{person}{Cristiano Giuffrida}, \bibinfo{person}{Anton
+  Kuijsten}, {and} \bibinfo{person}{Andrew~S. Tanenbaum}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Enhanced Operating System Security Through
+  Efficient and Fine-grained Address Space Randomization}. In
+  \bibinfo{booktitle}{\emph{21st {USENIX} Security Symposium ({USENIX} Security
+  12)}}. \bibinfo{publisher}{{USENIX} Association}, \bibinfo{address}{Bellevue,
+  WA}, \bibinfo{pages}{475--490}.
+\newblock
+\showISBNx{978-931971-95-9}
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/giuffrida}
 \showURL{%
-Retrieved April, 2019 from \tempurl}
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Imtiaz and Bhowmik}{Imtiaz and
+  Bhowmik}{2018}]%
+        {Imtiaz2018TowardsDV}
+\bibfield{author}{\bibinfo{person}{S. Imtiaz} {and} \bibinfo{person}{T.
+  Bhowmik}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Towards data-driven vulnerability prediction for
+  requirements}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the 2018 26th ACM Joint
+  Meeting on European Software Engineering Conference and Symposium on the
+  Foundations of Software Engineering}} (\bibinfo{year}{2018}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kuo, Chen, Mohan, and Xu}{Kuo
+  et~al\mbox{.}}{2020}]%
+        {Kernel-Debloating}
+\bibfield{author}{\bibinfo{person}{{Hsuan Chi} Kuo}, \bibinfo{person}{Jianyan
+  Chen}, \bibinfo{person}{Sibin Mohan}, {and} \bibinfo{person}{Tianyin Xu}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Set the Configuration for the Heart of the OS: On
+  the Practicality of Operating System Kernel Debloating}. In
+  \bibinfo{booktitle}{\emph{Abstracts of the 2020 SIGMETRICS/Performance Joint
+  International Conference on Measurement and Modeling of Computer Systems}}.
+  \bibinfo{publisher}{Association for Computing Machinery, Inc},
+  \bibinfo{pages}{87--88}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3393691.3394215}
+\showDOI{\tempurl}
+\newblock
+\shownote{2020 SIGMETRICS/Performance Joint International Conference on
+  Measurement and Modeling of Computer Systems, SIGMETRICS 2020 ; Conference
+  date: 08-06-2020 Through 12-06-2020.}
+
+
+\bibitem[\protect\citeauthoryear{Kurmus, Sorniotti, and Kapitza}{Kurmus
+  et~al\mbox{.}}{2011}]%
+        {10.1145/1972551.1972557}
+\bibfield{author}{\bibinfo{person}{Anil Kurmus}, \bibinfo{person}{Alessandro
+  Sorniotti}, {and} \bibinfo{person}{R\"{u}diger Kapitza}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Attack Surface Reduction for Commodity OS Kernels:
+  Trimmed Garden Plants May Attract Less Bugs}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Fourth European Workshop on
+  System Security}} \emph{(\bibinfo{series}{EUROSEC '11})}.
+  \bibinfo{publisher}{Association for Computing Machinery},
+  \bibinfo{address}{New York, NY, USA}, Article \bibinfo{articleno}{6},
+  \bibinfo{numpages}{6}~pages.
+\newblock
+\showISBNx{9781450306133}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1972551.1972557}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kurmus, Tartler, Dorneanu, Heinloth, Rothberg,
+  Ruprecht, and Lohmann}{Kurmus et~al\mbox{.}}{2013}]%
+        {NDSS13}
+\bibfield{author}{\bibinfo{person}{Anil Kurmus}, \bibinfo{person}{Reinhard
+  Tartler}, \bibinfo{person}{Daniela Dorneanu}, \bibinfo{person}{Bernhard
+  Heinloth}, \bibinfo{person}{Valentin Rothberg}, \bibinfo{person}{Andreas
+  Ruprecht}, {and} \bibinfo{person}{Daniel Lohmann}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Attack Surface Metrics and Automated Compile-Time
+  OS Kernel Tailoring}. In \bibinfo{booktitle}{\emph{Proceedings of the 20th
+  Annual Network and Distributed System Security Symposium}}
+  \emph{(\bibinfo{series}{NDSS'13})}.
+\newblock
 
 
 \bibitem[\protect\citeauthoryear{Li, Dolan-Gavitt, Weber, and Cappos}{Li
@@ -397,6 +636,19 @@ LinuxKit \bibinfo{year}{2019}\natexlab{}.
 Retrieved April, 2019 from \tempurl}
 
 
+\bibitem[\protect\citeauthoryear{{Loukidis-Andreou}, {Giannakopoulos}, {Doka},
+  and {Koziris}}{{Loukidis-Andreou} et~al\mbox{.}}{2018}]%
+        {8416432}
+\bibfield{author}{\bibinfo{person}{F. {Loukidis-Andreou}}, \bibinfo{person}{I.
+  {Giannakopoulos}}, \bibinfo{person}{K. {Doka}}, {and} \bibinfo{person}{N.
+  {Koziris}}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Docker-Sec: A Fully Automated Container Security
+  Enhancement Mechanism}. In \bibinfo{booktitle}{\emph{2018 IEEE 38th
+  International Conference on Distributed Computing Systems (ICDCS)}}.
+  \bibinfo{pages}{1561--1564}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Madhavapeddy, Mortier, Rotsos, Scott, Singh,
   Gazagnaire, Smith, Hand, and Crowcroft}{Madhavapeddy et~al\mbox{.}}{2013}]%
         {Madhavapeddy:2013:ULO:2451116.2451167}
@@ -418,15 +670,47 @@ Retrieved April, 2019 from \tempurl}
 \showDOI{\tempurl}
 
 
-\bibitem[\protect\citeauthoryear{OS Level Virtualization}{OS Level
-  Virtualization}{2019}]%
-        {OS-Level-Virtualization}
-OS Level Virtualization \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{title}{Wikipedia}.
+\bibitem[\protect\citeauthoryear{Manco, Lupu, Schmidt, Mendes, Kuenzer, Sati,
+  Yasukata, Raiciu, and Huici}{Manco et~al\mbox{.}}{2017}]%
+        {10.1145/3132747.3132763}
+\bibfield{author}{\bibinfo{person}{Filipe Manco}, \bibinfo{person}{Costin
+  Lupu}, \bibinfo{person}{Florian Schmidt}, \bibinfo{person}{Jose Mendes},
+  \bibinfo{person}{Simon Kuenzer}, \bibinfo{person}{Sumit Sati},
+  \bibinfo{person}{Kenichi Yasukata}, \bibinfo{person}{Costin Raiciu}, {and}
+  \bibinfo{person}{Felipe Huici}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{My VM is Lighter (and Safer) than Your Container}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the 26th Symposium on Operating
+  Systems Principles}} \emph{(\bibinfo{series}{SOSP '17})}.
+  \bibinfo{publisher}{Association for Computing Machinery},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{218–233}.
+\newblock
+\showISBNx{9781450350853}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3132747.3132763}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{{Mattetti}, {Shulman-Peleg}, {Allouche},
+  {Corradi}, {Dolev}, and {Foschini}}{{Mattetti} et~al\mbox{.}}{2015}]%
+        {7346869}
+\bibfield{author}{\bibinfo{person}{M. {Mattetti}}, \bibinfo{person}{A.
+  {Shulman-Peleg}}, \bibinfo{person}{Y. {Allouche}}, \bibinfo{person}{A.
+  {Corradi}}, \bibinfo{person}{S. {Dolev}}, {and} \bibinfo{person}{L.
+  {Foschini}}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Securing the infrastructure and the workloads of
+  linux containers}. In \bibinfo{booktitle}{\emph{2015 IEEE Conference on
+  Communications and Network Security (CNS)}}. \bibinfo{pages}{559--567}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{NVD}{NVD}{2019}]%
+        {NVD}
+NVD \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{National Vulnerability Database}.
 \newblock
 \newblock
 \urldef\tempurl%
-\url{https://en.wikipedia.org/wiki/OS-level_virtualisation}
+\url{https://nvd.nist.gov}
 \showURL{%
 Retrieved April, 2019 from \tempurl}
 
@@ -464,6 +748,24 @@ Retrieved April, 2019 from \tempurl}
 \tempurl}
 
 
+\bibitem[\protect\citeauthoryear{Pomonis, Petsios, Keromytis, Polychronakis,
+  and Kemerlis}{Pomonis et~al\mbox{.}}{2019}]%
+        {10.1145/3277592}
+\bibfield{author}{\bibinfo{person}{Marios Pomonis}, \bibinfo{person}{Theofilos
+  Petsios}, \bibinfo{person}{Angelos~D. Keromytis}, \bibinfo{person}{Michalis
+  Polychronakis}, {and} \bibinfo{person}{Vasileios~P. Kemerlis}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Kernel Protection Against Just-In-Time Code Reuse}.
+\newblock \bibinfo{journal}{\emph{ACM Trans. Priv. Secur.}}
+  \bibinfo{volume}{22}, \bibinfo{number}{1}, Article \bibinfo{articleno}{5}
+  (\bibinfo{date}{Jan.} \bibinfo{year}{2019}), \bibinfo{numpages}{28}~pages.
+\newblock
+\showISSN{2471-2566}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3277592}
+\showDOI{\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{Porter, Boyd-Wickizer, Howell, Olinsky, and
   Hunt}{Porter et~al\mbox{.}}{2011}]%
         {Porter:2011:RLO:1950365.1950399}
@@ -483,6 +785,42 @@ Retrieved April, 2019 from \tempurl}
 \showDOI{\tempurl}
 
 
+\bibitem[\protect\citeauthoryear{Qian, Hu, Alharthi, Chung, Kim, and Lee}{Qian
+  et~al\mbox{.}}{2019}]%
+        {RAZOR}
+\bibfield{author}{\bibinfo{person}{Chenxiong Qian}, \bibinfo{person}{Hong Hu},
+  \bibinfo{person}{Mansour Alharthi}, \bibinfo{person}{Pak~Ho Chung},
+  \bibinfo{person}{Taesoo Kim}, {and} \bibinfo{person}{Wenke Lee}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{RAZOR}: A Framework for Post-deployment Software
+  Debloating}. In \bibinfo{booktitle}{\emph{28th {USENIX} Security Symposium
+  ({USENIX} Security 19)}}. \bibinfo{publisher}{{USENIX} Association},
+  \bibinfo{address}{Santa Clara, CA}, \bibinfo{pages}{1733--1750}.
+\newblock
+\showISBNx{978-1-939133-06-9}
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity19/presentation/qian}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Quach, Prakash, and Yan}{Quach
+  et~al\mbox{.}}{2018}]%
+        {Debloating-Software}
+\bibfield{author}{\bibinfo{person}{Anh Quach}, \bibinfo{person}{Aravind
+  Prakash}, {and} \bibinfo{person}{Lok Yan}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Debloating Software through Piece-Wise Compilation
+  and Loading}. In \bibinfo{booktitle}{\emph{27th {USENIX} Security Symposium
+  ({USENIX} Security 18)}}. \bibinfo{publisher}{{USENIX} Association},
+  \bibinfo{address}{Baltimore, MD}, \bibinfo{pages}{869--886}.
+\newblock
+\showISBNx{978-1-939133-04-5}
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity18/presentation/quach}
+\showURL{%
+\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{Rubens.}{Rubens.}{2017}]%
         {what-containers-do}
 \bibfield{author}{\bibinfo{person}{P. Rubens.}}
@@ -494,6 +832,20 @@ Retrieved April, 2019 from \tempurl}
 \url{https://www.cio.com/article/2924995/what-are-containers-and-why-do-you-need-them.htm}
 \showURL{%
 \tempurl}
+
+
+\bibitem[\protect\citeauthoryear{{Shin}, {Meneely}, {Williams}, and
+  {Osborne}}{{Shin} et~al\mbox{.}}{2011}]%
+        {5560680}
+\bibfield{author}{\bibinfo{person}{Y. {Shin}}, \bibinfo{person}{A. {Meneely}},
+  \bibinfo{person}{L. {Williams}}, {and} \bibinfo{person}{J.~A. {Osborne}}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Evaluating Complexity, Code Churn, and Developer
+  Activity Metrics as Indicators of Software Vulnerabilities}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Software Engineering}}
+  \bibinfo{volume}{37}, \bibinfo{number}{6} (\bibinfo{year}{2011}),
+  \bibinfo{pages}{772--787}.
+\newblock
 
 
 \bibitem[\protect\citeauthoryear{Shin, Meneely, Williams, and Osborne}{Shin
@@ -512,6 +864,27 @@ Retrieved April, 2019 from \tempurl}
 \urldef\tempurl%
 \url{https://doi.org/10.1109/TSE.2010.81}
 \showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Tartler, Kurmus, Heinloth, Rothberg, Ruprecht,
+  Dorneanu, Kapitza, Schr{\"o}der-Preikschat, and Lohmann}{Tartler
+  et~al\mbox{.}}{2012}]%
+        {179459}
+\bibfield{author}{\bibinfo{person}{Reinhard Tartler}, \bibinfo{person}{Anil
+  Kurmus}, \bibinfo{person}{Bernhard Heinloth}, \bibinfo{person}{Valentin
+  Rothberg}, \bibinfo{person}{Andreas Ruprecht}, \bibinfo{person}{Daniela
+  Dorneanu}, \bibinfo{person}{R{\"u}diger Kapitza}, \bibinfo{person}{Wolfgang
+  Schr{\"o}der-Preikschat}, {and} \bibinfo{person}{Daniel Lohmann}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Automatic {OS} Kernel {TCB} Reduction by Leveraging
+  Compile-Time Configurability}. In \bibinfo{booktitle}{\emph{Eighth Workshop
+  on Hot Topics in System Dependability (HotDep 12)}}.
+  \bibinfo{publisher}{{USENIX} Association}, \bibinfo{address}{Hollywood, CA}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/hotdep12/workshop-program/presentation/Tartler}
+\showURL{%
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Tsai, Arora, Bandi, Jain, Jannen, John,
@@ -536,43 +909,16 @@ Retrieved April, 2019 from \tempurl}
 \showDOI{\tempurl}
 
 
-\bibitem[\protect\citeauthoryear{VirtualBox}{VirtualBox}{2019}]%
-        {VirtualBox}
-VirtualBox \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{title}{An x86 and AMD64/Intel64 virtualization.}
+\bibitem[\protect\citeauthoryear{{Zhang}, {Zhang}, and {Gu}}{{Zhang}
+  et~al\mbox{.}}{2007}]%
+        {4459644}
+\bibfield{author}{\bibinfo{person}{H. {Zhang}}, \bibinfo{person}{X. {Zhang}},
+  {and} \bibinfo{person}{M. {Gu}}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Predicting Defective Software Components from Code
+  Complexity Measures}. In \bibinfo{booktitle}{\emph{13th Pacific Rim
+  International Symposium on Dependable Computing (PRDC 2007)}}.
+  \bibinfo{pages}{93--96}.
 \newblock
-\newblock
-\urldef\tempurl%
-\url{https://www.virtualbox.org}
-\showURL{%
-Retrieved April, 2019 from \tempurl}
-
-
-\bibitem[\protect\citeauthoryear{VMWare Workstation}{VMWare
-  Workstation}{2019}]%
-        {VMWare-Workstation}
-VMWare Workstation \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{title}{Running multiple operating systems as virtual
-  machines (VMs) on a single Linux or Windows PC.}
-\newblock
-\newblock
-\urldef\tempurl%
-\url{https://www.vmware.com/products/workstation-pro.html}
-\showURL{%
-Retrieved April, 2019 from \tempurl}
-
-
-\bibitem[\protect\citeauthoryear{W.G. Wong}{W.G. Wong}{2016}]%
-        {Containers_and_VirtualMachines}
-W.G. Wong \bibinfo{year}{2016}\natexlab{}.
-\newblock \bibinfo{title}{What’s the Difference Between Containers and
-  Virtual Machines? Electronic Design}.
-\newblock
-\newblock
-\urldef\tempurl%
-\url{https://en.wikipedia.org/wiki/OS-level_virtualisation}
-\showURL{%
-Retrieved April, 2019 from \tempurl}
 
 
 \end{thebibliography}
