@@ -380,12 +380,11 @@ In each test, the container finished its workload as defined in the official Doc
 On average, the results show running containers on UnPAK incurred about 0.5\% to 1\% of extra performance overhead, as compared to the original kernel. 
 Results of the top 10 containers are shown in Figure \ref{fig:performance}. (For each container, the runtime was the average runtime of 10 runs.)
 
-\begin{figure*}
-\centering
-\includegraphics[width=1.5\columnwidth]{diagram/performance.png}
+\begin{figure}
+\includegraphics[width=1.0\columnwidth]{diagram/performance.png}
 \caption{\small Runtime performance comparison for the top 10 containers}
 \label{fig:performance}
-\end{figure*}
+\end{figure}
 
 The original Linux kernel image used for the LinuxKit test  is sized at 163,012,008 bytes. In comparison, UnPAK is sized at 163,622,440 bytes. 
 Thus the extra memory space added by our modified kernel was only about 0.37\%. 

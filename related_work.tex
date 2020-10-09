@@ -1,6 +1,6 @@
 \section{Related Work}
 \label{sec.related_work}
-To improve container security, this work seeks to build an efficient security auditing system based on an effective vulnerability prediction metric. 
+This work seeks to build an efficient security auditing system based on an effective vulnerability prediction metric. 
 Therefore, when developing our strategy, we consulted previous studies in three main areas: 1) metrics for vulnerability prediction, 2) techniques for securing containers, 
 and 3) container security auditing approaches. Below, we summarize a few relevant studies and discuss how they relate to our work. 
 
@@ -13,31 +13,30 @@ reported that neither metric was as predictive of vulnerabilities in the Linux k
 
 Shin et al. \cite{Shin:2011:ECC}  and Chowdhury et al. \cite{SAC10} both examined potential metrics in sets, with Shin testing code churn, complexity, and developer activity metrics, 
 and Chowdhury validating a correlation between vulnerabilities and combined measures of complexity, coupling, and cohesion. 
-Imtiaz et al. \cite{Imtiaz2018TowardsDV} proposed a metric that used publicly available data sources, such as issue tracking systems and vulnerability databases, 
+Imtiaz et al. \cite{Imtiaz2018TowardsDV} proposed a metric that used publicly available data sources, such as vulnerability databases, 
 to predict vulnerabilities early on in the design process. Other researchers, such as Zhang et al.  \cite{4459644} and Alenezi et al. \cite{Alenezi2015EvaluatingSM}, 
 used software engineering related metrics to train and build classification models to predict defects in software components and modules. 
 A commonality of all of these techniques is that they work at the coarse level of files, functions, classes, modules, etc. 
-Though our recent study proved there is value in extracting security data at these  granularities, it also affirms that the ability to also access information at the lines of code level offers distinct benefits.
+Though our recent study proved there is value in extracting security data at these  granularities, it also affirms that accessing information at the lines of code level offers distinct benefits.
 
 \textbf{Container security enhancement.} 
 Existing container security mechanisms, such as Namespaces \cite{namespaces} used by Docker, tend to leverage host kernel features to provide isolation between processes. 
 Linux capabilities \cite{linux-kernel-capabilities} allow users to define and choose smaller groups of root privileges, and thus can reduce the number of entities that can exploit  containers. 
-LinuxKit allows users to define and control the capabilities, such as file permissions. 
-Control groups \cite{cgroups}, a key Linux feature, can be used to limit, account for, and isolate important system resources, such as memory, CPU, and disk I/O, in  each container. 
+Control groups \cite{cgroups} can be used to limit, account for, and isolate important system resources, such as memory, CPU, and disk I/O, in  each container. 
 More recently, kernel hardening systems,  such as AppArmor \cite{AppArmor}, SELinux \cite{SELinux}, GRSEC \cite{GRSEC}, and PAX \cite{PAX} provide access control mechanisms for better safety. 
 Docker ships a template that works with AppArmor, and also has SELinux policies working with Red Hat \cite{red-hat}. 
-While these existing approaches do help improve security, their settings can be hard to configure, and current systems often allow containers to access more code in the host kernel than they actually need. 
+While these existing approaches do help improve security, their settings can be hard to configure, and often allow containers to access more code in the host kernel than they actually need. 
 
 Loukidis-Andreou et al. \cite{8416432} and Mattetti et al. \cite{7346869} have both presented frameworks that borrow rules and information from existing security mechanisms to design 
-and build container security systems. Loukidia-Andreou dynamically adds rules during container runtime, while Mattetti traces a container’s execution and profiles its kernel security modules to automatically construct rules to prevent attacks. While these prior systems can better define what operations containers can do, by recommending what code the operating system kernel should offer, 
+and build container security systems. While these prior systems can better define what containers can do,
 UnPAK imposes a fine-grained security monitor on the potentially risky unpopular kernel code. 
 
 \textbf{Container security auditing.} 
 Previous research  in  auditing container security shows that many container images suffer from security vulnerabilities. 
 In 2015, Gummaraju et al. \cite{Gummaraju} reported that more than 30\% of official Docker images contained high impact security vulnerabilities based on a CVSS score. 
-Two years later, Henriksson and Falk \cite{Henriksson} scanned the top 1000 Docker images and showed that 70\% of the images suffered from high severity issues, and 54\% from critical severity issues. 
-Shu et al. \cite{Shu} studied vulnerabilities present in Docker hub images and proposed the Docker Image Vulnerability Analysis (DIVA) framework to automate analysis of Docker images. 
-They scanned 356,218 images and concluded that community and official images contain 180 vulnerabilities on average, and showed 90\% of the images suffered from high severity vulnerabilities. 
-These container security auditing studies revealed that the vulnerabilities were in the container images themselves. 
+Two years later, Henriksson and Falk \cite{Henriksson} scanned the top 1000 Docker images and showed that 70\% of them had high severity issues, and 54\% critical severity issues. 
+Shu et al. \cite{Shu} studied vulnerabilities in Docker hub images and proposed the Docker Image Vulnerability Analysis (DIVA) framework to automate analysis of these images. 
+They scanned 356,218 images and concluded that community and official images contain 180 vulnerabilities on average, and 90\% of the images had high severity vulnerabilities. 
+These auditing studies revealed vulnerabilities in the container images themselves. 
 Our approach supplements these findings and provides a means to tell if bugs in the kernel were triggered when running these containers. 
-In addition, adopting UnPAK and SmashPAK does not limit a system manager to just scanning static container images, but can provide continuous auditing for containers with different user behaviors. 
+In addition, adopting UnPAK and SmashPAK allows a system manager to provide continuous auditing for containers with different user behaviors. 
