@@ -1,93 +1,43 @@
 \section{Related Work}
 \label{sec.related_work}
-In this paper, we seek to enhance the security of containers running on top of a host kernel by reducing exposure to the rarely used risky code it contains. 
-When developing our strategy, we consulted previous studies in four areas: 1) metrics for vulnerability prediction, 2) techniques for enhancing kernel security, 
-3) efforts to debloat operating system kernels, and 4) alternative approaches for securing containers. 
-Below, we summarize a few of the relevant studies in each area and discuss how they compare to our recent work in container security and vulnerability detection.
+To improve container security, this work seeks to build an efficient security auditing system based on an effective vulnerability prediction metric. 
+Therefore, when developing our strategy, we consulted previous studies in three main areas: 1) metrics for vulnerability prediction, 2) techniques for securing containers, 
+and 3) container security auditing approaches. Below, we summarize a few relevant studies and discuss how they relate to our work. 
 
 \textbf{Estimating and predicting vulnerabilities.} 
 Metrics that can identify the code most likely to contain vulnerabilities help developers and researchers to prioritize their efforts to fix bugs. 
-Towards this end, a number of prediction methods have been put forward in the last decade or so. Chou et al. \cite{Chou} looked at error rates in different parts of 
-the operating system kernel, and found that device drivers had error rates up to seven times higher than other components. Ozment and Schechter \cite{Ozment} examined 
-the age of code as a predictor of vulnerability in the OpenBSD \cite{OpenBSD} operating system, and generally confirmed the finding that the rate at which bugs are 
-found goes down over time, meaning older code is less risky than new code. In a more recent work \cite{Lock-in-Pop}, 
-Li et al. directly compared both of these metrics \cite{Chou, Ozment} to the popular paths metric, and found that neither was as predictive of vulnerabilities in the Linux kernel. 
+Chou et al. \cite{Chou} looked at error rates in different parts of the operating system kernel, and found that device drivers had error rates up to seven times higher than other components. 
+Ozment and Schechter \cite{Ozment} examined the age of code as a predictor of vulnerability in the OpenBSD \cite{OpenBSD} operating system, 
+and generally confirmed that older code is less risky than new code. In a direct comparison, Li et al. \cite{Lock-in-Pop}, 
+reported that neither metric was as predictive of vulnerabilities in the Linux kernel as the popular paths metric. 
 
-Shin et al. \cite{Shin:2011:ECC} examined code churn, complexity, and developer activity metrics, finding that these metrics together could identify around 70\% of known vulnerabilities 
-in the two large open source project codebases they studied. 
-Similarly, Chowdhury et al. \cite{SAC10} proposed a metric that validates a correlation between vulnerabilities and a software entity’s CCC(Complexity, Coupling, and Cohesion), 
-or the combined measures of these variables. Imtiaz et al. \cite{Imtiaz2018TowardsDV} proposed a metric that can automatically predict vulnerabilities early on in the design process from publicly available data sources, 
-such as issue tracking systems and vulnerability databases. Other researchers have used software engineering related metrics to train and build classification models that can predict defects in software components and modules. 
-Zhang et al. \cite{4459644} used three code-level complexity measures—lines of code, McCabe’s cyclomatic complexity, and Halstead’s volume—to assess classification models as predictors of code quality. 
-Alenezi et al. \cite{Alenezi2015EvaluatingSM} used software metrics, process and product metrics to predict vulnerabilities in PHP files. 
-While these techniques are helpful for identifying potentially defective code areas, they worked at the coarse level of files, functions, classes, modules, etc. 
-In practice, it is usually unideal or impossible to remove an entire function or file. 
-Though our recent study proved there is value in extracting security data at coarser granularities, 
-being able to predict vulnerabilities at the lines of code level is more precise, and therefore more effective. 
-
-\textbf{Operating System kernel security enhancement.} 
-One common research focus in  the area of OS kernel security studies has been developing methods to protect kernel memory \cite{180231, KASLR, KIBSD, 10.1145/3277592}. 
-The deployment of standard kernel-hardening schemes, such as address space layout randomization (KASLR) \cite{KASLR} and non-executable memory \cite{KIBSD}, 
-has prevented attackers from injecting  legacy code in the kernel space. 
-Giuffrida et al. \cite{180231} proposed a fine-grained address space randomization technique that enhances security by randomizing the location where system executables are loaded into memory. 
-Pomonis et al. \cite{10.1145/3277592} proposed a kernel hardening scheme that uses execute-only memory and code diversification techniques to protect the kernel against JIT (Just-In-Time) code reuse attacks. 
-These memory protection strategies can effectively protect the kernel against certain attack schemes in practice, but can not defend against security bugs within the kernel itself.
-
-Some research has focused on leveraging hardware features to enhance kernel security. 
-Azab et al. \cite{10.1145/2660267.2660350} presented a solution that routes functions through the ARM TrustZone isolated environment for inspection before being executed, 
-rather than allowing them to execute directly in the kernel \cite{ARM-TrustZone}. This can provide extra security since the security monitor is isolated and protected by the TrustZone. 
-However, it also requires special hardware that may not be available to every user. 
-
-A number of prior research efforts in enhancing kernel security required refactoring or modification of the kernel. 
-Engler et al. \cite{Engler:1995:EOS:224056.224076} introduced the Exokernel architecture, which allowed applications more direct control of hardware resources through 
-an architecture that exports these resources to a library OS. More recently, but in a similar spirit, unikernels, 
-such as Mirage \cite{Madhavapeddy:2013:ULO:2451116.2451167} run each application as its own operating system inside of a virtual machine, 
-thus customizing the “kernel” for each application. Each of these systems, however, requires significant changes to existing applications. 
-For example, Mirage requires applications to be rewritten in the OCaml programming language \cite{OCaml}. Other library OSes are written to run existing applications. 
-Drawbridge \cite{Porter:2011:RLO:1950365.1950399} and Graphene \cite{Tsai:2014:CSI:2592798.2592812} support security in unmodified Windows and Linux applications, 
-respectively, by implementing an OS ``personality'' as a support library in each address space. Unfortunately, reimplementation of OS functionality incurs a performance overhead. 
-Containers can mostly avoid this type of overhead, since they allow contained applications to make system calls directly. Thus, our work focused on the container-based approach. 
-
-Prior research has also looked at improving security by reducing the kernel attack surface. Kurmus et al. \cite{10.1145/1972551.1972557} has proposed finding and removing 
-unused kernel code sections by binary instrumentation. The main difference from our work is that this approach only profiles kernel code usage at the function level, 
-while we examine the lines of code inside of a function for better precision. The way to reduce the unused kernel code also differs. 
-While they employ binary instrumentation, we use source code modification.
-
-\textbf{Operating system kernel debloating.} 
-Modern operating system kernels have grown in both size and complexity, a condition that affects operating speed and increases the potential for bugs. 
-Previous research work \cite{Debloating-Software} has attempted to debloat OS kernels to reduce boot time and memory usage, as well as to reduce the size of attack surfaces. 
-Kurmus et al. \cite{NDSS13} found that more than half of the total attack surfaces for the Linux kernel could be reduced by automating the kernel configuration to 
-a particular workload and hardware. Alharthi et al. \cite{SALAD18} investigated including only kernel modules necessary for the target applications, 
-and reported that such an approach could avoid known security vulnerabilities in the Linux kernel by around 35\% to 75\%. 
-While these approaches provide some help for specific user applications, they tend to be ad hoc and are not necessarily applicable on a larger  scale.     
-
-Many researchers \cite{kernel-configuration-17, kernel-tailor-17, kernel-tailor-18, 10.1145/3132747.3132763, 179459, Linux-Kernel-Tailoring-Framework} 
-have explored a  configuration-driven (also known as feature-driven) approach to debloating the OS kernel. 
-This method decides which parts of code are to be compiled and built by selecting existing kernel configuration options to support corresponding features. 
-While this approach has the advantage of being able to produce stable kernels, it could be argued that relying entirely on this method may mean missing some opportunities 
-to reduce the code. Such an approach may allow code containing rarely used flags and modes not needed by most applications. 
-This method tends to be more coarse than our strategy, because it works at the configuration-option level,  
-and therefore is less flexible in making decisions on which lines could be reduced within functions.
+Shin et al. \cite{Shin:2011:ECC}  and Chowdhury et al. \cite{SAC10} both examined potential metrics in sets, with Shin testing code churn, complexity, and developer activity metrics, 
+and Chowdhury validating a correlation between vulnerabilities and combined measures of complexity, coupling, and cohesion. 
+Imtiaz et al. \cite{Imtiaz2018TowardsDV} proposed a metric that used publicly available data sources, such as issue tracking systems and vulnerability databases, 
+to predict vulnerabilities early on in the design process. Other researchers, such as Zhang et al.  \cite{4459644} and Alenezi et al. \cite{Alenezi2015EvaluatingSM}, 
+used software engineering related metrics to train and build classification models to predict defects in software components and modules. 
+A commonality of all of these techniques is that they work at the coarse level of files, functions, classes, modules, etc. 
+Though our recent study proved there is value in extracting security data at these  granularities, it also affirms that the ability to also access information at the lines of code level offers distinct benefits.
 
 \textbf{Container security enhancement.} 
-Existing security mechanisms available for containers usually leverage host kernel features. 
-Namespaces \cite{namespaces} is one mechanism that can provide isolation between processes, and has been adopted by Docker. 
-Linux capabilities \cite{linux-kernel-capabilities} allow users to define and choose smaller groups of root privileges, and thus can reduce the number of entities that 
-can exploit  containers. Docker containers use Linux capabilities, and LinuxKit allows users to define and control the capabilities they want to use, such as file permissions. 
-Control groups \cite{cgroups},, a key Linux feature, can be used to limit, account for, and isolate important system resources, such as memory, CPU, and disk I/O, in each container. 
-More recently, various kernel hardening systems have been developed to provide access control mechanisms for better safety, 
-such as AppArmor \cite{AppArmor}, SELinux \cite{SELinux}, GRSEC \cite{GRSEC}, and PAX \cite{PAX}. 
-GRSEC and PAX add safety checks at compile-time and run-time of the kernel. Docker ships a template that works with AppArmor, and also has SELinux policies working with Red Hat \cite{red-hat}. 
-While these existing approaches do help improve security for containers, they also have limitations. 
-First, it can be really hard to understand how to correctly configure the security settings for containers. In fact, many users just keep the default configuration, 
-which may not be the best choice if strong security is needed. Second, in order to run the applications a user wants, 
-current systems often allow containers to access more code in the host kernel than they actually need, including potentially risky, rarely used code. 
+Existing container security mechanisms, such as Namespaces \cite{namespaces} used by Docker, tend to leverage host kernel features to provide isolation between processes. 
+Linux capabilities \cite{linux-kernel-capabilities} allow users to define and choose smaller groups of root privileges, and thus can reduce the number of entities that can exploit  containers. 
+LinuxKit allows users to define and control the capabilities, such as file permissions. 
+Control groups \cite{cgroups}, a key Linux feature, can be used to limit, account for, and isolate important system resources, such as memory, CPU, and disk I/O, in  each container. 
+More recently, kernel hardening systems,  such as AppArmor \cite{AppArmor}, SELinux \cite{SELinux}, GRSEC \cite{GRSEC}, and PAX \cite{PAX} provide access control mechanisms for better safety. 
+Docker ships a template that works with AppArmor, and also has SELinux policies working with Red Hat \cite{red-hat}. 
+While these existing approaches do help improve security, their settings can be hard to configure, and current systems often allow containers to access more code in the host kernel than they actually need. 
 
-Researchers have attempted to use the above existing security mechanisms to design and build container security systems. 
-Loukidis-Andreou et al. \cite{8416432} proposed a framework that enforces access control rules by dynamically adding access rules during container runtime to restrict its behavior. 
-Mattetti et al. \cite{7346869} presented a framework that traces a container’s execution and profiles its kernel security modules. 
-Based on this data, AppArmor rules can be automatically constructed to restrict container capabilities and prevent attack from malicious containers. 
+Loukidis-Andreou et al. \cite{8416432} and Mattetti et al. \cite{7346869} have both presented frameworks that borrow rules and information from existing security mechanisms to design 
+and build container security systems. Loukidia-Andreou dynamically adds rules during container runtime, while Mattetti traces a container’s execution and profiles its kernel security modules to automatically construct rules to prevent attacks. While these prior systems can better define what operations containers can do, by recommending what code the operating system kernel should offer, 
+UnPAK imposes a fine-grained security monitor on the potentially risky unpopular kernel code. 
 
-While these prior systems can construct security rules and restrictions to better define what operations containers can do, 
-we can recommend what code the operating system kernel should offer. 
-This extra step improves container security by imposing a fine-grained security monitor and control over access to the potentially risky kernel code. 
+\textbf{Container security auditing.} 
+Previous research  in  auditing container security shows that many container images suffer from security vulnerabilities. 
+In 2015, Gummaraju et al. \cite{Gummaraju} reported that more than 30\% of official Docker images contained high impact security vulnerabilities based on a CVSS score. 
+Two years later, Henriksson and Falk \cite{Henriksson} scanned the top 1000 Docker images and showed that 70\% of the images suffered from high severity issues, and 54\% from critical severity issues. 
+Shu et al. \cite{Shu} studied vulnerabilities present in Docker hub images and proposed the Docker Image Vulnerability Analysis (DIVA) framework to automate analysis of Docker images. 
+They scanned 356,218 images and concluded that community and official images contain 180 vulnerabilities on average, and showed 90\% of the images suffered from high severity vulnerabilities. 
+These container security auditing studies revealed that the vulnerabilities were in the container images themselves. 
+Our approach supplements these findings and provides a means to tell if bugs in the kernel were triggered when running these containers. 
+In addition, adopting UnPAK and SmashPAK does not limit a system manager to just scanning static container images, but can provide continuous auditing for containers with different user behaviors. 

@@ -1,14 +1,16 @@
 \section{Conclusion}
 \label{sec.conclusion}
-In earlier work, we found that running applications using only frequently used popular paths could improve the security of virtual machines. 
-As a follow-up we wanted to test the feasibility of applying this popular paths metric to existing containers. 
-To do so, we developed a methodology to systematically profile and obtain the popular paths data of widely-used container applications. 
-Using this data, we were not only able to create UnPAK, a modified Linux kernel that could alert users whenever potentially dangerous unpopular lines are about to be triggered, 
-but  also identify ways to improve security at various levels of granularity. By allowing users to improve container security with steps as simple as eliminating unused files, 
-it means that those who can not do the more labor intensive work of eliminating bugs at the line of code level do not need to remain completely vulnerable. 
-Security thus stops being an ``all or nothing'' proposition, but instead can be tailored to the security sensitivity of the application and the available resources of the user. 
+Widely used containers, such as Docker and LinuxKit, are not designed to protect against zero-day bugs found inside the kernel itself. 
+As adding monitoring and auditing systems can increase the size and complexity of kernel code, a targeted strategy that effectively identifies the best places to audit is highly desirable. 
+This is particularly true in container systems, which are designed to be lightweight. 
+In this paper we introduced such a strategy that leverages previous findings \cite{Lock-in-Pop} that fewer zero-day kernel bugs are located in the most used kernel paths. 
+We developed a methodology to systematically profile and identity these ``popular paths'' in widely-used container applications. 
+With this data, we were able to create \textbf{UnPAK}, a modified Linux audit kernel that automatically logs access to the unpopular kernel code. 
+We then developed a novel data structure called \textbf{SmashPAK} that catalogs and stores data on the location of this unpopular code. 
+SmashPak can be queried by systems managers about specific CVE bugs and thus conduct informed forensic audits for potential exploits. 
 
-We were also able to verify that, consistent with previous findings, the popular paths in the host kernel for frequently used Docker containers do contain fewer security vulnerabilities, 
-and thus are inherently more secure. Equally important, usingUnPAK, we were able to prove that  these containers were able to run their default workload using the popular paths 
-more than 99.9\% of the time, with only a negligible (less than 1\%) performance overhead based on its current action configuration. 
-Compared with three other current kernel tailoring strategies, we demonstrate that UnPAK was an efficient solution in reducing the kernel attack surface, with relatively fewer limitations. 
+We verified that conducting security audits using UnPAK created no loss of functionality for the containers. When auditing real-world container applications, 
+UnPAK was able to operate with only minor increments (0.1\% on average) in runtime overhead, and only around 0.37\% extra cost in memory space. 
+UnPAK tailors around 80\% of the kernel codebase, and identifies around 94\% of kernel CVE bugs. 
+With our novel data structure SmashPAK, it was easy and efficient to store, update, and search for kernel logs. 
+The logging data gathered by UnPAK and stored in SmashPAK can be searched in as little as a few milliseconds to learn if (and when) a CVE could have been triggered at a particular location in the container kernel. 
