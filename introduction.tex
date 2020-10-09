@@ -48,9 +48,8 @@ Thus, valuable information that can prevent future kernel bug exploits can be ob
 
 In summary, we make the following contributions in this paper:
 \begin{itemize}
-	\item We design a novel data structure called SmashPAK, which efficiently stores, updates, and indexes appropriate forensic logging data using a fixed amount of space. SmashPAK data structure allows system managers to learn in as little as a few milliseconds if (and when) specific bugs could have been triggered at a particular location. 
-	\item We gather the popularity kernel profile data by developing a methodology to systematically capture the “popular paths” data for widely-used container applications, and verify that the technique works for the top 100 most downloaded Docker containers run inside of the LinuxKit VM. And it works for new versions of kernel released.
-	\item We evaluate popular paths data at different levels of granularity (line, function, and file) and find that, at each level, the popularity data can provide opportunities to conduct security audits. 
-	\item We use the popular paths kernel profile to implement UnPAK, a  tailored  Linux kernel that can generate logs for kernel forensic audit using SmashPAK. 
+	\item We design a novel data structure called SmashPAK, which efficiently stores, updates, and indexes appropriate forensic logging data using a fixed amount of space. SmashPAK data structure allows system managers to learn in as little as a few milliseconds if (and when) specific bugs could have been triggered at a particular location.
+	\item We develop a methodology to systematically capture the “popular paths” data for widely-used container applications, and verify that the technique works for the top 100 most downloaded Docker containers run inside of the LinuxKit VM.  We affirm that these popularity profiles can automatically update as new versions of the kernel are released.
+	\item We use the popular paths kernel profile to implement UnPAK, a  tailored  Linux kernel that can generate logs for kernel forensic auditing using SmashPAK. 
 	\item In performance tests, we demonstrate that auditing frequently-used Docker containers running their default workload using UnPAK incurs only a negligible performance overhead in runtime and memory. 
 \end{itemize}
