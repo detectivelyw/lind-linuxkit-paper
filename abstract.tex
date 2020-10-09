@@ -1,19 +1,15 @@
 \section*{Abstract}
-One reason why containers, such as Docker and LinuxKit, are so widely used is because of the perceived isolation and security they provide against 
-the potentially malicious or buggy user programs running inside of them. Yet, most security measures designed for containers do not take into account 
-how to protect against the zero-day kernel bugs inside the kernel itself. 
-Containers are vulnerable to these bugs because they allow access to rarely executed paths where such vulnerabilities can be found. 
-Limiting kernel access to only frequently used \textbf{\textit{popular paths}}, which have previously been proven to contain fewer security bugs, 
-would greatly reduce the risk of triggering these vulnerabilities. 
+One reason why containers, such as Docker and LinuxKit, are so widely used is because of the perceived isolation 
+and security they provide against the potentially malicious user programs running inside of them. 
+Yet, most container security measures are not designed to protect against zero-day bugs found inside the kernel itself. 
+These bugs overwhelmingly ($\sim$94\%) appear in lines of code outside of the kernel’s \textbf{\textit{popular paths}}. 
+A reliable method for separating the popular from the unpopular paths within a kernel would provide a strong basis for the design of a more secure system. 
+But, even if such a method can be found,  to truly be effective, kernel developers would need more information about previous code executions in these risky paths.
 
-In this paper, we present a multi-step methodology for improving container security by leveraging data about popular paths into a kernel tailoring strategy. 
-It starts with a systematic approach to identifying and capturing the popular paths data for widely-used container applications. 
-By evaluating this data at different levels of granularity (line, function, and file), users can get fresh insights into which parts of the kernel are being used, 
-and so make informed decisions about which code is safe to execute. 
-The data also guided the implementation of a tailored kernel called the \textbf{\textit{UnPopular Action Kernel (UnPAK)}}. 
-\textbf{UnPAK} registers when a potentially risky path is reached and can respond with a number of actions, from issuing warning messages to denying execution of commands. 
-When testing containers using UnPAK, we found that they were able to run their default workload using just the popular paths more than 99.9\% of the time. 
-Furthermore, the kernel was able to operate with only minor increments (0.1\% on average) in runtime overhead, and only around 0.37\% extra cost in memory space. 
-Most importantly, since only 6\% of 50 Linux kernel CVE security vulnerabilities we examined were present in the popular paths, 
-utilizing the UnPAK system offers a way to reduce the risk of triggering bugs without sacrificing operational efficiency. 
-Lastly, UnPAK compares favorably with three other current kernel tailoring strategies, as it is more adaptable to a wider variety of applications, and can reduce the largest amount of attack surface. 
+In this paper, we present a multi-step methodology for implementing a novel kernel forensic auditing system based on captured code execution data from widely-used container applications.  
+The system gathers data from running container applications using a tailored kernel that logs each time a potentially risky (i.e., not popular) path is reached. 
+The logged data is stored, updated and indexed using a novel data structure called \textbf{\textit{SmashPAK}}. 
+If a kernel developer or system administrator wants to audit a container for a specific CVE vulnerability, 
+the SmashPAK data structure can be searched in as little as a few milliseconds to learn if (and when) that bug  could have been triggered at a particular location. 
+Both SmashPAK and the logging kernel, known as \textbf{\textit{UnPAK}}, are able to operate with minimal impact on the host containers. 
+When tested running a number of real-world containers, UnPAK was able to operate with only minor increments (0.1\% on average) in runtime overhead, and only around 0.37\% extra cost in memory space.
