@@ -10,6 +10,6 @@ In this paper, we present a multi-step methodology for implementing a novel kern
 The system gathers data from running container applications using a tailored kernel that logs each time a potentially risky (i.e., not popular) path is reached. 
 The logged data is stored, updated and indexed using a novel data structure called \textbf{\textit{SmashPAK}}. 
 If a kernel developer or system administrator wants to audit a container for a specific CVE vulnerability, 
-the SmashPAK data structure can be searched in as little as a few milliseconds to learn if (and when) that bug  could have been triggered at a particular location. 
+the SmashPAK data structure can be searched in as little as 0.16 seconds to learn if (and when) that bug could have been triggered at a particular location. 
 Both SmashPAK and the logging kernel, known as \textbf{\textit{UnPAK}}, are able to operate with minimal impact on the host containers. 
 When tested running a number of real-world containers, UnPAK was able to operate with only minor increments (0.1\% on average) in runtime overhead, and only around 0.37\% extra cost in memory space.

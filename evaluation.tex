@@ -404,6 +404,10 @@ For example, we set the maximum size of our occurrences list to 10, and use ``in
 The total size of each SmashPAK is only around 10 mb. Considering that many SmashPAKs could be combined, 
 modern machines or cloud services conducting security audits could easily store millions. 
 
-SmashPAK operations Create, Lookup, Add, and  Combine all take constant time to finish, so for a 10 mb SmashPAK, the cost of operations is at the magnitude of a millisecond. 
-Considering that the end user who conducts the audit is likely a human being, such as system administrator, committing a few milliseconds searching to learn 
-if (and when) a CVE could have been triggered at a particular location for a container is very efficient in practice.
+We implemented SmashPAK with our kernel size (158929 unpopular basic blocks). 
+The average time cost of a search operation for a CVE bug in SmashPAK was 0.1598 seconds. 
+The average time cost of a combine operation for two SmashPAKs was 0.2422 seconds for almost empty (<=10\% filled) occurrences lists, 
+and 0.8399 seconds for almost full (>=90\% filled) occurrences lists. 
+
+Considering that the end user who conducts the audit is likely a human being, such as system administrator, 
+committing only about 0.16 seconds searching to learn if (and when) a CVE  could have been triggered at a particular location for a container is very efficient in practice.
