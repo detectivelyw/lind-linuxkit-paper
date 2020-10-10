@@ -39,16 +39,15 @@ showing that this is the right place for effective security auditing. And in gen
 We also found that UnPAK kernels are efficient and effective at capturing code path executions at the sites of later discovered CVEs, catching 94\% of CVE bugs we examined, 
 making them effective tools for forensic auditing.
 
-In performance tests, an evaluation of our findings affirmed that frequently used Docker containers experience no loss of functionality when run using just the popular paths. 
-Indeed, we found these paths were used more than 99.9\% of the time to run the official Docker containers’ default workload. In addition, 
-UnPAK was effective as a kernel tailoring strategy. In our tests, it tailored around 80\% of the kernel code and identified more than 90\% of CVE vulnerabilities. 
+In performance tests, an evaluation of our findings affirmed that frequently used Docker containers experience no loss of functionality when run using UnPAK. 
+In addition, UnPAK was effective as a kernel tailoring strategy. In our tests, it tailored around 80\% of the kernel code and identified more than 90\% of CVE vulnerabilities. 
 UnPAK also is a more flexible option as many of the existing strategies are tied to a specific application, or to addressing a particular subset of bugs. 
 Lastly, we found that running UnPAK as currently designed only incurred about 1\% of runtime overhead, while the memory overhead was only about 0.37\%. 
 Thus, valuable information that can prevent future kernel bug exploits can be obtained with very little perceived difference in operation efficiency or cost.
 
 In summary, we make the following contributions in this paper:
 \begin{itemize}
-	\item We design a novel data structure called SmashPAK, which efficiently stores, updates, and indexes appropriate forensic logging data using a fixed amount of space. SmashPAK data structure allows system managers to learn in as little as a few milliseconds if (and when) specific bugs could have been triggered at a particular location.
+	\item We design a novel data structure called SmashPAK, which efficiently stores, updates, and indexes appropriate forensic logging data using a fixed amount of space. SmashPAK data structure allows system managers to learn in as little as 0.16 seconds if (and when) specific bugs could have been triggered at a particular location.
 	\item We develop a methodology to systematically capture the “popular paths” data for widely-used container applications, and verify that the technique works for the top 100 most downloaded Docker containers run inside of the LinuxKit VM.  We affirm that these popularity profiles can automatically update as new versions of the kernel are released.
 	\item We use the popular paths kernel profile to implement UnPAK, a  tailored  Linux kernel that can generate logs for kernel forensic auditing using SmashPAK. 
 	\item In performance tests, we demonstrate that auditing frequently-used Docker containers running their default workload using UnPAK incurs only a negligible performance overhead in runtime and memory. 

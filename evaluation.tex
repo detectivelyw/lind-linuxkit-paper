@@ -53,7 +53,6 @@ In the discussion below, we label files and functions with four different catego
 Those labeled ``unpop'': contain 0 lines of popular code; ``all-pop'': contain 100\% popular code lines; ``partial-pop'': contain at least 1 line of popular code 
 and 1 line of unpopular code. ``Pop'' is the combined lines of all-pop + partial-pop.
 
-\noindent
 \textbf{Popular paths data at the file level}
 \newline
 For developers and security teams, the first thing to identify is which files are popular, as this can be a first step to secure the kernel without needing to 
@@ -105,10 +104,8 @@ Alternatively, the  ``unpop'' files contain more than half of the bugs. The high
 \textit{\textbf{pop}: all-pop + partial-pop.}
 \end{table}
 
-\noindent
 \textbf{Popular paths data at the function level}
 \newline
-
 Using the raw data, shown in Table \ref{tab:cve_functions}, we pinpoint which functions were used by popular containers. 
 Our data shows that ``unpop'' functions contain 5x more bugs than ``pop'' functions, while the ``all-pop'' functions contain only one bug. 
 
@@ -215,10 +212,8 @@ Below we look at vulnerabilities revealed by the popular paths data at this most
   \end{center}
 \end{table*}
 
-\noindent
 \textbf{Popular paths data at the line level}
 \newline
-
 An analysis of the gathered data at the line level shows that the popular lines make up about  20\% of the kernel codebase, 
 and that only 6\% (or three) of the CVE bugs were detected in those lines (Table \ref{tab:evaluation_cve}.) 
 These three bugs were in commonly used kernel code that, to the best of our knowledge, 
@@ -234,8 +229,7 @@ The only software-related bug is  CVE-2018-1120, which is related to the \texttt
 \newline
 This bug lies in \texttt{arch/x86/kernel/paravirt.c} in the Linux kernel before 4.18.1. The source code mishandles certain indirect calls, 
 making it easier for attackers to conduct Spectre-v2 attacks against paravirtual guests. 
-In our tests, this bug was found in the  kernel trace data, and was reached frequently by programs running in LinuxKit. 
-This occurs because the code inside of the \texttt{paravirt\_patch\_call()} function in \texttt{arch/x86/kernel/paravirt.c} is used to rewrite an indirect call with a direct call, 
+This bug occurs because the code inside of the \texttt{paravirt\_patch\_call()} function in \texttt{arch/x86/kernel/paravirt.c} is used to rewrite an indirect call with a direct call, 
 an essential function used to support Linux kernel paravirtualization. 
 
 \noindent
@@ -243,10 +237,9 @@ an essential function used to support Linux kernel paravirtualization.
 \newline
 The \texttt{spectre\_v2\_select\_mitigation}  \\ 
 function in \texttt{arch/x86/kernel/cpu/bugs.c} in the Linux kernel before 4.18.1 does not always fill RSB upon a context switch. 
-This makes it easier for attackers to conduct userspace-userspace spectreRSB attacks. 
 As this piece of code in \\
 \texttt{spectre\_v2\_select\_mitigation(void)} function would be used by every program as the kernel attempts to mitigate potential Spectre attacks, 
-it explains why it appeared in our LinuxKit popular paths. 
+it explains why it appeared in the LinuxKit popular paths. 
 
 \noindent
 \textbf{[CVE-2018-1120]} 
@@ -255,11 +248,9 @@ This vulnerability was found affecting the Linux kernel before version 4.17. by
 \texttt{mmap()ing} a FUSE-backed file onto the memory of a process containing command line arguments (or environment strings). 
 It appears in the popular paths because \texttt{mmap()} is a commonly used system call. 
 Furthermore, this vulnerability involves \texttt{proc\_pid\_cmdline\_read()} and \texttt{environ\_read()} functions that are commonly invoked by virtual machines and user programs. 
-According to CVSS 3.0 \cite{CVSS} metrics, this bug has ``high'' attack complexity, suggesting that it is very hard to exploit it in practice. 
-Therefore, the negative impact of this bug’s existence is low. 
 
 The fact that 94\% of bugs were located in the unpopular paths demonstrates that monitoring the unpopular paths to target kernel auditing is a correct choice, 
-as an UnPAK kernel based on the unpopular paths would be able to catch the overwhelming majority of bugs. In addition, the 6\% of bugs missed were in the popular paths, 
+as an UnPAK kernel based on data above would be able to catch the overwhelming majority of bugs. In addition, the 6\% of bugs missed were in the popular paths, 
 and are used by almost every program during their normal runs, which means that they were quite easy to catch and thus far less interesting as auditing targets. 
 
 An important result of this multi-level data analysis was the discovery  that users actually had a hierarchy of security choices, rather than one ``all or nothing'' option. 
@@ -273,9 +264,9 @@ Moreover, ``line'' level tends to be more ``volatile.'' Thus, this data could ch
 \noindent
 \textbf{Are there sufficient commonalities across different containers to form a valid kernel profile for the most frequently used containers?} 
 \newline
-To ensure our kernel profile could be applicable to a broad variety of containers, we needed to establish that the data of containers we obtained shared common ground in their kernel footprints. 
-If there were enough commonalities to form a realistic popular paths profile to support multiple popular containers, we could use the kernel trace, or the record of all kernel code executed, 
-of just a sample of containers to represent the trace of many more. Such confirmation is essential for building a robust kernel profile to guide our container kernel auditing strategy.
+To ensure our kernel profile could be applicable to a broad variety of containers, we needed to establish that the data we obtained shared common ground in their kernel footprints. 
+If there were enough commonalities, we could use the kernel trace, or the record of all kernel code executed, 
+of just a sample of containers to represent many more. Such confirmation is essential for building a robust kernel profile to guide our container kernel auditing strategy.
 
 To answer this question, we used the CDF (Cumulative Distribution Function) to analyze how soon the kernel trace of different containers would converge. 
 Results of the CDF, as visualized in Figure \ref{fig:pp-cdf}, point out that the trace of the top six popular containers covered about 98\% of the total kernel trace for 25 containers. 
@@ -324,11 +315,12 @@ and therefore is key to aiding efficient security auditing.
 
 \subsection{Can real-world containers run on the UnPAK auditing kernel with no loss of functionality?}
 \label{sec.evaluation.3} 
-To demonstrate that the UnPAK kernel can support efficient auditing in practice, we needed to confirm that it will not break any essential kernel functionalities, and can support real-world containers.
+To demonstrate that the UnPAK kernel can support efficient auditing in practice, we needed to confirm that, as compared to the original Linux kernel, 
+it will not break any essential kernel functionalities, and can support real-world containers.
 
-The next set of tests were to determine if  running applications in UnPAK, will cause any loss of functionality, as compared to using the original Linux kernel. 
-The first study used the Linux Testing Project (LTP) [cite] test suites—an open source test project designed to validate the reliability, robustness, and stability of Linux—to verify that 
-UnPAK functions as anticipated. The second test involved running a collection of the most popular containers from Docker Hub to verify if they were able to function correctly if they ran on UnPAK auditing kernel.
+To affirm this, we ran a set of tests, the first of which used the Linux Testing Project (LTP) \cite{LTP} test suites. 
+We used this open source test project designed to validate the reliability, robustness, and stability of Linux to verify that UnPAK functions as anticipated. 
+The second test involved running a collection of the most popular containers from Docker Hub to verify if they were able to function correctly if they ran on UnPAK auditing kernel.
 
 \subsubsection{Testing functionality with the LTP test suites}
 \label{sec.evaluation.3.1} 
@@ -338,26 +330,21 @@ The test script we ran consisted of 798 test cases that verified the correctness
 Using the test suites, we ran our experiments inside of a LinuxKit version 0.2+ virtual machine. The machine was built using Docker version 18.03.0-ce running on 
 a host operating system of Ubuntu 16.04 LTS, with Linux kernel 4.13.0-36-generic. A QEMU emulator version 2.5.0 served as the local hypervisor. 
 
-\textbf{Results:}  UnPAK was able to run all of the 798 test cases, produced the same results as the original unmodified Linux kernel. 
+\textbf{Results:}  UnPAK was able to run all of the 798 test cases, and produced the same results as the original Linux kernel. 
+This indicates that our UnPAK audit kernel implementation, using KVM hypercalls, can provide correct functionality. 
 Among all these tests, 673 of them generated ``success'' as their expected output on both kernels. We observed 105 test cases returned ``failures'' as expected, 
-mainly because of restrictions imposed by LinuxKit. For example, ``mem01'' test failed because the malloc function failed to allocate 3056 MB memory due to the default memory restriction; 
-the ``gf01'' test failed due to ``no space left on device'' in LinuxKit. The ``swapon01'' test failed due to swapfile not available, and more. 
-There were 20 tests skipped due to certain required functions being unavailable in the LinuxKit VM version we tested. 
-For example, the swap file was not accessible in LinuxKit, therefore the related ``swapoff'' test iterations were skipped intentionally.
-
-In summary, UnPAK yields the exact same output as the unmodified Linux kernel when running the 798 test cases in the LTP test suites. 
-This shows that our UnPAK audit kernel implementation, using KVM hypercalls, can provide correct functionality.
+mainly because of restrictions imposed by LinuxKit. For example, ``mem01'' test failed because the malloc function failed to allocate 3056 MB memory due to the default memory restriction. 
 
 \subsubsection{Testing functionality on real-world container applications}
 \label{sec.evaluation.3.2} 
 \textbf{Experimental Setup:} To confirm that UnPAK could run applications in real-world practice, we identified the 100 most downloaded containers from Docker Hub, 
 and ran them in the same version of the LinuxKit virtual machine used in the test described in 4.3.1. Each container was run in the LinuxKit VM using the commands from its official Docker image. 
 To take into account any potential variances, each container was run 10 times in the exact same environment. We used the top 50 popular containers as the training dataset to 
-get the popular paths kernel profile, and then tested our UnPAK kernel with these 50 containers plus 50 more popular containers that were not used in building the kernel profile. 
+get the popular paths kernel profile, and then tested our UnPAK kernel with these 50 containers plus 50 other popular containers. 
 
 \textbf{Results:}  We verified that the 100 containers run using UnPAK were able to finish their normal workloads with, on average, less than 1\% of runtime overhead. 
 In doing so,  less than 0.1\% of the total kernel lines reached were unpopular. And these unpopular lines appeared both in the 50 containers used in the training dataset, 
-as well as in the 50 new containers in the testing dataset. Using our list of 50 CVE bugs, we verified that these unpopular paths logged by UnPAK audit kernel contained none of the bugs. 
+as well as in the 50 new containers in the testing dataset. Using our list of 50 CVE bugs, we verified that these unpopular paths logged by UnPAK contained none of the bugs. 
 (These unpopular lines were mostly rarely executed race-condition related code) 
 
 The results show that real-world containers will not generate unpopular kernel logs in the overwhelmingly majority of (>99.9\%) cases. 
@@ -402,7 +389,7 @@ For each released kernel, there is a fixed amount of basic blocks for the kernel
 For the kernel we implemented, there is a total number of 158,929 unpopular basic blocks, so we have 158,929 indices for our SmashPAK. 
 Each index points to a list of occurrences. The occurrences data structure has a maximum fixed size, so the total size of each SmashPAK is fixed and relatively small. 
 For example, we set the maximum size of our occurrences list to 10, and use ``int'' (four bytes) to store the information. 
-The total size of each SmashPAK is only around 10 mb. Considering that many SmashPAKs could be combined, 
+The total size of each SmashPAK is only around 10 mb, and considering that many SmashPAKs could be combined, 
 modern machines or cloud services conducting security audits could easily store millions. 
 
 We implemented SmashPAK with our kernel size (158929 unpopular basic blocks). 

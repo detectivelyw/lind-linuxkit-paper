@@ -11,7 +11,7 @@ Given the rapid pace at which container applications are being introduced and ad
 DockerHub already hosts more than four million container images \cite{DockerHub}. 
 Yet, to date, no effort has been made to systematically collect data for containers, and to analyze what the kernel footprints look like. 
 Using Li’s metric, described below, as a starting point,  we identified three challenges. The first was to design and build a framework for automatic container data collection.  
-A second challenge was to determine whether a kernel tailored for security purposes would  be able to function for different container applications, 
+The second was to determine whether a kernel tailored for security purposes would  be able to function for different container applications, 
 and if a new kernel tailoring approach was actually a feasible security strategy. 
 A third challenge was to find a way to process the logged information on potentially risky paths by capturing and storing evidence of potential exploits. 
 
@@ -19,30 +19,27 @@ A third challenge was to find a way to process the logged information on potenti
 \label{sec.motivation.metrics}
 Since the OS kernel in a container must service multiple applications, the underlying code is often bloated and overly complex. 
 Numerous research teams have investigated metrics to find and eliminate risky code. 
-Such a metric would be invaluable not only for security reasons, but also as a guideline for reducing the bloat, an issue that can also affect system efficiency. 
-Previous metrics proposed to selectively reduce the OS kernel over the last few decades have included the work of  Chou et al. \cite{Chou}, which focused on a particular part of the code, 
-and Ozment and Schechter \cite{Ozment}, which examined the age of code to see if that worked as a predictor of vulnerability in the OpenBSD \cite{OpenBSD}. 
+Chou et al. \cite{Chou} focused on a particular part of the code, 
+and Ozment and Schechter \cite{Ozment} examined the age of code to see if that worked as a predictor of vulnerability in the OpenBSD \cite{OpenBSD}. 
 Other researchers have considered software engineering elements, such as code complexity or the number of times a developer rewrites the code, 
 as factors tied to potential vulnerabilities \cite{5560680, SAC10, Imtiaz2018TowardsDV, 4459644, Alenezi2015EvaluatingSM}. 
 
 The work of Li et al. \cite{Lock-in-Pop} introduced the Popular Paths metric, which posits that lines of code in the kernel used to run popular software programs are less likely to contain security bugs. 
 Unlike the work described above, Li’s research  took a quantitative approach, based on results from human subject studies in which participants ran daily tasks over a period of 5 calendar days on 
 applications from the 50 most popular packages in Debian 7.0. The collected data was then evaluated at the fine-grained line-of-code level, which enabled more selective code reduction. 
-The study documented that only 2.5\% of zero-day bugs were found in these popular paths, and gave evidence that in practice, 
+The study documented that only 2.5\% of zero-day bugs were found in these popular paths. It also gave evidence that in practice, 
 it is possible to design and build a virtualization system that can run large and complex legacy programs, such as Tor and Apache using only the popular kernel paths.  
-
-Li’s metric served as the basis of UnPAK’s design, which is discussed in greater detail in Section 3. 
 
 \subsection{Processing the Logging Data with SmashPAK}
 \label{sec.motivation.smashpak}
 Once the UnPAK kernel and its logging instrumentation had been designed,  
-our research team needed to add a third It was decided that being able to use loggings of unpopular paths to check for actual exploits of kernel bugs would enable container designers 
-and administrators to better assess and prioritize critical vulnerabilities. This leads to the creation of \textbf{SmashPAK}, which can efficiently store, update, and index forensic logging data accessed 
+our research team needed to add a third. It was decided that being able to use loggings of unpopular paths to check for actual exploits of kernel bugs would enable container designers 
+and administrators to better assess and prioritize critical vulnerabilities. This led to the creation of \textbf{SmashPAK}, which can efficiently store, update, and index forensic logging data accessed 
 from the UnPAK’s kernel logs. 
 
 A SmashPAK is a data structure that stores information about a sequence of items, and enables quick lookups for parties that want to both store and update data efficiently. 
 For its use in UnPAK, SmashPAK captures sets of unpopular basic blocks in the Linux kernel, each of which indexes into an occurrences data structure with a start and end time. 
 Since each structure has a maximum fixed size, container developers or supervisors can build databases of triggering incidents with minimal memory requirements. 
-This enabled the system to perform forensic analysis on past exploits in containers, enabling better informed security and kernel tailoring decision-making.
+This enables the system to perform forensic analysis on past exploits in containers, enabling better informed security and kernel tailoring decision-making.
 
 The design and implementation of SmashPAK are discussed in greater detail in Section 3. 
